@@ -1,0 +1,725 @@
+Classic Timing Analyzer report for FREQ2SIN
+Mon Jan 09 16:25:52 2017
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Clock Setup: 'CLK_IN'
+  6. tsu
+  7. tco
+  8. th
+  9. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                       ;
++------------------------------+-------+---------------+----------------------------------+--------------------------+-----------------------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From                     ; To                                ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+--------------------------+-----------------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 8.314 ns                         ; FREQ_in[10]              ; freq2ClkDiv:inst1|Div[1]          ; --         ; CLK_IN   ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 7.963 ns                         ; SinTableTC:inst25|Q[7]   ; Sin_out[7]                        ; CLK_IN     ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; -0.944 ns                        ; RESETn                   ; Clk_Divider:inst|clk_out_sig      ; --         ; CLK_IN   ; 0            ;
+; Clock Setup: 'CLK_IN'        ; N/A   ; None          ; 211.33 MHz ( period = 4.732 ns ) ; freq2ClkDiv:inst1|Div[3] ; Clk_Divider:inst|clk_div_param[8] ; CLK_IN     ; CLK_IN   ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                          ;                                   ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+--------------------------+-----------------------------------+------------+----------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                                                            ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                                                               ; Setting            ; From ; To ; Entity Name ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                                                          ; EP2C35F672C6       ;      ;    ;             ;
+; Timing Models                                                                                        ; Final              ;      ;    ;             ;
+; Default hold multicycle                                                                              ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                                                            ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                                                               ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                                                       ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                                                     ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                                                                ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                                                              ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                                                     ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                                                 ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                                                        ; Off                ;      ;    ;             ;
+; Number of source nodes to report per destination node                                                ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                                                                ; 10                 ;      ;    ;             ;
+; Number of paths to report                                                                            ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                                                         ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                                                               ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                                                           ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                                                         ; On                 ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis                                       ; Off                ;      ;    ;             ;
+; Reports worst-case timing paths for each clock domain and analysis                                   ; On                 ;      ;    ;             ;
+; Specifies the maximum number of worst-case timing paths to report for each clock domain and analysis ; 100                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation                                  ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                                                           ; Near End           ;      ;    ;             ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; CLK_IN          ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; RESETn          ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'CLK_IN'                                                                                                                                                                                                                                                                                                                          ;
++-----------------------------------------+-----------------------------------------------------+--------------------------------------------------------------------------------------+---------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                                                                                 ; To                                          ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+--------------------------------------------------------------------------------------+---------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 211.33 MHz ( period = 4.732 ns )                    ; freq2ClkDiv:inst1|Div[3]                                                             ; Clk_Divider:inst|clk_div_param[8]           ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.512 ns                ;
+; N/A                                     ; 214.78 MHz ( period = 4.656 ns )                    ; freq2ClkDiv:inst1|Div[2]                                                             ; Clk_Divider:inst|clk_div_param[25]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.444 ns                ;
+; N/A                                     ; 217.96 MHz ( period = 4.588 ns )                    ; Clk_Divider:inst|clk_div_param[3]~_emulated                                          ; Clk_Divider:inst|clk_div_param[8]           ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.368 ns                ;
+; N/A                                     ; 219.06 MHz ( period = 4.565 ns )                    ; freq2ClkDiv:inst1|Div[2]                                                             ; Clk_Divider:inst|clk_div_param[21]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.349 ns                ;
+; N/A                                     ; 220.26 MHz ( period = 4.540 ns )                    ; freq2ClkDiv:inst1|Div[3]                                                             ; Clk_Divider:inst|clk_div_param[24]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.323 ns                ;
+; N/A                                     ; 221.48 MHz ( period = 4.515 ns )                    ; freq2ClkDiv:inst1|Div[2]                                                             ; Clk_Divider:inst|clk_div_param[23]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.303 ns                ;
+; N/A                                     ; 221.88 MHz ( period = 4.507 ns )                    ; freq2ClkDiv:inst1|Div[2]                                                             ; Clk_Divider:inst|clk_div_param[22]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.291 ns                ;
+; N/A                                     ; 224.11 MHz ( period = 4.462 ns )                    ; Clk_Divider:inst|clk_div_param[0]~_emulated                                          ; Clk_Divider:inst|clk_div_param[25]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.246 ns                ;
+; N/A                                     ; 224.32 MHz ( period = 4.458 ns )                    ; Clk_Divider:inst|clk_div_param[25]                                                   ; Clk_Divider:inst|clk_div_param[2]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.242 ns                ;
+; N/A                                     ; 224.32 MHz ( period = 4.458 ns )                    ; Clk_Divider:inst|clk_div_param[25]                                                   ; Clk_Divider:inst|clk_div_param[7]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.242 ns                ;
+; N/A                                     ; 224.32 MHz ( period = 4.458 ns )                    ; Clk_Divider:inst|clk_div_param[25]                                                   ; Clk_Divider:inst|clk_div_param[6]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.242 ns                ;
+; N/A                                     ; 224.32 MHz ( period = 4.458 ns )                    ; Clk_Divider:inst|clk_div_param[25]                                                   ; Clk_Divider:inst|clk_div_param[4]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.242 ns                ;
+; N/A                                     ; 224.37 MHz ( period = 4.457 ns )                    ; Clk_Divider:inst|clk_div_param[25]                                                   ; Clk_Divider:inst|clk_div_param[5]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.241 ns                ;
+; N/A                                     ; 224.82 MHz ( period = 4.448 ns )                    ; freq2ClkDiv:inst1|Div[2]                                                             ; Clk_Divider:inst|clk_div_param[24]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.236 ns                ;
+; N/A                                     ; 226.86 MHz ( period = 4.408 ns )                    ; freq2ClkDiv:inst1|Div[3]                                                             ; Clk_Divider:inst|clk_div_param[25]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.191 ns                ;
+; N/A                                     ; 226.86 MHz ( period = 4.408 ns )                    ; Clk_Divider:inst|clk_div_param[1]~_emulated                                          ; Clk_Divider:inst|clk_div_param[25]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.191 ns                ;
+; N/A                                     ; 227.27 MHz ( period = 4.400 ns )                    ; freq2ClkDiv:inst1|Div[3]                                                             ; Clk_Divider:inst|clk_div_param[17]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.179 ns                ;
+; N/A                                     ; 227.32 MHz ( period = 4.399 ns )                    ; freq2ClkDiv:inst1|Div[3]                                                             ; Clk_Divider:inst|clk_div_param[19]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.178 ns                ;
+; N/A                                     ; 227.48 MHz ( period = 4.396 ns )                    ; Clk_Divider:inst|clk_div_param[3]~_emulated                                          ; Clk_Divider:inst|clk_div_param[24]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.179 ns                ;
+; N/A                                     ; 227.53 MHz ( period = 4.395 ns )                    ; freq2ClkDiv:inst1|Div[3]                                                             ; Clk_Divider:inst|clk_div_param[20]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.174 ns                ;
+; N/A                                     ; 227.69 MHz ( period = 4.392 ns )                    ; freq2ClkDiv:inst1|Div[3]                                                             ; Clk_Divider:inst|clk_div_param[21]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.171 ns                ;
+; N/A                                     ; 227.74 MHz ( period = 4.391 ns )                    ; freq2ClkDiv:inst1|Div[3]                                                             ; Clk_Divider:inst|clk_div_param[11]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.170 ns                ;
+; N/A                                     ; 227.79 MHz ( period = 4.390 ns )                    ; freq2ClkDiv:inst1|Div[3]                                                             ; Clk_Divider:inst|clk_div_param[13]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.169 ns                ;
+; N/A                                     ; 227.84 MHz ( period = 4.389 ns )                    ; freq2ClkDiv:inst1|Div[3]                                                             ; Clk_Divider:inst|clk_div_param[18]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.168 ns                ;
+; N/A                                     ; 228.10 MHz ( period = 4.384 ns )                    ; freq2ClkDiv:inst1|Div[3]                                                             ; Clk_Divider:inst|clk_div_param[10]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.163 ns                ;
+; N/A                                     ; 228.31 MHz ( period = 4.380 ns )                    ; freq2ClkDiv:inst1|Div[4]                                                             ; Clk_Divider:inst|clk_div_param[25]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.168 ns                ;
+; N/A                                     ; 228.57 MHz ( period = 4.375 ns )                    ; freq2ClkDiv:inst1|Div[2]                                                             ; Clk_Divider:inst|clk_div_param[20]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.159 ns                ;
+; N/A                                     ; 228.78 MHz ( period = 4.371 ns )                    ; Clk_Divider:inst|clk_div_param[0]~_emulated                                          ; Clk_Divider:inst|clk_div_param[21]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.151 ns                ;
+; N/A                                     ; 229.73 MHz ( period = 4.353 ns )                    ; Clk_Divider:inst|clk_div_param[0]~_emulated                                          ; Clk_Divider:inst|clk_div_param[8]           ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.134 ns                ;
+; N/A                                     ; 230.52 MHz ( period = 4.338 ns )                    ; Clk_Divider:inst|clk_div_param[2]~_emulated                                          ; Clk_Divider:inst|clk_div_param[25]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.126 ns                ;
+; N/A                                     ; 230.57 MHz ( period = 4.337 ns )                    ; freq2ClkDiv:inst1|Div[2]                                                             ; Clk_Divider:inst|clk_div_param[19]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.121 ns                ;
+; N/A                                     ; 231.43 MHz ( period = 4.321 ns )                    ; Clk_Divider:inst|clk_div_param[0]~_emulated                                          ; Clk_Divider:inst|clk_div_param[23]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.105 ns                ;
+; N/A                                     ; 231.64 MHz ( period = 4.317 ns )                    ; Clk_Divider:inst|clk_div_param[1]~_emulated                                          ; Clk_Divider:inst|clk_div_param[21]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.096 ns                ;
+; N/A                                     ; 231.86 MHz ( period = 4.313 ns )                    ; Clk_Divider:inst|clk_div_param[0]~_emulated                                          ; Clk_Divider:inst|clk_div_param[22]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.093 ns                ;
+; N/A                                     ; 231.91 MHz ( period = 4.312 ns )                    ; Clk_Divider:inst|clk_div_param[25]                                                   ; Clk_Divider:inst|clk_div_param[0]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.100 ns                ;
+; N/A                                     ; 232.34 MHz ( period = 4.304 ns )                    ; Clk_Divider:inst|clk_div_param[14]                                                   ; Clk_Divider:inst|clk_div_param[2]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.092 ns                ;
+; N/A                                     ; 232.34 MHz ( period = 4.304 ns )                    ; Clk_Divider:inst|clk_div_param[14]                                                   ; Clk_Divider:inst|clk_div_param[7]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.092 ns                ;
+; N/A                                     ; 232.34 MHz ( period = 4.304 ns )                    ; Clk_Divider:inst|clk_div_param[14]                                                   ; Clk_Divider:inst|clk_div_param[6]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.092 ns                ;
+; N/A                                     ; 232.34 MHz ( period = 4.304 ns )                    ; Clk_Divider:inst|clk_div_param[14]                                                   ; Clk_Divider:inst|clk_div_param[4]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.092 ns                ;
+; N/A                                     ; 232.40 MHz ( period = 4.303 ns )                    ; freq2ClkDiv:inst1|Div[3]                                                             ; Clk_Divider:inst|clk_div_param[15]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.082 ns                ;
+; N/A                                     ; 232.40 MHz ( period = 4.303 ns )                    ; Clk_Divider:inst|clk_div_param[14]                                                   ; Clk_Divider:inst|clk_div_param[5]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.091 ns                ;
+; N/A                                     ; 232.45 MHz ( period = 4.302 ns )                    ; freq2ClkDiv:inst1|Div[3]                                                             ; Clk_Divider:inst|clk_div_param[22]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.081 ns                ;
+; N/A                                     ; 232.50 MHz ( period = 4.301 ns )                    ; freq2ClkDiv:inst1|Div[3]                                                             ; Clk_Divider:inst|clk_div_param[12]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.080 ns                ;
+; N/A                                     ; 232.56 MHz ( period = 4.300 ns )                    ; freq2ClkDiv:inst1|Div[3]                                                             ; Clk_Divider:inst|clk_div_param[14]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.079 ns                ;
+; N/A                                     ; 232.83 MHz ( period = 4.295 ns )                    ; freq2ClkDiv:inst1|Div[3]                                                             ; Clk_Divider:inst|clk_div_param[9]           ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.074 ns                ;
+; N/A                                     ; 232.94 MHz ( period = 4.293 ns )                    ; freq2ClkDiv:inst1|Div[3]                                                             ; Clk_Divider:inst|clk_div_param[16]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.072 ns                ;
+; N/A                                     ; 233.15 MHz ( period = 4.289 ns )                    ; freq2ClkDiv:inst1|Div[4]                                                             ; Clk_Divider:inst|clk_div_param[21]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.073 ns                ;
+; N/A                                     ; 234.08 MHz ( period = 4.272 ns )                    ; freq2ClkDiv:inst1|Div[3]                                                             ; Clk_Divider:inst|clk_div_param[23]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.055 ns                ;
+; N/A                                     ; 234.08 MHz ( period = 4.272 ns )                    ; Clk_Divider:inst|clk_div_param[16]                                                   ; Clk_Divider:inst|clk_div_param[2]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.060 ns                ;
+; N/A                                     ; 234.08 MHz ( period = 4.272 ns )                    ; Clk_Divider:inst|clk_div_param[16]                                                   ; Clk_Divider:inst|clk_div_param[7]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.060 ns                ;
+; N/A                                     ; 234.08 MHz ( period = 4.272 ns )                    ; Clk_Divider:inst|clk_div_param[16]                                                   ; Clk_Divider:inst|clk_div_param[6]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.060 ns                ;
+; N/A                                     ; 234.08 MHz ( period = 4.272 ns )                    ; Clk_Divider:inst|clk_div_param[16]                                                   ; Clk_Divider:inst|clk_div_param[4]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.060 ns                ;
+; N/A                                     ; 234.14 MHz ( period = 4.271 ns )                    ; Clk_Divider:inst|clk_div_param[16]                                                   ; Clk_Divider:inst|clk_div_param[5]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.059 ns                ;
+; N/A                                     ; 234.36 MHz ( period = 4.267 ns )                    ; Clk_Divider:inst|clk_div_param[1]~_emulated                                          ; Clk_Divider:inst|clk_div_param[23]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.050 ns                ;
+; N/A                                     ; 234.36 MHz ( period = 4.267 ns )                    ; freq2ClkDiv:inst1|Div[2]                                                             ; Clk_Divider:inst|clk_div_param[18]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.051 ns                ;
+; N/A                                     ; 234.52 MHz ( period = 4.264 ns )                    ; Clk_Divider:inst|clk_div_param[3]~_emulated                                          ; Clk_Divider:inst|clk_div_param[25]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.047 ns                ;
+; N/A                                     ; 234.80 MHz ( period = 4.259 ns )                    ; Clk_Divider:inst|clk_div_param[1]~_emulated                                          ; Clk_Divider:inst|clk_div_param[22]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.038 ns                ;
+; N/A                                     ; 234.96 MHz ( period = 4.256 ns )                    ; Clk_Divider:inst|clk_div_param[3]~_emulated                                          ; Clk_Divider:inst|clk_div_param[17]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.035 ns                ;
+; N/A                                     ; 235.02 MHz ( period = 4.255 ns )                    ; Clk_Divider:inst|clk_div_param[3]~_emulated                                          ; Clk_Divider:inst|clk_div_param[19]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.034 ns                ;
+; N/A                                     ; 235.07 MHz ( period = 4.254 ns )                    ; Clk_Divider:inst|clk_div_param[0]~_emulated                                          ; Clk_Divider:inst|clk_div_param[24]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.038 ns                ;
+; N/A                                     ; 235.24 MHz ( period = 4.251 ns )                    ; Clk_Divider:inst|clk_div_param[3]~_emulated                                          ; Clk_Divider:inst|clk_div_param[20]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.030 ns                ;
+; N/A                                     ; 235.40 MHz ( period = 4.248 ns )                    ; Clk_Divider:inst|clk_div_param[3]~_emulated                                          ; Clk_Divider:inst|clk_div_param[21]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.027 ns                ;
+; N/A                                     ; 235.46 MHz ( period = 4.247 ns )                    ; Clk_Divider:inst|clk_div_param[3]~_emulated                                          ; Clk_Divider:inst|clk_div_param[11]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.026 ns                ;
+; N/A                                     ; 235.46 MHz ( period = 4.247 ns )                    ; Clk_Divider:inst|clk_div_param[2]~_emulated                                          ; Clk_Divider:inst|clk_div_param[21]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.031 ns                ;
+; N/A                                     ; 235.52 MHz ( period = 4.246 ns )                    ; Clk_Divider:inst|clk_div_param[3]~_emulated                                          ; Clk_Divider:inst|clk_div_param[13]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.025 ns                ;
+; N/A                                     ; 235.57 MHz ( period = 4.245 ns )                    ; Clk_Divider:inst|clk_div_param[3]~_emulated                                          ; Clk_Divider:inst|clk_div_param[18]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.024 ns                ;
+; N/A                                     ; 235.85 MHz ( period = 4.240 ns )                    ; Clk_Divider:inst|clk_div_param[3]~_emulated                                          ; Clk_Divider:inst|clk_div_param[10]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.019 ns                ;
+; N/A                                     ; 235.90 MHz ( period = 4.239 ns )                    ; freq2ClkDiv:inst1|Div[4]                                                             ; Clk_Divider:inst|clk_div_param[23]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.027 ns                ;
+; N/A                                     ; 236.02 MHz ( period = 4.237 ns )                    ; freq2ClkDiv:inst1|Div[2]                                                             ; Clk_Divider:inst|clk_div_param[8]           ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.022 ns                ;
+; N/A                                     ; 236.18 MHz ( period = 4.234 ns )                    ; Clk_Divider:inst|clk_div_param[4]~_emulated                                          ; Clk_Divider:inst|clk_div_param[25]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.022 ns                ;
+; N/A                                     ; 236.35 MHz ( period = 4.231 ns )                    ; freq2ClkDiv:inst1|Div[4]                                                             ; Clk_Divider:inst|clk_div_param[22]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 4.015 ns                ;
+; N/A                                     ; 238.10 MHz ( period = 4.200 ns )                    ; Clk_Divider:inst|clk_div_param[1]~_emulated                                          ; Clk_Divider:inst|clk_div_param[24]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.983 ns                ;
+; N/A                                     ; 238.15 MHz ( period = 4.199 ns )                    ; freq2ClkDiv:inst1|Div[2]                                                             ; Clk_Divider:inst|clk_div_param[17]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.983 ns                ;
+; N/A                                     ; 238.21 MHz ( period = 4.198 ns )                    ; Clk_Divider:inst|clk_div_param[20]                                                   ; Clk_Divider:inst|clk_div_param[2]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.986 ns                ;
+; N/A                                     ; 238.21 MHz ( period = 4.198 ns )                    ; Clk_Divider:inst|clk_div_param[20]                                                   ; Clk_Divider:inst|clk_div_param[7]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.986 ns                ;
+; N/A                                     ; 238.21 MHz ( period = 4.198 ns )                    ; Clk_Divider:inst|clk_div_param[20]                                                   ; Clk_Divider:inst|clk_div_param[6]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.986 ns                ;
+; N/A                                     ; 238.21 MHz ( period = 4.198 ns )                    ; Clk_Divider:inst|clk_div_param[20]                                                   ; Clk_Divider:inst|clk_div_param[4]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.986 ns                ;
+; N/A                                     ; 238.27 MHz ( period = 4.197 ns )                    ; Clk_Divider:inst|clk_div_param[2]~_emulated                                          ; Clk_Divider:inst|clk_div_param[23]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.985 ns                ;
+; N/A                                     ; 238.27 MHz ( period = 4.197 ns )                    ; Clk_Divider:inst|clk_div_param[20]                                                   ; Clk_Divider:inst|clk_div_param[5]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.985 ns                ;
+; N/A                                     ; 238.61 MHz ( period = 4.191 ns )                    ; Clk_Divider:inst|clk_div_param[22]                                                   ; Clk_Divider:inst|clk_div_param[2]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.979 ns                ;
+; N/A                                     ; 238.61 MHz ( period = 4.191 ns )                    ; Clk_Divider:inst|clk_div_param[22]                                                   ; Clk_Divider:inst|clk_div_param[7]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.979 ns                ;
+; N/A                                     ; 238.61 MHz ( period = 4.191 ns )                    ; Clk_Divider:inst|clk_div_param[22]                                                   ; Clk_Divider:inst|clk_div_param[6]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.979 ns                ;
+; N/A                                     ; 238.61 MHz ( period = 4.191 ns )                    ; Clk_Divider:inst|clk_div_param[22]                                                   ; Clk_Divider:inst|clk_div_param[4]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.979 ns                ;
+; N/A                                     ; 238.66 MHz ( period = 4.190 ns )                    ; Clk_Divider:inst|clk_div_param[22]                                                   ; Clk_Divider:inst|clk_div_param[5]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.978 ns                ;
+; N/A                                     ; 238.72 MHz ( period = 4.189 ns )                    ; Clk_Divider:inst|clk_div_param[2]~_emulated                                          ; Clk_Divider:inst|clk_div_param[22]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.973 ns                ;
+; N/A                                     ; 238.72 MHz ( period = 4.189 ns )                    ; Clk_Divider:inst|clk_div_param[24]                                                   ; Clk_Divider:inst|clk_div_param[2]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.973 ns                ;
+; N/A                                     ; 238.72 MHz ( period = 4.189 ns )                    ; Clk_Divider:inst|clk_div_param[24]                                                   ; Clk_Divider:inst|clk_div_param[7]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.973 ns                ;
+; N/A                                     ; 238.72 MHz ( period = 4.189 ns )                    ; Clk_Divider:inst|clk_div_param[24]                                                   ; Clk_Divider:inst|clk_div_param[6]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.973 ns                ;
+; N/A                                     ; 238.72 MHz ( period = 4.189 ns )                    ; Clk_Divider:inst|clk_div_param[24]                                                   ; Clk_Divider:inst|clk_div_param[4]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.973 ns                ;
+; N/A                                     ; 238.78 MHz ( period = 4.188 ns )                    ; Clk_Divider:inst|clk_div_param[24]                                                   ; Clk_Divider:inst|clk_div_param[5]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.972 ns                ;
+; N/A                                     ; 239.06 MHz ( period = 4.183 ns )                    ; counter256:inst7|lpm_counter:lpm_counter_component|cntr_1cj:auto_generated|safe_q[2] ; SinTableTC:inst25|Q[1]                      ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.967 ns                ;
+; N/A                                     ; 239.18 MHz ( period = 4.181 ns )                    ; Clk_Divider:inst|clk_div_param[0]~_emulated                                          ; Clk_Divider:inst|clk_div_param[20]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.961 ns                ;
+; N/A                                     ; 239.23 MHz ( period = 4.180 ns )                    ; freq2ClkDiv:inst1|Div[2]                                                             ; Clk_Divider:inst|clk_div_param[11]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.964 ns                ;
+; N/A                                     ; 239.41 MHz ( period = 4.177 ns )                    ; Clk_Divider:inst|clk_div_param[17]                                                   ; Clk_Divider:inst|clk_div_param[2]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.965 ns                ;
+; N/A                                     ; 239.41 MHz ( period = 4.177 ns )                    ; Clk_Divider:inst|clk_div_param[17]                                                   ; Clk_Divider:inst|clk_div_param[7]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.965 ns                ;
+; N/A                                     ; 239.41 MHz ( period = 4.177 ns )                    ; Clk_Divider:inst|clk_div_param[17]                                                   ; Clk_Divider:inst|clk_div_param[6]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.965 ns                ;
+; N/A                                     ; 239.41 MHz ( period = 4.177 ns )                    ; Clk_Divider:inst|clk_div_param[17]                                                   ; Clk_Divider:inst|clk_div_param[4]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.965 ns                ;
+; N/A                                     ; 239.46 MHz ( period = 4.176 ns )                    ; Clk_Divider:inst|clk_div_param[17]                                                   ; Clk_Divider:inst|clk_div_param[5]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.964 ns                ;
+; N/A                                     ; 239.69 MHz ( period = 4.172 ns )                    ; freq2ClkDiv:inst1|Div[4]                                                             ; Clk_Divider:inst|clk_div_param[24]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.960 ns                ;
+; N/A                                     ; 240.38 MHz ( period = 4.160 ns )                    ; Clk_Divider:inst|clk_div_param[21]                                                   ; Clk_Divider:inst|clk_div_param[2]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.948 ns                ;
+; N/A                                     ; 240.38 MHz ( period = 4.160 ns )                    ; Clk_Divider:inst|clk_div_param[21]                                                   ; Clk_Divider:inst|clk_div_param[7]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.948 ns                ;
+; N/A                                     ; 240.38 MHz ( period = 4.160 ns )                    ; Clk_Divider:inst|clk_div_param[21]                                                   ; Clk_Divider:inst|clk_div_param[6]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.948 ns                ;
+; N/A                                     ; 240.38 MHz ( period = 4.160 ns )                    ; Clk_Divider:inst|clk_div_param[21]                                                   ; Clk_Divider:inst|clk_div_param[4]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.948 ns                ;
+; N/A                                     ; 240.44 MHz ( period = 4.159 ns )                    ; Clk_Divider:inst|clk_div_param[3]~_emulated                                          ; Clk_Divider:inst|clk_div_param[15]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.938 ns                ;
+; N/A                                     ; 240.44 MHz ( period = 4.159 ns )                    ; Clk_Divider:inst|clk_div_param[21]                                                   ; Clk_Divider:inst|clk_div_param[5]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.947 ns                ;
+; N/A                                     ; 240.50 MHz ( period = 4.158 ns )                    ; Clk_Divider:inst|clk_div_param[3]~_emulated                                          ; Clk_Divider:inst|clk_div_param[22]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.937 ns                ;
+; N/A                                     ; 240.50 MHz ( period = 4.158 ns )                    ; Clk_Divider:inst|clk_div_param[14]                                                   ; Clk_Divider:inst|clk_div_param[0]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.950 ns                ;
+; N/A                                     ; 240.56 MHz ( period = 4.157 ns )                    ; freq2ClkDiv:inst1|Div[0]                                                             ; Clk_Divider:inst|clk_div_param[25]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.941 ns                ;
+; N/A                                     ; 240.56 MHz ( period = 4.157 ns )                    ; Clk_Divider:inst|clk_div_param[3]~_emulated                                          ; Clk_Divider:inst|clk_div_param[12]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.936 ns                ;
+; N/A                                     ; 240.62 MHz ( period = 4.156 ns )                    ; Clk_Divider:inst|clk_div_param[3]~_emulated                                          ; Clk_Divider:inst|clk_div_param[14]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.935 ns                ;
+; N/A                                     ; 240.91 MHz ( period = 4.151 ns )                    ; Clk_Divider:inst|clk_div_param[3]~_emulated                                          ; Clk_Divider:inst|clk_div_param[9]           ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.930 ns                ;
+; N/A                                     ; 241.02 MHz ( period = 4.149 ns )                    ; Clk_Divider:inst|clk_div_param[3]~_emulated                                          ; Clk_Divider:inst|clk_div_param[16]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.928 ns                ;
+; N/A                                     ; 241.25 MHz ( period = 4.145 ns )                    ; freq2ClkDiv:inst1|Div[2]                                                             ; Clk_Divider:inst|clk_div_param[12]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.929 ns                ;
+; N/A                                     ; 241.37 MHz ( period = 4.143 ns )                    ; Clk_Divider:inst|clk_div_param[4]~_emulated                                          ; Clk_Divider:inst|clk_div_param[21]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.927 ns                ;
+; N/A                                     ; 241.37 MHz ( period = 4.143 ns )                    ; Clk_Divider:inst|clk_div_param[0]~_emulated                                          ; Clk_Divider:inst|clk_div_param[19]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.923 ns                ;
+; N/A                                     ; 242.13 MHz ( period = 4.130 ns )                    ; Clk_Divider:inst|clk_div_param[2]~_emulated                                          ; Clk_Divider:inst|clk_div_param[24]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.918 ns                ;
+; N/A                                     ; 242.25 MHz ( period = 4.128 ns )                    ; Clk_Divider:inst|clk_div_param[3]~_emulated                                          ; Clk_Divider:inst|clk_div_param[23]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.911 ns                ;
+; N/A                                     ; 242.25 MHz ( period = 4.128 ns )                    ; counter256:inst7|lpm_counter:lpm_counter_component|cntr_1cj:auto_generated|safe_q[3] ; SinTableTC:inst25|Q[1]                      ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.912 ns                ;
+; N/A                                     ; 242.31 MHz ( period = 4.127 ns )                    ; Clk_Divider:inst|clk_div_param[1]~_emulated                                          ; Clk_Divider:inst|clk_div_param[20]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.906 ns                ;
+; N/A                                     ; 242.37 MHz ( period = 4.126 ns )                    ; Clk_Divider:inst|clk_div_param[16]                                                   ; Clk_Divider:inst|clk_div_param[0]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.918 ns                ;
+; N/A                                     ; 242.95 MHz ( period = 4.116 ns )                    ; counter256:inst7|lpm_counter:lpm_counter_component|cntr_1cj:auto_generated|safe_q[5] ; SinTableTC:inst25|Q[1]                      ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.900 ns                ;
+; N/A                                     ; 243.96 MHz ( period = 4.099 ns )                    ; freq2ClkDiv:inst1|Div[4]                                                             ; Clk_Divider:inst|clk_div_param[20]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.883 ns                ;
+; N/A                                     ; 244.32 MHz ( period = 4.093 ns )                    ; Clk_Divider:inst|clk_div_param[4]~_emulated                                          ; Clk_Divider:inst|clk_div_param[23]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.881 ns                ;
+; N/A                                     ; 244.38 MHz ( period = 4.092 ns )                    ; freq2ClkDiv:inst1|Div[1]                                                             ; Clk_Divider:inst|clk_div_param[25]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.876 ns                ;
+; N/A                                     ; 244.56 MHz ( period = 4.089 ns )                    ; Clk_Divider:inst|clk_div_param[1]~_emulated                                          ; Clk_Divider:inst|clk_div_param[19]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.868 ns                ;
+; N/A                                     ; 244.80 MHz ( period = 4.085 ns )                    ; Clk_Divider:inst|clk_div_param[4]~_emulated                                          ; Clk_Divider:inst|clk_div_param[22]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.869 ns                ;
+; N/A                                     ; 245.52 MHz ( period = 4.073 ns )                    ; Clk_Divider:inst|clk_div_param[0]~_emulated                                          ; Clk_Divider:inst|clk_div_param[18]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.853 ns                ;
+; N/A                                     ; 245.94 MHz ( period = 4.066 ns )                    ; freq2ClkDiv:inst1|Div[0]                                                             ; Clk_Divider:inst|clk_div_param[21]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.846 ns                ;
+; N/A                                     ; 246.06 MHz ( period = 4.064 ns )                    ; Clk_Divider:inst|clk_div_param[18]                                                   ; Clk_Divider:inst|clk_div_param[2]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.852 ns                ;
+; N/A                                     ; 246.06 MHz ( period = 4.064 ns )                    ; Clk_Divider:inst|clk_div_param[18]                                                   ; Clk_Divider:inst|clk_div_param[7]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.852 ns                ;
+; N/A                                     ; 246.06 MHz ( period = 4.064 ns )                    ; Clk_Divider:inst|clk_div_param[18]                                                   ; Clk_Divider:inst|clk_div_param[6]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.852 ns                ;
+; N/A                                     ; 246.06 MHz ( period = 4.064 ns )                    ; Clk_Divider:inst|clk_div_param[18]                                                   ; Clk_Divider:inst|clk_div_param[4]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.852 ns                ;
+; N/A                                     ; 246.12 MHz ( period = 4.063 ns )                    ; Clk_Divider:inst|clk_div_param[18]                                                   ; Clk_Divider:inst|clk_div_param[5]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.851 ns                ;
+; N/A                                     ; 246.24 MHz ( period = 4.061 ns )                    ; freq2ClkDiv:inst1|Div[4]                                                             ; Clk_Divider:inst|clk_div_param[19]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.845 ns                ;
+; N/A                                     ; 246.49 MHz ( period = 4.057 ns )                    ; Clk_Divider:inst|clk_div_param[2]~_emulated                                          ; Clk_Divider:inst|clk_div_param[20]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.841 ns                ;
+; N/A                                     ; 246.61 MHz ( period = 4.055 ns )                    ; Clk_Divider:inst|clk_div_param[23]                                                   ; Clk_Divider:inst|clk_div_param[2]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.839 ns                ;
+; N/A                                     ; 246.61 MHz ( period = 4.055 ns )                    ; Clk_Divider:inst|clk_div_param[23]                                                   ; Clk_Divider:inst|clk_div_param[7]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.839 ns                ;
+; N/A                                     ; 246.61 MHz ( period = 4.055 ns )                    ; Clk_Divider:inst|clk_div_param[23]                                                   ; Clk_Divider:inst|clk_div_param[6]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.839 ns                ;
+; N/A                                     ; 246.61 MHz ( period = 4.055 ns )                    ; Clk_Divider:inst|clk_div_param[23]                                                   ; Clk_Divider:inst|clk_div_param[4]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.839 ns                ;
+; N/A                                     ; 246.67 MHz ( period = 4.054 ns )                    ; Clk_Divider:inst|clk_div_param[23]                                                   ; Clk_Divider:inst|clk_div_param[5]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.838 ns                ;
+; N/A                                     ; 246.73 MHz ( period = 4.053 ns )                    ; Clk_Divider:inst|clk_div_param[15]                                                   ; Clk_Divider:inst|clk_div_param[2]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.841 ns                ;
+; N/A                                     ; 246.73 MHz ( period = 4.053 ns )                    ; Clk_Divider:inst|clk_div_param[15]                                                   ; Clk_Divider:inst|clk_div_param[7]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.841 ns                ;
+; N/A                                     ; 246.73 MHz ( period = 4.053 ns )                    ; Clk_Divider:inst|clk_div_param[15]                                                   ; Clk_Divider:inst|clk_div_param[6]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.841 ns                ;
+; N/A                                     ; 246.73 MHz ( period = 4.053 ns )                    ; Clk_Divider:inst|clk_div_param[15]                                                   ; Clk_Divider:inst|clk_div_param[4]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.841 ns                ;
+; N/A                                     ; 246.79 MHz ( period = 4.052 ns )                    ; Clk_Divider:inst|clk_div_param[20]                                                   ; Clk_Divider:inst|clk_div_param[0]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.844 ns                ;
+; N/A                                     ; 246.79 MHz ( period = 4.052 ns )                    ; Clk_Divider:inst|clk_div_param[15]                                                   ; Clk_Divider:inst|clk_div_param[5]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.840 ns                ;
+; N/A                                     ; 247.04 MHz ( period = 4.048 ns )                    ; freq2ClkDiv:inst1|Div[0]                                                             ; Clk_Divider:inst|clk_div_param[8]           ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.829 ns                ;
+; N/A                                     ; 247.22 MHz ( period = 4.045 ns )                    ; Clk_Divider:inst|clk_div_param[22]                                                   ; Clk_Divider:inst|clk_div_param[0]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.837 ns                ;
+; N/A                                     ; 247.34 MHz ( period = 4.043 ns )                    ; Clk_Divider:inst|clk_div_param[5]~_emulated                                          ; Clk_Divider:inst|clk_div_param[25]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.831 ns                ;
+; N/A                                     ; 247.34 MHz ( period = 4.043 ns )                    ; Clk_Divider:inst|clk_div_param[24]                                                   ; Clk_Divider:inst|clk_div_param[0]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.831 ns                ;
+; N/A                                     ; 248.08 MHz ( period = 4.031 ns )                    ; Clk_Divider:inst|clk_div_param[17]                                                   ; Clk_Divider:inst|clk_div_param[0]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.823 ns                ;
+; N/A                                     ; 248.39 MHz ( period = 4.026 ns )                    ; Clk_Divider:inst|clk_div_param[4]~_emulated                                          ; Clk_Divider:inst|clk_div_param[24]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.814 ns                ;
+; N/A                                     ; 248.69 MHz ( period = 4.021 ns )                    ; Clk_Divider:inst|clk_div_param[0]~_emulated                                          ; Clk_Divider:inst|clk_div_param[17]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.801 ns                ;
+; N/A                                     ; 248.82 MHz ( period = 4.019 ns )                    ; Clk_Divider:inst|clk_div_param[1]~_emulated                                          ; Clk_Divider:inst|clk_div_param[18]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.798 ns                ;
+; N/A                                     ; 248.82 MHz ( period = 4.019 ns )                    ; Clk_Divider:inst|clk_div_param[2]~_emulated                                          ; Clk_Divider:inst|clk_div_param[19]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.803 ns                ;
+; N/A                                     ; 249.00 MHz ( period = 4.016 ns )                    ; freq2ClkDiv:inst1|Div[0]                                                             ; Clk_Divider:inst|clk_div_param[23]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.800 ns                ;
+; N/A                                     ; 249.13 MHz ( period = 4.014 ns )                    ; Clk_Divider:inst|clk_div_param[21]                                                   ; Clk_Divider:inst|clk_div_param[0]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.806 ns                ;
+; N/A                                     ; 249.25 MHz ( period = 4.012 ns )                    ; Clk_Divider:inst|clk_div_param[0]~_emulated                                          ; Clk_Divider:inst|clk_div_param[11]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.792 ns                ;
+; N/A                                     ; 249.31 MHz ( period = 4.011 ns )                    ; Clk_Divider:inst|clk_div_param[0]~_emulated                                          ; Clk_Divider:inst|clk_div_param[13]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.791 ns                ;
+; N/A                                     ; 249.31 MHz ( period = 4.011 ns )                    ; counter256:inst7|lpm_counter:lpm_counter_component|cntr_1cj:auto_generated|safe_q[5] ; SinTableTC:inst25|Q[5]                      ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.796 ns                ;
+; N/A                                     ; 249.50 MHz ( period = 4.008 ns )                    ; freq2ClkDiv:inst1|Div[0]                                                             ; Clk_Divider:inst|clk_div_param[22]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.788 ns                ;
+; N/A                                     ; 249.69 MHz ( period = 4.005 ns )                    ; Clk_Divider:inst|clk_div_param[0]~_emulated                                          ; Clk_Divider:inst|clk_div_param[10]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.785 ns                ;
+; N/A                                     ; 249.69 MHz ( period = 4.005 ns )                    ; Clk_Divider:inst|clk_div_param[25]                                                   ; Clk_Divider:inst|clk_div_param[3]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.794 ns                ;
+; N/A                                     ; 249.81 MHz ( period = 4.003 ns )                    ; Clk_Divider:inst|clk_div_param[25]                                                   ; Clk_Divider:inst|clk_div_param[1]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.792 ns                ;
+; N/A                                     ; 249.94 MHz ( period = 4.001 ns )                    ; freq2ClkDiv:inst1|Div[1]                                                             ; Clk_Divider:inst|clk_div_param[21]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.781 ns                ;
+; N/A                                     ; 250.00 MHz ( period = 4.000 ns )                    ; freq2ClkDiv:inst1|Div[2]                                                             ; Clk_Divider:inst|clk_div_param[10]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.784 ns                ;
+; N/A                                     ; 250.06 MHz ( period = 3.999 ns )                    ; counter256:inst7|lpm_counter:lpm_counter_component|cntr_1cj:auto_generated|safe_q[6] ; SinTableTC:inst25|Q[1]                      ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.783 ns                ;
+; N/A                                     ; 250.13 MHz ( period = 3.998 ns )                    ; counter256:inst7|lpm_counter:lpm_counter_component|cntr_1cj:auto_generated|safe_q[5] ; SinTableTC:inst25|Q[4]                      ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.784 ns                ;
+; N/A                                     ; 250.38 MHz ( period = 3.994 ns )                    ; freq2ClkDiv:inst1|Div[2]                                                             ; Clk_Divider:inst|clk_div_param[16]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.778 ns                ;
+; N/A                                     ; 250.56 MHz ( period = 3.991 ns )                    ; freq2ClkDiv:inst1|Div[4]                                                             ; Clk_Divider:inst|clk_div_param[18]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.775 ns                ;
+; N/A                                     ; 250.94 MHz ( period = 3.985 ns )                    ; Clk_Divider:inst|clk_div_param[25]                                                   ; Clk_Divider:inst|clk_div_param[8]           ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.768 ns                ;
+; N/A                                     ; 250.94 MHz ( period = 3.985 ns )                    ; Clk_Divider:inst|clk_div_param[1]~_emulated                                          ; Clk_Divider:inst|clk_div_param[8]           ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.765 ns                ;
+; N/A                                     ; 251.38 MHz ( period = 3.978 ns )                    ; Clk_Divider:inst|clk_div_param[6]~_emulated                                          ; Clk_Divider:inst|clk_div_param[25]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.766 ns                ;
+; N/A                                     ; 251.64 MHz ( period = 3.974 ns )                    ; Clk_Divider:inst|clk_div_param[13]                                                   ; Clk_Divider:inst|clk_div_param[2]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.762 ns                ;
+; N/A                                     ; 251.64 MHz ( period = 3.974 ns )                    ; Clk_Divider:inst|clk_div_param[13]                                                   ; Clk_Divider:inst|clk_div_param[7]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.762 ns                ;
+; N/A                                     ; 251.64 MHz ( period = 3.974 ns )                    ; Clk_Divider:inst|clk_div_param[13]                                                   ; Clk_Divider:inst|clk_div_param[6]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.762 ns                ;
+; N/A                                     ; 251.64 MHz ( period = 3.974 ns )                    ; Clk_Divider:inst|clk_div_param[13]                                                   ; Clk_Divider:inst|clk_div_param[4]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.762 ns                ;
+; N/A                                     ; 251.70 MHz ( period = 3.973 ns )                    ; Clk_Divider:inst|clk_div_param[13]                                                   ; Clk_Divider:inst|clk_div_param[5]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.761 ns                ;
+; N/A                                     ; 252.97 MHz ( period = 3.953 ns )                    ; Clk_Divider:inst|clk_div_param[4]~_emulated                                          ; Clk_Divider:inst|clk_div_param[20]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.737 ns                ;
+; N/A                                     ; 253.04 MHz ( period = 3.952 ns )                    ; Clk_Divider:inst|clk_div_param[5]~_emulated                                          ; Clk_Divider:inst|clk_div_param[21]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.736 ns                ;
+; N/A                                     ; 253.10 MHz ( period = 3.951 ns )                    ; freq2ClkDiv:inst1|Div[1]                                                             ; Clk_Divider:inst|clk_div_param[23]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.735 ns                ;
+; N/A                                     ; 253.10 MHz ( period = 3.951 ns )                    ; Clk_Divider:inst|clk_div_param[0]~_emulated                                          ; Clk_Divider:inst|clk_div_param[12]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.731 ns                ;
+; N/A                                     ; 253.10 MHz ( period = 3.951 ns )                    ; Clk_Divider:inst|clk_div_param[1]~_emulated                                          ; Clk_Divider:inst|clk_div_param[17]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.730 ns                ;
+; N/A                                     ; 253.23 MHz ( period = 3.949 ns )                    ; freq2ClkDiv:inst1|Div[0]                                                             ; Clk_Divider:inst|clk_div_param[24]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.733 ns                ;
+; N/A                                     ; 253.23 MHz ( period = 3.949 ns )                    ; Clk_Divider:inst|clk_div_param[2]~_emulated                                          ; Clk_Divider:inst|clk_div_param[18]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.733 ns                ;
+; N/A                                     ; 253.61 MHz ( period = 3.943 ns )                    ; freq2ClkDiv:inst1|Div[1]                                                             ; Clk_Divider:inst|clk_div_param[22]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.723 ns                ;
+; N/A                                     ; 253.87 MHz ( period = 3.939 ns )                    ; Clk_Divider:inst|clk_div_param[19]                                                   ; Clk_Divider:inst|clk_div_param[2]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.727 ns                ;
+; N/A                                     ; 253.87 MHz ( period = 3.939 ns )                    ; Clk_Divider:inst|clk_div_param[19]                                                   ; Clk_Divider:inst|clk_div_param[7]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.727 ns                ;
+; N/A                                     ; 253.87 MHz ( period = 3.939 ns )                    ; Clk_Divider:inst|clk_div_param[19]                                                   ; Clk_Divider:inst|clk_div_param[6]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.727 ns                ;
+; N/A                                     ; 253.87 MHz ( period = 3.939 ns )                    ; Clk_Divider:inst|clk_div_param[19]                                                   ; Clk_Divider:inst|clk_div_param[4]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.727 ns                ;
+; N/A                                     ; 253.94 MHz ( period = 3.938 ns )                    ; Clk_Divider:inst|clk_div_param[19]                                                   ; Clk_Divider:inst|clk_div_param[5]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.726 ns                ;
+; N/A                                     ; 254.19 MHz ( period = 3.934 ns )                    ; counter256:inst7|lpm_counter:lpm_counter_component|cntr_1cj:auto_generated|safe_q[4] ; SinTableTC:inst25|Q[3]                      ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.720 ns                ;
+; N/A                                     ; 254.32 MHz ( period = 3.932 ns )                    ; Clk_Divider:inst|clk_div_param[1]~_emulated                                          ; Clk_Divider:inst|clk_div_param[11]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.711 ns                ;
+; N/A                                     ; 254.45 MHz ( period = 3.930 ns )                    ; counter256:inst7|lpm_counter:lpm_counter_component|cntr_1cj:auto_generated|safe_q[6] ; SinTableTC:inst25|Q[4]                      ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.716 ns                ;
+; N/A                                     ; 254.52 MHz ( period = 3.929 ns )                    ; freq2ClkDiv:inst1|Div[7]                                                             ; Clk_Divider:inst|clk_div_param[8]           ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.714 ns                ;
+; N/A                                     ; 254.78 MHz ( period = 3.925 ns )                    ; freq2ClkDiv:inst1|Div[2]                                                             ; Clk_Divider:inst|clk_div_param[15]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.709 ns                ;
+; N/A                                     ; 254.84 MHz ( period = 3.924 ns )                    ; Clk_Divider:inst|clk_div_param[0]~_emulated                                          ; Clk_Divider:inst|clk_div_param[15]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.704 ns                ;
+; N/A                                     ; 254.91 MHz ( period = 3.923 ns )                    ; freq2ClkDiv:inst1|Div[4]                                                             ; Clk_Divider:inst|clk_div_param[17]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.707 ns                ;
+; N/A                                     ; 255.04 MHz ( period = 3.921 ns )                    ; Clk_Divider:inst|clk_div_param[0]~_emulated                                          ; Clk_Divider:inst|clk_div_param[14]          ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.701 ns                ;
+; N/A                                     ; 255.10 MHz ( period = 3.920 ns )                    ; Clk_Divider:inst|clk_div_param[12]                                                   ; Clk_Divider:inst|clk_div_param[6]~_emulated ; CLK_IN     ; CLK_IN   ; None                        ; None                      ; 3.708 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                                                                                      ;                                             ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+--------------------------------------------------------------------------------------+---------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; tsu                                                                                                                                                ;
++-------+--------------+------------+--------------+--------------------------------------------------------------------------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From         ; To                                                                                   ; To Clock ;
++-------+--------------+------------+--------------+--------------------------------------------------------------------------------------+----------+
+; N/A   ; None         ; 8.314 ns   ; FREQ_in[10]  ; freq2ClkDiv:inst1|Div[1]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 8.259 ns   ; FREQ_in[6]   ; freq2ClkDiv:inst1|Div[1]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 8.235 ns   ; FREQ_in[2]   ; freq2ClkDiv:inst1|Div[1]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 8.190 ns   ; FREQ_in[11]  ; freq2ClkDiv:inst1|Div[1]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 8.060 ns   ; FREQ_in[10]  ; freq2ClkDiv:inst1|Div[7]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 8.005 ns   ; FREQ_in[6]   ; freq2ClkDiv:inst1|Div[7]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 7.981 ns   ; FREQ_in[2]   ; freq2ClkDiv:inst1|Div[7]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 7.978 ns   ; FREQ_in[4]   ; freq2ClkDiv:inst1|Div[1]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 7.961 ns   ; FREQ_in[0]   ; freq2ClkDiv:inst1|Div[5]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 7.940 ns   ; FREQ_in[10]  ; freq2ClkDiv:inst1|Div[5]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 7.936 ns   ; FREQ_in[11]  ; freq2ClkDiv:inst1|Div[7]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 7.927 ns   ; FREQ_in[5]   ; freq2ClkDiv:inst1|Div[5]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 7.918 ns   ; FREQ_in[1]   ; freq2ClkDiv:inst1|Div[5]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 7.913 ns   ; FREQ_in[7]   ; freq2ClkDiv:inst1|Div[1]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 7.885 ns   ; FREQ_in[6]   ; freq2ClkDiv:inst1|Div[5]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 7.881 ns   ; FREQ_in[0]   ; freq2ClkDiv:inst1|Div[1]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 7.864 ns   ; FREQ_in[3]   ; freq2ClkDiv:inst1|Div[5]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 7.861 ns   ; FREQ_in[2]   ; freq2ClkDiv:inst1|Div[5]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 7.853 ns   ; FREQ_in[8]   ; freq2ClkDiv:inst1|Div[1]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 7.843 ns   ; FREQ_in[9]   ; freq2ClkDiv:inst1|Div[1]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 7.838 ns   ; FREQ_in[3]   ; freq2ClkDiv:inst1|Div[7]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 7.816 ns   ; FREQ_in[11]  ; freq2ClkDiv:inst1|Div[5]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 7.813 ns   ; FREQ_in[5]   ; freq2ClkDiv:inst1|Div[1]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 7.809 ns   ; FREQ_in[8]   ; freq2ClkDiv:inst1|Div[5]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 7.797 ns   ; FREQ_in[1]   ; freq2ClkDiv:inst1|Div[1]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 7.783 ns   ; FREQ_in[8]   ; freq2ClkDiv:inst1|Div[7]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 7.765 ns   ; FREQ_in[0]   ; freq2ClkDiv:inst1|Div[7]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 7.731 ns   ; FREQ_in[5]   ; freq2ClkDiv:inst1|Div[7]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 7.724 ns   ; FREQ_in[4]   ; freq2ClkDiv:inst1|Div[7]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 7.722 ns   ; FREQ_in[1]   ; freq2ClkDiv:inst1|Div[7]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 7.716 ns   ; FREQ_in[3]   ; freq2ClkDiv:inst1|Div[1]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 7.668 ns   ; FREQ_in[7]   ; freq2ClkDiv:inst1|Div[5]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 7.666 ns   ; FREQ_in[0]   ; freq2ClkDiv:inst1|Div[4]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 7.659 ns   ; FREQ_in[7]   ; freq2ClkDiv:inst1|Div[7]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 7.632 ns   ; FREQ_in[5]   ; freq2ClkDiv:inst1|Div[4]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 7.623 ns   ; FREQ_in[1]   ; freq2ClkDiv:inst1|Div[4]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 7.604 ns   ; FREQ_in[4]   ; freq2ClkDiv:inst1|Div[5]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 7.589 ns   ; FREQ_in[9]   ; freq2ClkDiv:inst1|Div[7]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 7.531 ns   ; FREQ_in[3]   ; freq2ClkDiv:inst1|Div[4]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 7.510 ns   ; FREQ_in[9]   ; freq2ClkDiv:inst1|Div[5]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 7.491 ns   ; FREQ_in[10]  ; freq2ClkDiv:inst1|Div[4]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 7.269 ns   ; FREQ_in[2]   ; freq2ClkDiv:inst1|Div[4]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 7.252 ns   ; FREQ_in[0]   ; freq2ClkDiv:inst1|Div[6]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 7.218 ns   ; FREQ_in[5]   ; freq2ClkDiv:inst1|Div[6]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 7.209 ns   ; FREQ_in[1]   ; freq2ClkDiv:inst1|Div[6]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 7.192 ns   ; FREQ_in[0]   ; freq2ClkDiv:inst1|Div[0]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 7.158 ns   ; FREQ_in[5]   ; freq2ClkDiv:inst1|Div[0]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 7.149 ns   ; FREQ_in[1]   ; freq2ClkDiv:inst1|Div[0]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 7.133 ns   ; FREQ_in[9]   ; freq2ClkDiv:inst1|Div[4]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 7.117 ns   ; FREQ_in[3]   ; freq2ClkDiv:inst1|Div[6]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 7.101 ns   ; FREQ_in[8]   ; freq2ClkDiv:inst1|Div[4]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 7.061 ns   ; FREQ_in[6]   ; freq2ClkDiv:inst1|Div[4]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 7.057 ns   ; FREQ_in[3]   ; freq2ClkDiv:inst1|Div[0]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 7.017 ns   ; FREQ_in[11]  ; freq2ClkDiv:inst1|Div[4]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 6.959 ns   ; FREQ_in[7]   ; freq2ClkDiv:inst1|Div[6]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 6.926 ns   ; FREQ_in[10]  ; freq2ClkDiv:inst1|Div[6]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 6.899 ns   ; FREQ_in[7]   ; freq2ClkDiv:inst1|Div[0]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 6.880 ns   ; FREQ_in[6]   ; freq2ClkDiv:inst1|Div[6]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 6.871 ns   ; FREQ_in[7]   ; freq2ClkDiv:inst1|Div[4]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 6.868 ns   ; FREQ_in[10]  ; freq2ClkDiv:inst1|Div[2]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 6.866 ns   ; FREQ_in[10]  ; freq2ClkDiv:inst1|Div[0]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 6.820 ns   ; FREQ_in[6]   ; freq2ClkDiv:inst1|Div[0]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 6.801 ns   ; FREQ_in[9]   ; freq2ClkDiv:inst1|Div[6]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 6.789 ns   ; FREQ_in[2]   ; freq2ClkDiv:inst1|Div[2]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 6.744 ns   ; FREQ_in[11]  ; freq2ClkDiv:inst1|Div[2]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 6.741 ns   ; FREQ_in[9]   ; freq2ClkDiv:inst1|Div[0]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 6.698 ns   ; FREQ_in[2]   ; freq2ClkDiv:inst1|Div[6]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 6.654 ns   ; FREQ_in[4]   ; freq2ClkDiv:inst1|Div[4]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 6.638 ns   ; FREQ_in[2]   ; freq2ClkDiv:inst1|Div[0]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 6.543 ns   ; FREQ_in[8]   ; freq2ClkDiv:inst1|Div[6]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 6.532 ns   ; FREQ_in[4]   ; freq2ClkDiv:inst1|Div[2]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 6.483 ns   ; FREQ_in[8]   ; freq2ClkDiv:inst1|Div[0]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 6.482 ns   ; FREQ_in[11]  ; freq2ClkDiv:inst1|Div[6]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 6.439 ns   ; FREQ_in[0]   ; freq2ClkDiv:inst1|Div[3]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 6.431 ns   ; FREQ_in[6]   ; freq2ClkDiv:inst1|Div[2]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 6.430 ns   ; FREQ_in[10]  ; freq2ClkDiv:inst1|Div[3]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 6.428 ns   ; FREQ_in[4]   ; freq2ClkDiv:inst1|Div[6]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 6.406 ns   ; FREQ_in[8]   ; freq2ClkDiv:inst1|Div[2]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 6.405 ns   ; FREQ_in[5]   ; freq2ClkDiv:inst1|Div[3]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 6.396 ns   ; FREQ_in[9]   ; freq2ClkDiv:inst1|Div[2]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 6.396 ns   ; FREQ_in[1]   ; freq2ClkDiv:inst1|Div[3]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 6.395 ns   ; FREQ_in[0]   ; freq2ClkDiv:inst1|Div[2]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 6.385 ns   ; FREQ_in[11]  ; freq2ClkDiv:inst1|Div[0]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 6.368 ns   ; FREQ_in[4]   ; freq2ClkDiv:inst1|Div[0]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 6.366 ns   ; FREQ_in[5]   ; freq2ClkDiv:inst1|Div[2]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 6.351 ns   ; FREQ_in[2]   ; freq2ClkDiv:inst1|Div[3]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 6.332 ns   ; FREQ_in[7]   ; freq2ClkDiv:inst1|Div[2]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 6.306 ns   ; FREQ_in[11]  ; freq2ClkDiv:inst1|Div[3]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 6.304 ns   ; FREQ_in[3]   ; freq2ClkDiv:inst1|Div[3]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 6.288 ns   ; FREQ_in[6]   ; freq2ClkDiv:inst1|Div[3]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 6.262 ns   ; FREQ_in[3]   ; freq2ClkDiv:inst1|Div[2]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 6.146 ns   ; FREQ_in[7]   ; freq2ClkDiv:inst1|Div[3]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 6.094 ns   ; FREQ_in[4]   ; freq2ClkDiv:inst1|Div[3]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 6.020 ns   ; FREQ_in[1]   ; freq2ClkDiv:inst1|Div[2]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 5.988 ns   ; FREQ_in[9]   ; freq2ClkDiv:inst1|Div[3]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 5.882 ns   ; FREQ_in[8]   ; freq2ClkDiv:inst1|Div[3]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 5.295 ns   ; SinEnable    ; counter256:inst7|lpm_counter:lpm_counter_component|cntr_1cj:auto_generated|safe_q[7] ; CLK_IN   ;
+; N/A   ; None         ; 5.295 ns   ; SinEnable    ; counter256:inst7|lpm_counter:lpm_counter_component|cntr_1cj:auto_generated|safe_q[6] ; CLK_IN   ;
+; N/A   ; None         ; 5.295 ns   ; SinEnable    ; counter256:inst7|lpm_counter:lpm_counter_component|cntr_1cj:auto_generated|safe_q[4] ; CLK_IN   ;
+; N/A   ; None         ; 5.295 ns   ; SinEnable    ; counter256:inst7|lpm_counter:lpm_counter_component|cntr_1cj:auto_generated|safe_q[5] ; CLK_IN   ;
+; N/A   ; None         ; 5.295 ns   ; SinEnable    ; counter256:inst7|lpm_counter:lpm_counter_component|cntr_1cj:auto_generated|safe_q[1] ; CLK_IN   ;
+; N/A   ; None         ; 5.295 ns   ; SinEnable    ; counter256:inst7|lpm_counter:lpm_counter_component|cntr_1cj:auto_generated|safe_q[0] ; CLK_IN   ;
+; N/A   ; None         ; 5.295 ns   ; SinEnable    ; counter256:inst7|lpm_counter:lpm_counter_component|cntr_1cj:auto_generated|safe_q[2] ; CLK_IN   ;
+; N/A   ; None         ; 5.295 ns   ; SinEnable    ; counter256:inst7|lpm_counter:lpm_counter_component|cntr_1cj:auto_generated|safe_q[3] ; CLK_IN   ;
+; N/A   ; None         ; 4.869 ns   ; SinEnable    ; SinTableTC:inst25|Q[2]                                                               ; CLK_IN   ;
+; N/A   ; None         ; 4.672 ns   ; SinEnable    ; SinTableTC:inst25|Q[7]                                                               ; CLK_IN   ;
+; N/A   ; None         ; 4.672 ns   ; SinEnable    ; SinTableTC:inst25|Q[6]                                                               ; CLK_IN   ;
+; N/A   ; None         ; 4.672 ns   ; SinEnable    ; SinTableTC:inst25|Q[5]                                                               ; CLK_IN   ;
+; N/A   ; None         ; 4.653 ns   ; RESETn       ; Clk_Divider:inst|clk_div_param[8]                                                    ; CLK_IN   ;
+; N/A   ; None         ; 4.653 ns   ; SinEnable    ; SinTableTC:inst25|Q[1]                                                               ; CLK_IN   ;
+; N/A   ; None         ; 4.461 ns   ; RESETn       ; Clk_Divider:inst|clk_div_param[24]                                                   ; CLK_IN   ;
+; N/A   ; None         ; 4.407 ns   ; RESETn       ; Clk_Divider:inst|clk_div_param[25]                                                   ; CLK_IN   ;
+; N/A   ; None         ; 4.371 ns   ; SinEnable    ; SinTableTC:inst25|Q[0]                                                               ; CLK_IN   ;
+; N/A   ; None         ; 4.360 ns   ; SinEnable    ; SinTableTC:inst25|Q[3]                                                               ; CLK_IN   ;
+; N/A   ; None         ; 4.359 ns   ; SinEnable    ; SinTableTC:inst25|Q[4]                                                               ; CLK_IN   ;
+; N/A   ; None         ; 4.321 ns   ; RESETn       ; Clk_Divider:inst|clk_div_param[17]                                                   ; CLK_IN   ;
+; N/A   ; None         ; 4.320 ns   ; RESETn       ; Clk_Divider:inst|clk_div_param[19]                                                   ; CLK_IN   ;
+; N/A   ; None         ; 4.316 ns   ; RESETn       ; Clk_Divider:inst|clk_div_param[20]                                                   ; CLK_IN   ;
+; N/A   ; None         ; 4.316 ns   ; RESETn       ; Clk_Divider:inst|clk_div_param[21]                                                   ; CLK_IN   ;
+; N/A   ; None         ; 4.312 ns   ; RESETn       ; Clk_Divider:inst|clk_div_param[11]                                                   ; CLK_IN   ;
+; N/A   ; None         ; 4.311 ns   ; RESETn       ; Clk_Divider:inst|clk_div_param[13]                                                   ; CLK_IN   ;
+; N/A   ; None         ; 4.310 ns   ; RESETn       ; Clk_Divider:inst|clk_div_param[18]                                                   ; CLK_IN   ;
+; N/A   ; None         ; 4.305 ns   ; RESETn       ; Clk_Divider:inst|clk_div_param[10]                                                   ; CLK_IN   ;
+; N/A   ; None         ; 4.266 ns   ; RESETn       ; Clk_Divider:inst|clk_div_param[23]                                                   ; CLK_IN   ;
+; N/A   ; None         ; 4.258 ns   ; RESETn       ; Clk_Divider:inst|clk_div_param[22]                                                   ; CLK_IN   ;
+; N/A   ; None         ; 4.224 ns   ; RESETn       ; Clk_Divider:inst|clk_div_param[15]                                                   ; CLK_IN   ;
+; N/A   ; None         ; 4.222 ns   ; RESETn       ; Clk_Divider:inst|clk_div_param[12]                                                   ; CLK_IN   ;
+; N/A   ; None         ; 4.221 ns   ; RESETn       ; Clk_Divider:inst|clk_div_param[14]                                                   ; CLK_IN   ;
+; N/A   ; None         ; 4.216 ns   ; RESETn       ; Clk_Divider:inst|clk_div_param[9]                                                    ; CLK_IN   ;
+; N/A   ; None         ; 4.214 ns   ; RESETn       ; Clk_Divider:inst|clk_div_param[16]                                                   ; CLK_IN   ;
+; N/A   ; None         ; 3.825 ns   ; RESETn       ; Clk_Divider:inst|clk_div_param[3]~_emulated                                          ; CLK_IN   ;
+; N/A   ; None         ; 3.821 ns   ; RESETn       ; Clk_Divider:inst|clk_div_param[1]~_emulated                                          ; CLK_IN   ;
+; N/A   ; None         ; 3.622 ns   ; freq2Div_ena ; freq2ClkDiv:inst1|Div[2]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 3.622 ns   ; freq2Div_ena ; freq2ClkDiv:inst1|Div[7]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 3.622 ns   ; freq2Div_ena ; freq2ClkDiv:inst1|Div[6]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 3.622 ns   ; freq2Div_ena ; freq2ClkDiv:inst1|Div[5]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 3.622 ns   ; freq2Div_ena ; freq2ClkDiv:inst1|Div[4]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 3.616 ns   ; freq2Div_ena ; freq2ClkDiv:inst1|Div[1]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 3.616 ns   ; freq2Div_ena ; freq2ClkDiv:inst1|Div[0]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 3.613 ns   ; freq2Div_ena ; freq2ClkDiv:inst1|Div[3]                                                             ; CLK_IN   ;
+; N/A   ; None         ; 3.612 ns   ; RESETn       ; Clk_Divider:inst|clk_div_param[6]~_emulated                                          ; CLK_IN   ;
+; N/A   ; None         ; 3.610 ns   ; RESETn       ; Clk_Divider:inst|clk_div_param[7]~_emulated                                          ; CLK_IN   ;
+; N/A   ; None         ; 3.609 ns   ; RESETn       ; Clk_Divider:inst|clk_div_param[5]~_emulated                                          ; CLK_IN   ;
+; N/A   ; None         ; 3.607 ns   ; RESETn       ; Clk_Divider:inst|clk_div_param[2]~_emulated                                          ; CLK_IN   ;
+; N/A   ; None         ; 3.586 ns   ; RESETn       ; Clk_Divider:inst|clk_out_sig                                                         ; CLK_IN   ;
+; N/A   ; None         ; 3.448 ns   ; RESETn       ; Clk_Divider:inst|clk_div_param[0]~_emulated                                          ; CLK_IN   ;
+; N/A   ; None         ; 3.436 ns   ; RESETn       ; Clk_Divider:inst|clk_div_param[4]~_emulated                                          ; CLK_IN   ;
++-------+--------------+------------+--------------+--------------------------------------------------------------------------------------+----------+
+
+
++--------------------------------------------------------------------------------------+
+; tco                                                                                  ;
++-------+--------------+------------+------------------------+------------+------------+
+; Slack ; Required tco ; Actual tco ; From                   ; To         ; From Clock ;
++-------+--------------+------------+------------------------+------------+------------+
+; N/A   ; None         ; 7.963 ns   ; SinTableTC:inst25|Q[7] ; Sin_out[7] ; CLK_IN     ;
+; N/A   ; None         ; 7.646 ns   ; SinTableTC:inst25|Q[3] ; Sin_out[3] ; CLK_IN     ;
+; N/A   ; None         ; 7.614 ns   ; SinTableTC:inst25|Q[4] ; Sin_out[4] ; CLK_IN     ;
+; N/A   ; None         ; 7.587 ns   ; SinTableTC:inst25|Q[0] ; Sin_out[0] ; CLK_IN     ;
+; N/A   ; None         ; 7.361 ns   ; SinTableTC:inst25|Q[6] ; Sin_out[6] ; CLK_IN     ;
+; N/A   ; None         ; 7.325 ns   ; SinTableTC:inst25|Q[5] ; Sin_out[5] ; CLK_IN     ;
+; N/A   ; None         ; 6.900 ns   ; SinTableTC:inst25|Q[1] ; Sin_out[1] ; CLK_IN     ;
+; N/A   ; None         ; 6.697 ns   ; SinTableTC:inst25|Q[2] ; Sin_out[2] ; CLK_IN     ;
++-------+--------------+------------+------------------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; th                                                                                                                                                       ;
++---------------+-------------+-----------+--------------+--------------------------------------------------------------------------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From         ; To                                                                                   ; To Clock ;
++---------------+-------------+-----------+--------------+--------------------------------------------------------------------------------------+----------+
+; N/A           ; None        ; -0.944 ns ; RESETn       ; Clk_Divider:inst|clk_out_sig                                                         ; CLK_IN   ;
+; N/A           ; None        ; -1.951 ns ; RESETn       ; Clk_Divider:inst|clk_div_param[0]~_emulated                                          ; CLK_IN   ;
+; N/A           ; None        ; -2.130 ns ; RESETn       ; Clk_Divider:inst|clk_div_param[4]~_emulated                                          ; CLK_IN   ;
+; N/A           ; None        ; -2.151 ns ; RESETn       ; Clk_Divider:inst|clk_div_param[1]~_emulated                                          ; CLK_IN   ;
+; N/A           ; None        ; -2.182 ns ; RESETn       ; Clk_Divider:inst|clk_div_param[5]~_emulated                                          ; CLK_IN   ;
+; N/A           ; None        ; -2.301 ns ; RESETn       ; Clk_Divider:inst|clk_div_param[2]~_emulated                                          ; CLK_IN   ;
+; N/A           ; None        ; -2.304 ns ; RESETn       ; Clk_Divider:inst|clk_div_param[7]~_emulated                                          ; CLK_IN   ;
+; N/A           ; None        ; -2.306 ns ; RESETn       ; Clk_Divider:inst|clk_div_param[6]~_emulated                                          ; CLK_IN   ;
+; N/A           ; None        ; -2.344 ns ; RESETn       ; Clk_Divider:inst|clk_div_param[3]~_emulated                                          ; CLK_IN   ;
+; N/A           ; None        ; -2.775 ns ; RESETn       ; Clk_Divider:inst|clk_div_param[8]                                                    ; CLK_IN   ;
+; N/A           ; None        ; -2.801 ns ; RESETn       ; Clk_Divider:inst|clk_div_param[9]                                                    ; CLK_IN   ;
+; N/A           ; None        ; -2.887 ns ; RESETn       ; Clk_Divider:inst|clk_div_param[25]                                                   ; CLK_IN   ;
+; N/A           ; None        ; -2.887 ns ; RESETn       ; Clk_Divider:inst|clk_div_param[23]                                                   ; CLK_IN   ;
+; N/A           ; None        ; -2.908 ns ; RESETn       ; Clk_Divider:inst|clk_div_param[16]                                                   ; CLK_IN   ;
+; N/A           ; None        ; -2.915 ns ; RESETn       ; Clk_Divider:inst|clk_div_param[14]                                                   ; CLK_IN   ;
+; N/A           ; None        ; -2.916 ns ; RESETn       ; Clk_Divider:inst|clk_div_param[12]                                                   ; CLK_IN   ;
+; N/A           ; None        ; -2.917 ns ; RESETn       ; Clk_Divider:inst|clk_div_param[22]                                                   ; CLK_IN   ;
+; N/A           ; None        ; -2.918 ns ; RESETn       ; Clk_Divider:inst|clk_div_param[15]                                                   ; CLK_IN   ;
+; N/A           ; None        ; -2.995 ns ; RESETn       ; Clk_Divider:inst|clk_div_param[13]                                                   ; CLK_IN   ;
+; N/A           ; None        ; -2.999 ns ; RESETn       ; Clk_Divider:inst|clk_div_param[10]                                                   ; CLK_IN   ;
+; N/A           ; None        ; -3.004 ns ; RESETn       ; Clk_Divider:inst|clk_div_param[18]                                                   ; CLK_IN   ;
+; N/A           ; None        ; -3.006 ns ; RESETn       ; Clk_Divider:inst|clk_div_param[11]                                                   ; CLK_IN   ;
+; N/A           ; None        ; -3.007 ns ; RESETn       ; Clk_Divider:inst|clk_div_param[21]                                                   ; CLK_IN   ;
+; N/A           ; None        ; -3.010 ns ; RESETn       ; Clk_Divider:inst|clk_div_param[20]                                                   ; CLK_IN   ;
+; N/A           ; None        ; -3.014 ns ; RESETn       ; Clk_Divider:inst|clk_div_param[19]                                                   ; CLK_IN   ;
+; N/A           ; None        ; -3.015 ns ; RESETn       ; Clk_Divider:inst|clk_div_param[17]                                                   ; CLK_IN   ;
+; N/A           ; None        ; -3.155 ns ; RESETn       ; Clk_Divider:inst|clk_div_param[24]                                                   ; CLK_IN   ;
+; N/A           ; None        ; -3.383 ns ; freq2Div_ena ; freq2ClkDiv:inst1|Div[3]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -3.386 ns ; freq2Div_ena ; freq2ClkDiv:inst1|Div[1]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -3.386 ns ; freq2Div_ena ; freq2ClkDiv:inst1|Div[0]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -3.392 ns ; freq2Div_ena ; freq2ClkDiv:inst1|Div[2]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -3.392 ns ; freq2Div_ena ; freq2ClkDiv:inst1|Div[7]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -3.392 ns ; freq2Div_ena ; freq2ClkDiv:inst1|Div[6]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -3.392 ns ; freq2Div_ena ; freq2ClkDiv:inst1|Div[5]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -3.392 ns ; freq2Div_ena ; freq2ClkDiv:inst1|Div[4]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -3.888 ns ; FREQ_in[1]   ; freq2ClkDiv:inst1|Div[3]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -4.129 ns ; SinEnable    ; SinTableTC:inst25|Q[4]                                                               ; CLK_IN   ;
+; N/A           ; None        ; -4.130 ns ; SinEnable    ; SinTableTC:inst25|Q[3]                                                               ; CLK_IN   ;
+; N/A           ; None        ; -4.141 ns ; SinEnable    ; SinTableTC:inst25|Q[0]                                                               ; CLK_IN   ;
+; N/A           ; None        ; -4.148 ns ; FREQ_in[7]   ; freq2ClkDiv:inst1|Div[3]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -4.355 ns ; FREQ_in[6]   ; freq2ClkDiv:inst1|Div[3]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -4.423 ns ; SinEnable    ; SinTableTC:inst25|Q[1]                                                               ; CLK_IN   ;
+; N/A           ; None        ; -4.427 ns ; FREQ_in[0]   ; freq2ClkDiv:inst1|Div[3]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -4.442 ns ; SinEnable    ; SinTableTC:inst25|Q[7]                                                               ; CLK_IN   ;
+; N/A           ; None        ; -4.442 ns ; SinEnable    ; SinTableTC:inst25|Q[6]                                                               ; CLK_IN   ;
+; N/A           ; None        ; -4.442 ns ; SinEnable    ; SinTableTC:inst25|Q[5]                                                               ; CLK_IN   ;
+; N/A           ; None        ; -4.466 ns ; FREQ_in[5]   ; freq2ClkDiv:inst1|Div[3]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -4.639 ns ; SinEnable    ; SinTableTC:inst25|Q[2]                                                               ; CLK_IN   ;
+; N/A           ; None        ; -4.778 ns ; FREQ_in[4]   ; freq2ClkDiv:inst1|Div[3]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -4.784 ns ; FREQ_in[1]   ; freq2ClkDiv:inst1|Div[2]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -4.833 ns ; FREQ_in[9]   ; freq2ClkDiv:inst1|Div[3]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -4.901 ns ; FREQ_in[7]   ; freq2ClkDiv:inst1|Div[0]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -4.961 ns ; FREQ_in[7]   ; freq2ClkDiv:inst1|Div[6]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -4.963 ns ; FREQ_in[8]   ; freq2ClkDiv:inst1|Div[3]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -4.981 ns ; FREQ_in[5]   ; freq2ClkDiv:inst1|Div[6]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -4.989 ns ; FREQ_in[5]   ; freq2ClkDiv:inst1|Div[7]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -4.990 ns ; FREQ_in[11]  ; freq2ClkDiv:inst1|Div[3]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -4.991 ns ; FREQ_in[3]   ; freq2ClkDiv:inst1|Div[3]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -4.994 ns ; FREQ_in[3]   ; freq2ClkDiv:inst1|Div[0]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -5.026 ns ; FREQ_in[4]   ; freq2ClkDiv:inst1|Div[0]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -5.029 ns ; FREQ_in[4]   ; freq2ClkDiv:inst1|Div[2]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -5.032 ns ; FREQ_in[3]   ; freq2ClkDiv:inst1|Div[6]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -5.035 ns ; FREQ_in[2]   ; freq2ClkDiv:inst1|Div[3]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -5.040 ns ; FREQ_in[3]   ; freq2ClkDiv:inst1|Div[7]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -5.062 ns ; FREQ_in[1]   ; freq2ClkDiv:inst1|Div[4]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -5.065 ns ; SinEnable    ; counter256:inst7|lpm_counter:lpm_counter_component|cntr_1cj:auto_generated|safe_q[7] ; CLK_IN   ;
+; N/A           ; None        ; -5.065 ns ; SinEnable    ; counter256:inst7|lpm_counter:lpm_counter_component|cntr_1cj:auto_generated|safe_q[6] ; CLK_IN   ;
+; N/A           ; None        ; -5.065 ns ; SinEnable    ; counter256:inst7|lpm_counter:lpm_counter_component|cntr_1cj:auto_generated|safe_q[4] ; CLK_IN   ;
+; N/A           ; None        ; -5.065 ns ; SinEnable    ; counter256:inst7|lpm_counter:lpm_counter_component|cntr_1cj:auto_generated|safe_q[5] ; CLK_IN   ;
+; N/A           ; None        ; -5.065 ns ; SinEnable    ; counter256:inst7|lpm_counter:lpm_counter_component|cntr_1cj:auto_generated|safe_q[1] ; CLK_IN   ;
+; N/A           ; None        ; -5.065 ns ; SinEnable    ; counter256:inst7|lpm_counter:lpm_counter_component|cntr_1cj:auto_generated|safe_q[0] ; CLK_IN   ;
+; N/A           ; None        ; -5.065 ns ; SinEnable    ; counter256:inst7|lpm_counter:lpm_counter_component|cntr_1cj:auto_generated|safe_q[2] ; CLK_IN   ;
+; N/A           ; None        ; -5.065 ns ; SinEnable    ; counter256:inst7|lpm_counter:lpm_counter_component|cntr_1cj:auto_generated|safe_q[3] ; CLK_IN   ;
+; N/A           ; None        ; -5.114 ns ; FREQ_in[10]  ; freq2ClkDiv:inst1|Div[3]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -5.118 ns ; FREQ_in[7]   ; freq2ClkDiv:inst1|Div[4]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -5.150 ns ; FREQ_in[1]   ; freq2ClkDiv:inst1|Div[6]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -5.158 ns ; FREQ_in[1]   ; freq2ClkDiv:inst1|Div[7]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -5.162 ns ; FREQ_in[4]   ; freq2ClkDiv:inst1|Div[7]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -5.248 ns ; FREQ_in[6]   ; freq2ClkDiv:inst1|Div[2]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -5.250 ns ; FREQ_in[7]   ; freq2ClkDiv:inst1|Div[1]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -5.277 ns ; FREQ_in[6]   ; freq2ClkDiv:inst1|Div[0]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -5.291 ns ; FREQ_in[8]   ; freq2ClkDiv:inst1|Div[6]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -5.299 ns ; FREQ_in[8]   ; freq2ClkDiv:inst1|Div[7]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -5.306 ns ; FREQ_in[4]   ; freq2ClkDiv:inst1|Div[6]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -5.313 ns ; FREQ_in[11]  ; freq2ClkDiv:inst1|Div[2]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -5.337 ns ; FREQ_in[6]   ; freq2ClkDiv:inst1|Div[6]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -5.350 ns ; FREQ_in[1]   ; freq2ClkDiv:inst1|Div[5]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -5.358 ns ; FREQ_in[4]   ; freq2ClkDiv:inst1|Div[5]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -5.389 ns ; FREQ_in[3]   ; freq2ClkDiv:inst1|Div[4]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -5.411 ns ; FREQ_in[8]   ; freq2ClkDiv:inst1|Div[2]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -5.468 ns ; FREQ_in[5]   ; freq2ClkDiv:inst1|Div[4]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -5.474 ns ; FREQ_in[7]   ; freq2ClkDiv:inst1|Div[7]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -5.482 ns ; FREQ_in[5]   ; freq2ClkDiv:inst1|Div[2]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -5.495 ns ; FREQ_in[5]   ; freq2ClkDiv:inst1|Div[0]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -5.498 ns ; FREQ_in[9]   ; freq2ClkDiv:inst1|Div[4]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -5.504 ns ; FREQ_in[6]   ; freq2ClkDiv:inst1|Div[4]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -5.508 ns ; FREQ_in[8]   ; freq2ClkDiv:inst1|Div[4]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -5.525 ns ; FREQ_in[9]   ; freq2ClkDiv:inst1|Div[0]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -5.535 ns ; FREQ_in[8]   ; freq2ClkDiv:inst1|Div[0]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -5.545 ns ; FREQ_in[4]   ; freq2ClkDiv:inst1|Div[4]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -5.549 ns ; FREQ_in[0]   ; freq2ClkDiv:inst1|Div[0]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -5.552 ns ; FREQ_in[0]   ; freq2ClkDiv:inst1|Div[2]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -5.562 ns ; FREQ_in[11]  ; freq2ClkDiv:inst1|Div[4]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -5.566 ns ; FREQ_in[2]   ; freq2ClkDiv:inst1|Div[2]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -5.595 ns ; FREQ_in[1]   ; freq2ClkDiv:inst1|Div[0]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -5.602 ns ; FREQ_in[3]   ; freq2ClkDiv:inst1|Div[2]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -5.625 ns ; FREQ_in[6]   ; freq2ClkDiv:inst1|Div[7]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -5.636 ns ; FREQ_in[6]   ; freq2ClkDiv:inst1|Div[1]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -5.669 ns ; FREQ_in[9]   ; freq2ClkDiv:inst1|Div[2]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -5.670 ns ; FREQ_in[7]   ; freq2ClkDiv:inst1|Div[5]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -5.687 ns ; FREQ_in[7]   ; freq2ClkDiv:inst1|Div[2]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -5.695 ns ; FREQ_in[0]   ; freq2ClkDiv:inst1|Div[4]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -5.720 ns ; FREQ_in[3]   ; freq2ClkDiv:inst1|Div[5]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -5.794 ns ; FREQ_in[10]  ; freq2ClkDiv:inst1|Div[2]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -5.798 ns ; FREQ_in[9]   ; freq2ClkDiv:inst1|Div[6]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -5.806 ns ; FREQ_in[9]   ; freq2ClkDiv:inst1|Div[7]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -5.814 ns ; FREQ_in[6]   ; freq2ClkDiv:inst1|Div[5]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -5.815 ns ; FREQ_in[2]   ; freq2ClkDiv:inst1|Div[4]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -5.829 ns ; FREQ_in[0]   ; freq2ClkDiv:inst1|Div[6]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -5.834 ns ; FREQ_in[0]   ; freq2ClkDiv:inst1|Div[7]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -5.850 ns ; FREQ_in[11]  ; freq2ClkDiv:inst1|Div[0]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -5.969 ns ; FREQ_in[10]  ; freq2ClkDiv:inst1|Div[4]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -6.030 ns ; FREQ_in[0]   ; freq2ClkDiv:inst1|Div[5]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -6.033 ns ; FREQ_in[2]   ; freq2ClkDiv:inst1|Div[0]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -6.095 ns ; FREQ_in[4]   ; freq2ClkDiv:inst1|Div[1]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -6.104 ns ; FREQ_in[5]   ; freq2ClkDiv:inst1|Div[5]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -6.112 ns ; FREQ_in[10]  ; freq2ClkDiv:inst1|Div[0]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -6.115 ns ; FREQ_in[11]  ; freq2ClkDiv:inst1|Div[6]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -6.135 ns ; FREQ_in[11]  ; freq2ClkDiv:inst1|Div[7]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -6.185 ns ; FREQ_in[8]   ; freq2ClkDiv:inst1|Div[5]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -6.251 ns ; FREQ_in[9]   ; freq2ClkDiv:inst1|Div[5]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -6.297 ns ; FREQ_in[2]   ; freq2ClkDiv:inst1|Div[6]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -6.305 ns ; FREQ_in[2]   ; freq2ClkDiv:inst1|Div[7]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -6.322 ns ; FREQ_in[8]   ; freq2ClkDiv:inst1|Div[1]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -6.331 ns ; FREQ_in[11]  ; freq2ClkDiv:inst1|Div[5]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -6.376 ns ; FREQ_in[10]  ; freq2ClkDiv:inst1|Div[6]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -6.384 ns ; FREQ_in[10]  ; freq2ClkDiv:inst1|Div[7]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -6.583 ns ; FREQ_in[2]   ; freq2ClkDiv:inst1|Div[5]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -6.618 ns ; FREQ_in[0]   ; freq2ClkDiv:inst1|Div[1]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -6.661 ns ; FREQ_in[11]  ; freq2ClkDiv:inst1|Div[1]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -6.668 ns ; FREQ_in[3]   ; freq2ClkDiv:inst1|Div[1]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -6.692 ns ; FREQ_in[5]   ; freq2ClkDiv:inst1|Div[1]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -6.710 ns ; FREQ_in[1]   ; freq2ClkDiv:inst1|Div[1]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -6.777 ns ; FREQ_in[9]   ; freq2ClkDiv:inst1|Div[1]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -6.805 ns ; FREQ_in[10]  ; freq2ClkDiv:inst1|Div[5]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -6.913 ns ; FREQ_in[2]   ; freq2ClkDiv:inst1|Div[1]                                                             ; CLK_IN   ;
+; N/A           ; None        ; -7.135 ns ; FREQ_in[10]  ; freq2ClkDiv:inst1|Div[1]                                                             ; CLK_IN   ;
++---------------+-------------+-----------+--------------+--------------------------------------------------------------------------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+    Info: Processing started: Mon Jan 09 16:25:51 2017
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off FREQ2SIN -c FREQ2SIN --timing_analysis_only
+Warning: Timing Analysis is analyzing one or more combinational loops as latches
+    Warning: Node "Clk_Divider:inst|clk_div_param[2]~latch" is a latch
+    Warning: Node "Clk_Divider:inst|clk_div_param[3]~latch" is a latch
+    Warning: Node "Clk_Divider:inst|clk_div_param[7]~latch" is a latch
+    Warning: Node "Clk_Divider:inst|clk_div_param[6]~latch" is a latch
+    Warning: Node "Clk_Divider:inst|clk_div_param[0]~latch" is a latch
+    Warning: Node "Clk_Divider:inst|clk_div_param[1]~latch" is a latch
+    Warning: Node "Clk_Divider:inst|clk_div_param[5]~latch" is a latch
+    Warning: Node "Clk_Divider:inst|clk_div_param[4]~latch" is a latch
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "CLK_IN" is an undefined clock
+    Info: Assuming node "RESETn" is a latch enable. Will not compute fmax for this pin.
+Info: Clock "CLK_IN" has Internal fmax of 211.33 MHz between source register "freq2ClkDiv:inst1|Div[3]" and destination register "Clk_Divider:inst|clk_div_param[8]" (period= 4.732 ns)
+    Info: + Longest register to register delay is 4.512 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X38_Y34_N17; Fanout = 3; REG Node = 'freq2ClkDiv:inst1|Div[3]'
+        Info: 2: + IC(0.324 ns) + CELL(0.275 ns) = 0.599 ns; Loc. = LCCOMB_X38_Y34_N0; Fanout = 3; COMB Node = 'Clk_Divider:inst|clk_div_param[3]~head_lut'
+        Info: 3: + IC(1.193 ns) + CELL(0.150 ns) = 1.942 ns; Loc. = LCCOMB_X36_Y34_N20; Fanout = 1; COMB Node = 'Clk_Divider:inst|Equal0~1'
+        Info: 4: + IC(0.280 ns) + CELL(0.410 ns) = 2.632 ns; Loc. = LCCOMB_X36_Y34_N16; Fanout = 9; COMB Node = 'Clk_Divider:inst|Equal0~4'
+        Info: 5: + IC(0.453 ns) + CELL(0.275 ns) = 3.360 ns; Loc. = LCCOMB_X36_Y33_N8; Fanout = 19; COMB Node = 'Clk_Divider:inst|Equal0~10'
+        Info: 6: + IC(0.918 ns) + CELL(0.150 ns) = 4.428 ns; Loc. = LCCOMB_X35_Y34_N16; Fanout = 1; COMB Node = 'Clk_Divider:inst|Add0~69'
+        Info: 7: + IC(0.000 ns) + CELL(0.084 ns) = 4.512 ns; Loc. = LCFF_X35_Y34_N17; Fanout = 4; REG Node = 'Clk_Divider:inst|clk_div_param[8]'
+        Info: Total cell delay = 1.344 ns ( 29.79 % )
+        Info: Total interconnect delay = 3.168 ns ( 70.21 % )
+    Info: - Smallest clock skew is -0.006 ns
+        Info: + Shortest clock path from clock "CLK_IN" to destination register is 2.670 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_P2; Fanout = 1; CLK Node = 'CLK_IN'
+            Info: 2: + IC(0.118 ns) + CELL(0.000 ns) = 1.117 ns; Loc. = CLKCTRL_G3; Fanout = 51; COMB Node = 'CLK_IN~clkctrl'
+            Info: 3: + IC(1.016 ns) + CELL(0.537 ns) = 2.670 ns; Loc. = LCFF_X35_Y34_N17; Fanout = 4; REG Node = 'Clk_Divider:inst|clk_div_param[8]'
+            Info: Total cell delay = 1.536 ns ( 57.53 % )
+            Info: Total interconnect delay = 1.134 ns ( 42.47 % )
+        Info: - Longest clock path from clock "CLK_IN" to source register is 2.676 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_P2; Fanout = 1; CLK Node = 'CLK_IN'
+            Info: 2: + IC(0.118 ns) + CELL(0.000 ns) = 1.117 ns; Loc. = CLKCTRL_G3; Fanout = 51; COMB Node = 'CLK_IN~clkctrl'
+            Info: 3: + IC(1.022 ns) + CELL(0.537 ns) = 2.676 ns; Loc. = LCFF_X38_Y34_N17; Fanout = 3; REG Node = 'freq2ClkDiv:inst1|Div[3]'
+            Info: Total cell delay = 1.536 ns ( 57.40 % )
+            Info: Total interconnect delay = 1.140 ns ( 42.60 % )
+    Info: + Micro clock to output delay of source is 0.250 ns
+    Info: + Micro setup delay of destination is -0.036 ns
+Info: tsu for register "freq2ClkDiv:inst1|Div[1]" (data pin = "FREQ_in[10]", clock pin = "CLK_IN") is 8.314 ns
+    Info: + Longest pin to register delay is 11.025 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.840 ns) = 0.840 ns; Loc. = PIN_C15; Fanout = 4; PIN Node = 'FREQ_in[10]'
+        Info: 2: + IC(5.068 ns) + CELL(0.275 ns) = 6.183 ns; Loc. = LCCOMB_X41_Y34_N18; Fanout = 5; COMB Node = 'freq2ClkDiv:inst1|Equal0~0'
+        Info: 3: + IC(0.470 ns) + CELL(0.393 ns) = 7.046 ns; Loc. = LCCOMB_X42_Y34_N22; Fanout = 4; COMB Node = 'freq2ClkDiv:inst1|Equal0~4'
+        Info: 4: + IC(0.913 ns) + CELL(0.376 ns) = 8.335 ns; Loc. = LCCOMB_X38_Y34_N10; Fanout = 2; COMB Node = 'freq2ClkDiv:inst1|WideNor0~2'
+        Info: 5: + IC(0.950 ns) + CELL(0.150 ns) = 9.435 ns; Loc. = LCCOMB_X41_Y33_N0; Fanout = 1; COMB Node = 'freq2ClkDiv:inst1|WideOr6'
+        Info: 6: + IC(1.224 ns) + CELL(0.366 ns) = 11.025 ns; Loc. = LCFF_X37_Y34_N1; Fanout = 3; REG Node = 'freq2ClkDiv:inst1|Div[1]'
+        Info: Total cell delay = 2.400 ns ( 21.77 % )
+        Info: Total interconnect delay = 8.625 ns ( 78.23 % )
+    Info: + Micro setup delay of destination is -0.036 ns
+    Info: - Shortest clock path from clock "CLK_IN" to destination register is 2.675 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_P2; Fanout = 1; CLK Node = 'CLK_IN'
+        Info: 2: + IC(0.118 ns) + CELL(0.000 ns) = 1.117 ns; Loc. = CLKCTRL_G3; Fanout = 51; COMB Node = 'CLK_IN~clkctrl'
+        Info: 3: + IC(1.021 ns) + CELL(0.537 ns) = 2.675 ns; Loc. = LCFF_X37_Y34_N1; Fanout = 3; REG Node = 'freq2ClkDiv:inst1|Div[1]'
+        Info: Total cell delay = 1.536 ns ( 57.42 % )
+        Info: Total interconnect delay = 1.139 ns ( 42.58 % )
+Info: tco from clock "CLK_IN" to destination pin "Sin_out[7]" through register "SinTableTC:inst25|Q[7]" is 7.963 ns
+    Info: + Longest clock path from clock "CLK_IN" to source register is 2.680 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_P2; Fanout = 1; CLK Node = 'CLK_IN'
+        Info: 2: + IC(0.118 ns) + CELL(0.000 ns) = 1.117 ns; Loc. = CLKCTRL_G3; Fanout = 51; COMB Node = 'CLK_IN~clkctrl'
+        Info: 3: + IC(1.026 ns) + CELL(0.537 ns) = 2.680 ns; Loc. = LCFF_X47_Y16_N25; Fanout = 1; REG Node = 'SinTableTC:inst25|Q[7]'
+        Info: Total cell delay = 1.536 ns ( 57.31 % )
+        Info: Total interconnect delay = 1.144 ns ( 42.69 % )
+    Info: + Micro clock to output delay of source is 0.250 ns
+    Info: + Longest register to pin delay is 5.033 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X47_Y16_N25; Fanout = 1; REG Node = 'SinTableTC:inst25|Q[7]'
+        Info: 2: + IC(2.225 ns) + CELL(2.808 ns) = 5.033 ns; Loc. = PIN_AE20; Fanout = 0; PIN Node = 'Sin_out[7]'
+        Info: Total cell delay = 2.808 ns ( 55.79 % )
+        Info: Total interconnect delay = 2.225 ns ( 44.21 % )
+Info: th for register "Clk_Divider:inst|clk_out_sig" (data pin = "RESETn", clock pin = "CLK_IN") is -0.944 ns
+    Info: + Longest clock path from clock "CLK_IN" to destination register is 2.669 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_P2; Fanout = 1; CLK Node = 'CLK_IN'
+        Info: 2: + IC(0.118 ns) + CELL(0.000 ns) = 1.117 ns; Loc. = CLKCTRL_G3; Fanout = 51; COMB Node = 'CLK_IN~clkctrl'
+        Info: 3: + IC(1.015 ns) + CELL(0.537 ns) = 2.669 ns; Loc. = LCFF_X36_Y33_N9; Fanout = 1; REG Node = 'Clk_Divider:inst|clk_out_sig'
+        Info: Total cell delay = 1.536 ns ( 57.55 % )
+        Info: Total interconnect delay = 1.133 ns ( 42.45 % )
+    Info: + Micro hold delay of destination is 0.266 ns
+    Info: - Shortest pin to register delay is 3.879 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_P1; Fanout = 10; CLK Node = 'RESETn'
+        Info: 2: + IC(2.220 ns) + CELL(0.660 ns) = 3.879 ns; Loc. = LCFF_X36_Y33_N9; Fanout = 1; REG Node = 'Clk_Divider:inst|clk_out_sig'
+        Info: Total cell delay = 1.659 ns ( 42.77 % )
+        Info: Total interconnect delay = 2.220 ns ( 57.23 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 10 warnings
+    Info: Peak virtual memory: 195 megabytes
+    Info: Processing ended: Mon Jan 09 16:25:52 2017
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:00
+
+

@@ -1,0 +1,56 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 5.191 ns
+From           : SinEnable
+To             : counter256:inst7|lpm_counter:lpm_counter_component|cntr_1cj:auto_generated|safe_q[6]
+From Clock     : --
+To Clock       : CLK_IN
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 8.361 ns
+From           : MSS_XTRCT:inst|MSS_Core:inst|P_DAC_Interface:U3|DATA_TO_PDAC_B_6_
+To             : PDAC_B_DATA_CHIP[6]
+From Clock     : CLK_IN
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : -3.715 ns
+From           : SinEnable
+To             : SqrTable:inst8|Q[4]
+From Clock     : --
+To Clock       : CLK_IN
+Failed Paths   : 0
+
+Type           : Clock Setup: 'CLK_IN'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 243.84 MHz ( period = 4.101 ns )
+From           : counter256:inst7|lpm_counter:lpm_counter_component|cntr_1cj:auto_generated|safe_q[3]
+To             : SqrTable:inst8|Q[2]
+From Clock     : CLK_IN
+To Clock       : CLK_IN
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+

@@ -1,0 +1,68 @@
+
+State Machine - |COMPLETE_PROJECT|sosnotif:inst10|state
+Name state.ell state.dtwo state.uuu state.eee state.oo state.dione state.hone state.sone state.prespace state.idle 
+state.idle 0 0 0 0 0 0 0 0 0 0 
+state.prespace 0 0 0 0 0 0 0 0 1 1 
+state.sone 0 0 0 0 0 0 0 1 0 1 
+state.hone 0 0 0 0 0 0 1 0 0 1 
+state.dione 0 0 0 0 0 1 0 0 0 1 
+state.oo 0 0 0 0 1 0 0 0 0 1 
+state.eee 0 0 0 1 0 0 0 0 0 1 
+state.uuu 0 0 1 0 0 0 0 0 0 1 
+state.dtwo 0 1 0 0 0 0 0 0 0 1 
+state.ell 1 0 0 0 0 0 0 0 0 1 
+
+State Machine - |COMPLETE_PROJECT|Transmitter:inst|U2M:inst21|kbd:inst1|bitrec:bit_receiver|cur_state
+Name cur_state.last_low cur_state.tell_out cur_state.update_out cur_state.chk_data cur_state.low_clk cur_state.cnt_shift cur_state.high_clk cur_state.start cur_state.idle 
+cur_state.idle 0 0 0 0 0 0 0 0 0 
+cur_state.start 0 0 0 0 0 0 0 1 1 
+cur_state.high_clk 0 0 0 0 0 0 1 0 1 
+cur_state.cnt_shift 0 0 0 0 0 1 0 0 1 
+cur_state.low_clk 0 0 0 0 1 0 0 0 1 
+cur_state.chk_data 0 0 0 1 0 0 0 0 1 
+cur_state.update_out 0 0 1 0 0 0 0 0 1 
+cur_state.tell_out 0 1 0 0 0 0 0 0 1 
+cur_state.last_low 1 0 0 0 0 0 0 0 1 
+
+State Machine - |COMPLETE_PROJECT|Transmitter:inst|U2M:inst21|kbd:inst1|byterec:byte_receiver|present_state
+Name present_state.sample_ext_rel present_state.wait_ext_rel present_state.sample_ext present_state.wait_ext present_state.new_break present_state.sample_rel present_state.wait_rel present_state.new_make present_state.sample_nor present_state.idle 
+present_state.idle 0 0 0 0 0 0 0 0 0 0 
+present_state.sample_nor 0 0 0 0 0 0 0 0 1 1 
+present_state.new_make 0 0 0 0 0 0 0 1 0 1 
+present_state.wait_rel 0 0 0 0 0 0 1 0 0 1 
+present_state.sample_rel 0 0 0 0 0 1 0 0 0 1 
+present_state.new_break 0 0 0 0 1 0 0 0 0 1 
+present_state.wait_ext 0 0 0 1 0 0 0 0 0 1 
+present_state.sample_ext 0 0 1 0 0 0 0 0 0 1 
+present_state.wait_ext_rel 0 1 0 0 0 0 0 0 0 1 
+present_state.sample_ext_rel 1 0 0 0 0 0 0 0 0 1 
+
+State Machine - |COMPLETE_PROJECT|Transmitter:inst|MORSE2FREQ:inst|StateMachinefin:inst|state
+Name state.space state.dot state.kav state.idle 
+state.idle 0 0 0 0 
+state.kav 0 0 1 1 
+state.dot 0 1 0 1 
+state.space 1 0 0 1 
+
+State Machine - |COMPLETE_PROJECT|Reciever:inst23|SIN2FREQ:inst20|f_finder_fin:inst|state
+Name state.silent state.fin state.rise state.fall state.first_seq state.idle 
+state.idle 0 0 0 0 0 0 
+state.first_seq 0 0 0 0 1 1 
+state.fall 0 0 0 1 0 1 
+state.rise 0 0 1 0 0 1 
+state.fin 0 1 0 0 0 1 
+state.silent 1 0 0 0 0 1 
+
+State Machine - |COMPLETE_PROJECT|Reciever:inst23|freq2morse_SM_final:inst9|state
+Name state.fin state.dot state.kav state.idle 
+state.idle 0 0 0 0 
+state.kav 0 0 1 1 
+state.dot 0 1 0 1 
+state.fin 1 0 0 1 
+
+State Machine - |COMPLETE_PROJECT|Reciever:inst23|2LCD:inst18|LCD:inst8|state
+Name state.send state.ready state.initialize state.power_up 
+state.power_up 0 0 0 0 
+state.initialize 0 0 1 1 
+state.ready 0 1 0 1 
+state.send 1 0 0 1 

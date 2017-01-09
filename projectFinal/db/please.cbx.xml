@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="please">
+		<CBX_INST_ENTRY INSTANCE_NAME="|COMPLETE_PROJECT|MSS_XTRCT:inst24|MSS_Core:inst|P_DAC_Interface:U3|altsyncram:U2_altsyncram_component" CBX_FILE_NAME="altsyncram_gp81.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|COMPLETE_PROJECT|MSS_XTRCT:inst24|MSS_Core:inst|S_DAC_Interface:U4|altsyncram:U2_altsyncram_component" CBX_FILE_NAME="altsyncram_jp81.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|COMPLETE_PROJECT|Transmitter:inst|FREQ2SIN:inst31|counter256:inst7|lpm_counter:lpm_counter_component" CBX_FILE_NAME="cntr_1cj.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|COMPLETE_PROJECT|MSS_XTRCT:inst24|MSS_Core:inst|P_DAC_Interface:U3|altsyncram:U1_altsyncram_component" CBX_FILE_NAME="altsyncram_gp81.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|COMPLETE_PROJECT|Reciever:inst23|2LCD:inst18|LCD_Table:inst2|altsyncram:Mux0_rtl_0" CBX_FILE_NAME="altsyncram_d901.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|COMPLETE_PROJECT|Transmitter:inst|MORSE2FREQ:inst|mux2:inst12|LPM_MUX:lpm_mux_component" CBX_FILE_NAME="mux_03e.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|COMPLETE_PROJECT|Transmitter:inst|MORSE2FREQ:inst|mux4to1:inst21|LPM_MUX:lpm_mux_component" CBX_FILE_NAME="mux_gke.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="FREQ2SIN">
+		<CBX_INST_ENTRY INSTANCE_NAME="|FREQ2SIN|counter256:inst7|lpm_counter:lpm_counter_component" CBX_FILE_NAME="cntr_1cj.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

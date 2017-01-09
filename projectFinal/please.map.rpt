@@ -1,0 +1,1406 @@
+Analysis & Synthesis report for please
+Wed Jun 22 17:08:49 2016
+Quartus II Version 9.1 Build 222 10/21/2009 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. State Machine - |COMPLETE_PROJECT|sosnotif:inst10|state
+ 10. State Machine - |COMPLETE_PROJECT|Transmitter:inst|U2M:inst21|kbd:inst1|bitrec:bit_receiver|cur_state
+ 11. State Machine - |COMPLETE_PROJECT|Transmitter:inst|U2M:inst21|kbd:inst1|byterec:byte_receiver|present_state
+ 12. State Machine - |COMPLETE_PROJECT|Transmitter:inst|MORSE2FREQ:inst|StateMachinefin:inst|state
+ 13. State Machine - |COMPLETE_PROJECT|Reciever:inst23|SIN2FREQ:inst20|f_finder_fin:inst|state
+ 14. State Machine - |COMPLETE_PROJECT|Reciever:inst23|freq2morse_SM_final:inst9|state
+ 15. State Machine - |COMPLETE_PROJECT|Reciever:inst23|2LCD:inst18|LCD:inst8|state
+ 16. Registers Removed During Synthesis
+ 17. General Register Statistics
+ 18. Inverted Register Statistics
+ 19. Registers Packed Into Inferred Megafunctions
+ 20. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 21. Source assignments for MSS_XTRCT:inst24|MSS_Core:inst|P_DAC_Interface:U3|altsyncram:U1_altsyncram_component|altsyncram_gp81:auto_generated
+ 22. Source assignments for MSS_XTRCT:inst24|MSS_Core:inst|P_DAC_Interface:U3|altsyncram:U2_altsyncram_component|altsyncram_gp81:auto_generated
+ 23. Source assignments for MSS_XTRCT:inst24|MSS_Core:inst|S_DAC_Interface:U4|altsyncram:U2_altsyncram_component|altsyncram_jp81:auto_generated
+ 24. Source assignments for Transmitter:inst|FREQ2SIN:inst31|counter256:inst7|lpm_counter:lpm_counter_component
+ 25. Source assignments for Reciever:inst23|2LCD:inst18|LCD_Table:inst2|altsyncram:Mux0_rtl_0|altsyncram_d901:auto_generated
+ 26. Parameter Settings for User Entity Instance: MSS_XTRCT:inst24|MSS_Core:inst|P_DAC_Interface:U3|altsyncram:U1_altsyncram_component
+ 27. Parameter Settings for User Entity Instance: MSS_XTRCT:inst24|MSS_Core:inst|P_DAC_Interface:U3|altsyncram:U2_altsyncram_component
+ 28. Parameter Settings for User Entity Instance: MSS_XTRCT:inst24|MSS_Core:inst|S_DAC_Interface:U4|altsyncram:U2_altsyncram_component
+ 29. Parameter Settings for User Entity Instance: Transmitter:inst|FREQ2SIN:inst31|counter256:inst7|lpm_counter:lpm_counter_component
+ 30. Parameter Settings for User Entity Instance: Transmitter:inst|MORSE2FREQ:inst|mux2:inst12|LPM_MUX:lpm_mux_component
+ 31. Parameter Settings for User Entity Instance: Transmitter:inst|MORSE2FREQ:inst|mux4to1:inst21|LPM_MUX:lpm_mux_component
+ 32. Parameter Settings for User Entity Instance: Transmitter:inst|MORSE2FREQ:inst|Clk_Divider:inst4
+ 33. Parameter Settings for User Entity Instance: Transmitter:inst|MORSE2FREQ:inst|Clk_Divider:inst7
+ 34. Parameter Settings for User Entity Instance: Transmitter:inst|MORSE2FREQ:inst|Clk_Divider:inst5
+ 35. Parameter Settings for User Entity Instance: Transmitter:inst|MORSE2FREQ:inst|Clk_Divider:inst6
+ 36. Parameter Settings for User Entity Instance: Transmitter:inst|U2M:inst21|KBD:inst1|lpf:cleaner
+ 37. Parameter Settings for Inferred Entity Instance: Reciever:inst23|2LCD:inst18|LCD_Table:inst2|altsyncram:Mux0_rtl_0
+ 38. altsyncram Parameter Settings by Entity Instance
+ 39. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++------------------------------------+------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Wed Jun 22 17:08:49 2016    ;
+; Quartus II Version                 ; 9.1 Build 222 10/21/2009 SJ Full Version ;
+; Revision Name                      ; please                                   ;
+; Top-level Entity Name              ; COMPLETE_PROJECT                         ;
+; Family                             ; Cyclone II                               ;
+; Total logic elements               ; 1,504                                    ;
+;     Total combinational functions  ; 1,390                                    ;
+;     Dedicated logic registers      ; 636                                      ;
+; Total registers                    ; 643                                      ;
+; Total pins                         ; 70                                       ;
+; Total virtual pins                 ; 0                                        ;
+; Total memory bits                  ; 5,904                                    ;
+; Embedded Multiplier 9-bit elements ; 0                                        ;
+; Total PLLs                         ; 0                                        ;
++------------------------------------+------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C35F672C6       ;                    ;
+; Top-level entity name                                                      ; COMPLETE_PROJECT   ; please             ;
+; Family name                                                                ; Cyclone II         ; Stratix II         ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                         ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1 processor            ; 100.0%      ;
+;     2-4 processors         ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                       ;
++----------------------------------+-----------------+------------------------------------------+--------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                                ; File Name with Absolute Path                                 ;
++----------------------------------+-----------------+------------------------------------------+--------------------------------------------------------------+
+; sign2bin.vhd                     ; yes             ; User VHDL File                           ; C:/Users/mac3/Desktop/project/sign2bin.vhd                   ;
+; MSS_Core.edf                     ; yes             ; User EDIF File                           ; C:/Users/mac3/Desktop/project/MSS_Core.edf                   ;
+; MSS_XTRCT.bdf                    ; yes             ; User Block Diagram/Schematic File        ; C:/Users/mac3/Desktop/project/MSS_XTRCT.bdf                  ;
+; freq2morse_sm_final.vhd          ; yes             ; User VHDL File                           ; C:/Users/mac3/Desktop/project/freq2morse_sm_final.vhd        ;
+; sosnotif.vhd                     ; yes             ; User VHDL File                           ; C:/Users/mac3/Desktop/project/sosnotif.vhd                   ;
+; lcd.vhd                          ; yes             ; User VHDL File                           ; C:/Users/mac3/Desktop/project/lcd.vhd                        ;
+; Turbo_F_div_100K.vhd             ; yes             ; User VHDL File                           ; C:/Users/mac3/Desktop/project/Turbo_F_div_100K.vhd           ;
+; f_finder_fin.vhd                 ; yes             ; User VHDL File                           ; C:/Users/mac3/Desktop/project/f_finder_fin.vhd               ;
+; MultiTurbo_F_div_quater.vhd      ; yes             ; User VHDL File                           ; C:/Users/mac3/Desktop/project/MultiTurbo_F_div_quater.vhd    ;
+; StateMachinefin.vhd              ; yes             ; User VHDL File                           ; C:/Users/mac3/Desktop/project/StateMachinefin.vhd            ;
+; CLOSE_f_paramFin.vhd             ; yes             ; User VHDL File                           ; C:/Users/mac3/Desktop/project/CLOSE_f_paramFin.vhd           ;
+; Histereres.vhd                   ; yes             ; User VHDL File                           ; C:/Users/mac3/Desktop/project/Histereres.vhd                 ;
+; U2M.bdf                          ; yes             ; User Block Diagram/Schematic File        ; C:/Users/mac3/Desktop/project/U2M.bdf                        ;
+; 2LCD.bdf                         ; yes             ; User Block Diagram/Schematic File        ; C:/Users/mac3/Desktop/project/2LCD.bdf                       ;
+; SIN2FREQ.bdf                     ; yes             ; User Block Diagram/Schematic File        ; C:/Users/mac3/Desktop/project/SIN2FREQ.bdf                   ;
+; MORSE2FREQ.bdf                   ; yes             ; User Block Diagram/Schematic File        ; C:/Users/mac3/Desktop/project/MORSE2FREQ.bdf                 ;
+; Transmitter.bdf                  ; yes             ; User Block Diagram/Schematic File        ; C:/Users/mac3/Desktop/project/Transmitter.bdf                ;
+; Reciever.bdf                     ; yes             ; User Block Diagram/Schematic File        ; C:/Users/mac3/Desktop/project/Reciever.bdf                   ;
+; COMPLETE_PROJECT.bdf             ; yes             ; User Block Diagram/Schematic File        ; C:/Users/mac3/Desktop/project/COMPLETE_PROJECT.bdf           ;
+; lcd_table.vhd                    ; yes             ; Auto-Found VHDL File                     ; C:/Users/mac3/Desktop/project/lcd_table.vhd                  ;
+; altsyncram.tdf                   ; yes             ; Megafunction                             ; c:/altera/91/quartus/libraries/megafunctions/altsyncram.tdf  ;
+; db/altsyncram_gp81.tdf           ; yes             ; Auto-Generated Megafunction              ; C:/Users/mac3/Desktop/project/db/altsyncram_gp81.tdf         ;
+; pdac_conv_table.hex              ; yes             ; Auto-Found Memory Initialization File    ; C:/Users/mac3/Desktop/project/pdac_conv_table.hex            ;
+; db/altsyncram_jp81.tdf           ; yes             ; Auto-Generated Megafunction              ; C:/Users/mac3/Desktop/project/db/altsyncram_jp81.tdf         ;
+; sdac_conv_table.hex              ; yes             ; Auto-Found Memory Initialization File    ; C:/Users/mac3/Desktop/project/sdac_conv_table.hex            ;
+; freq2sin.bdf                     ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/mac3/Desktop/project/freq2sin.bdf                   ;
+; sintabletc.vhd                   ; yes             ; Auto-Found VHDL File                     ; C:/Users/mac3/Desktop/project/sintabletc.vhd                 ;
+; counter256.vhd                   ; yes             ; Auto-Found Wizard-Generated File         ; C:/Users/mac3/Desktop/project/counter256.vhd                 ;
+; lpm_counter.tdf                  ; yes             ; Megafunction                             ; c:/altera/91/quartus/libraries/megafunctions/lpm_counter.tdf ;
+; db/cntr_1cj.tdf                  ; yes             ; Auto-Generated Megafunction              ; C:/Users/mac3/Desktop/project/db/cntr_1cj.tdf                ;
+; mux2.vhd                         ; yes             ; Auto-Found Wizard-Generated File         ; C:/Users/mac3/Desktop/project/mux2.vhd                       ;
+; lpm_mux.tdf                      ; yes             ; Megafunction                             ; c:/altera/91/quartus/libraries/megafunctions/lpm_mux.tdf     ;
+; db/mux_03e.tdf                   ; yes             ; Auto-Generated Megafunction              ; C:/Users/mac3/Desktop/project/db/mux_03e.tdf                 ;
+; mux4to1.vhd                      ; yes             ; Auto-Found Wizard-Generated File         ; C:/Users/mac3/Desktop/project/mux4to1.vhd                    ;
+; db/mux_gke.tdf                   ; yes             ; Auto-Generated Megafunction              ; C:/Users/mac3/Desktop/project/db/mux_gke.tdf                 ;
+; clk_divider.vhd                  ; yes             ; Auto-Found VHDL File                     ; C:/Users/mac3/Desktop/project/clk_divider.vhd                ;
+; char2morsetable.vhd              ; yes             ; Auto-Found VHDL File                     ; C:/Users/mac3/Desktop/project/char2morsetable.vhd            ;
+; ena_morse.vhd                    ; yes             ; Auto-Found VHDL File                     ; C:/Users/mac3/Desktop/project/ena_morse.vhd                  ;
+; kbd.bdf                          ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/mac3/Desktop/project/kbd.bdf                        ;
+; byterec.vhd                      ; yes             ; Auto-Found VHDL File                     ; C:/Users/mac3/Desktop/project/byterec.vhd                    ;
+; bitrec.vhd                       ; yes             ; Auto-Found VHDL File                     ; C:/Users/mac3/Desktop/project/bitrec.vhd                     ;
+; lpf.vhd                          ; yes             ; Auto-Found VHDL File                     ; C:/Users/mac3/Desktop/project/lpf.vhd                        ;
+; enable_trans.vhd                 ; yes             ; Auto-Found VHDL File                     ; C:/Users/mac3/Desktop/project/enable_trans.vhd               ;
+; db/altsyncram_d901.tdf           ; yes             ; Auto-Generated Megafunction              ; C:/Users/mac3/Desktop/project/db/altsyncram_d901.tdf         ;
++----------------------------------+-----------------+------------------------------------------+--------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary          ;
++---------------------------------------------+--------+
+; Resource                                    ; Usage  ;
++---------------------------------------------+--------+
+; Estimated Total logic elements              ; 1,504  ;
+;                                             ;        ;
+; Total combinational functions               ; 1390   ;
+; Logic element usage by number of LUT inputs ;        ;
+;     -- 4 input functions                    ; 560    ;
+;     -- 3 input functions                    ; 237    ;
+;     -- <=2 input functions                  ; 593    ;
+;                                             ;        ;
+; Logic elements by mode                      ;        ;
+;     -- normal mode                          ; 930    ;
+;     -- arithmetic mode                      ; 460    ;
+;                                             ;        ;
+; Total registers                             ; 643    ;
+;     -- Dedicated logic registers            ; 636    ;
+;     -- I/O registers                        ; 7      ;
+;                                             ;        ;
+; I/O pins                                    ; 70     ;
+; Total memory bits                           ; 5904   ;
+; Maximum fan-out node                        ; CLK_IN ;
+; Maximum fan-out                             ; 674    ;
+; Total fan-out                               ; 6816   ;
+; Average fan-out                             ; 3.19   ;
++---------------------------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                             ;
++--------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                                   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                   ; Library Name ;
++--------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |COMPLETE_PROJECT                                            ; 1390 (0)          ; 636 (0)      ; 5904        ; 0            ; 0       ; 0         ; 70   ; 0            ; |COMPLETE_PROJECT                                                                                                                     ; work         ;
+;    |MSS_XTRCT:inst24|                                        ; 81 (0)            ; 121 (0)      ; 4112        ; 0            ; 0       ; 0         ; 33   ; 0            ; |COMPLETE_PROJECT|MSS_XTRCT:inst24                                                                                                    ;              ;
+;       |MSS_Core:inst|                                        ; 81 (12)           ; 121 (18)     ; 4112        ; 0            ; 0       ; 0         ; 33   ; 0            ; |COMPLETE_PROJECT|MSS_XTRCT:inst24|MSS_Core:inst                                                                                      ;              ;
+;          |P_DAC_Interface:U3|                                ; 7 (7)             ; 34 (34)      ; 2064        ; 0            ; 0       ; 0         ; 0    ; 0            ; |COMPLETE_PROJECT|MSS_XTRCT:inst24|MSS_Core:inst|P_DAC_Interface:U3                                                                   ;              ;
+;             |altsyncram:U1_altsyncram_component|             ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |COMPLETE_PROJECT|MSS_XTRCT:inst24|MSS_Core:inst|P_DAC_Interface:U3|altsyncram:U1_altsyncram_component                                ;              ;
+;                |altsyncram_gp81:auto_generated|              ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |COMPLETE_PROJECT|MSS_XTRCT:inst24|MSS_Core:inst|P_DAC_Interface:U3|altsyncram:U1_altsyncram_component|altsyncram_gp81:auto_generated ;              ;
+;             |altsyncram:U2_altsyncram_component|             ; 0 (0)             ; 0 (0)        ; 16          ; 0            ; 0       ; 0         ; 0    ; 0            ; |COMPLETE_PROJECT|MSS_XTRCT:inst24|MSS_Core:inst|P_DAC_Interface:U3|altsyncram:U2_altsyncram_component                                ;              ;
+;                |altsyncram_gp81:auto_generated|              ; 0 (0)             ; 0 (0)        ; 16          ; 0            ; 0       ; 0         ; 0    ; 0            ; |COMPLETE_PROJECT|MSS_XTRCT:inst24|MSS_Core:inst|P_DAC_Interface:U3|altsyncram:U2_altsyncram_component|altsyncram_gp81:auto_generated ;              ;
+;          |S_DAC_Interface:U4|                                ; 54 (54)           ; 61 (61)      ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |COMPLETE_PROJECT|MSS_XTRCT:inst24|MSS_Core:inst|S_DAC_Interface:U4                                                                   ;              ;
+;             |altsyncram:U2_altsyncram_component|             ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |COMPLETE_PROJECT|MSS_XTRCT:inst24|MSS_Core:inst|S_DAC_Interface:U4|altsyncram:U2_altsyncram_component                                ;              ;
+;                |altsyncram_jp81:auto_generated|              ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |COMPLETE_PROJECT|MSS_XTRCT:inst24|MSS_Core:inst|S_DAC_Interface:U4|altsyncram:U2_altsyncram_component|altsyncram_jp81:auto_generated ;              ;
+;          |modgen_counter_8_0:U1_modgen_counter_PDAC_COUNTER| ; 8 (8)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |COMPLETE_PROJECT|MSS_XTRCT:inst24|MSS_Core:inst|modgen_counter_8_0:U1_modgen_counter_PDAC_COUNTER                                    ;              ;
+;    |MultiTurbo_F_div_quater:inst28|                          ; 168 (168)         ; 33 (33)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |COMPLETE_PROJECT|MultiTurbo_F_div_quater:inst28                                                                                      ;              ;
+;    |Reciever:inst23|                                         ; 581 (0)           ; 213 (0)      ; 1792        ; 0            ; 0       ; 0         ; 0    ; 0            ; |COMPLETE_PROJECT|Reciever:inst23                                                                                                     ;              ;
+;       |2LCD:inst18|                                          ; 263 (0)           ; 81 (0)       ; 1792        ; 0            ; 0       ; 0         ; 0    ; 0            ; |COMPLETE_PROJECT|Reciever:inst23|2LCD:inst18                                                                                         ;              ;
+;          |LCD:inst8|                                         ; 263 (263)         ; 78 (78)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |COMPLETE_PROJECT|Reciever:inst23|2LCD:inst18|LCD:inst8                                                                               ;              ;
+;          |LCD_Table:inst2|                                   ; 0 (0)             ; 3 (3)        ; 1792        ; 0            ; 0       ; 0         ; 0    ; 0            ; |COMPLETE_PROJECT|Reciever:inst23|2LCD:inst18|LCD_Table:inst2                                                                         ;              ;
+;             |altsyncram:Mux0_rtl_0|                          ; 0 (0)             ; 0 (0)        ; 1792        ; 0            ; 0       ; 0         ; 0    ; 0            ; |COMPLETE_PROJECT|Reciever:inst23|2LCD:inst18|LCD_Table:inst2|altsyncram:Mux0_rtl_0                                                   ;              ;
+;                |altsyncram_d901:auto_generated|              ; 0 (0)             ; 0 (0)        ; 1792        ; 0            ; 0       ; 0         ; 0    ; 0            ; |COMPLETE_PROJECT|Reciever:inst23|2LCD:inst18|LCD_Table:inst2|altsyncram:Mux0_rtl_0|altsyncram_d901:auto_generated                    ;              ;
+;       |SIN2FREQ:inst20|                                      ; 288 (0)           ; 111 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |COMPLETE_PROJECT|Reciever:inst23|SIN2FREQ:inst20                                                                                     ;              ;
+;          |CLOSE_f_paramFin:inst15|                           ; 60 (60)           ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |COMPLETE_PROJECT|Reciever:inst23|SIN2FREQ:inst20|CLOSE_f_paramFin:inst15                                                             ;              ;
+;          |Histereres:inst16|                                 ; 3 (3)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |COMPLETE_PROJECT|Reciever:inst23|SIN2FREQ:inst20|Histereres:inst16                                                                   ;              ;
+;          |f_finder_fin:inst|                                 ; 225 (225)         ; 108 (108)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |COMPLETE_PROJECT|Reciever:inst23|SIN2FREQ:inst20|f_finder_fin:inst                                                                   ;              ;
+;       |freq2morse_SM_final:inst9|                            ; 30 (30)           ; 21 (21)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |COMPLETE_PROJECT|Reciever:inst23|freq2morse_SM_final:inst9                                                                           ;              ;
+;    |Transmitter:inst|                                        ; 534 (0)           ; 233 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |COMPLETE_PROJECT|Transmitter:inst                                                                                                    ;              ;
+;       |MORSE2FREQ:inst|                                      ; 182 (0)           ; 119 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |COMPLETE_PROJECT|Transmitter:inst|MORSE2FREQ:inst                                                                                    ;              ;
+;          |Clk_Divider:inst4|                                 ; 39 (39)           ; 27 (27)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |COMPLETE_PROJECT|Transmitter:inst|MORSE2FREQ:inst|Clk_Divider:inst4                                                                  ;              ;
+;          |Clk_Divider:inst5|                                 ; 36 (36)           ; 25 (25)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |COMPLETE_PROJECT|Transmitter:inst|MORSE2FREQ:inst|Clk_Divider:inst5                                                                  ;              ;
+;          |Clk_Divider:inst6|                                 ; 40 (40)           ; 27 (27)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |COMPLETE_PROJECT|Transmitter:inst|MORSE2FREQ:inst|Clk_Divider:inst6                                                                  ;              ;
+;          |Clk_Divider:inst7|                                 ; 36 (36)           ; 25 (25)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |COMPLETE_PROJECT|Transmitter:inst|MORSE2FREQ:inst|Clk_Divider:inst7                                                                  ;              ;
+;          |StateMachinefin:inst|                              ; 29 (29)           ; 14 (14)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |COMPLETE_PROJECT|Transmitter:inst|MORSE2FREQ:inst|StateMachinefin:inst                                                               ;              ;
+;          |mux4to1:inst21|                                    ; 2 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |COMPLETE_PROJECT|Transmitter:inst|MORSE2FREQ:inst|mux4to1:inst21                                                                     ;              ;
+;             |lpm_mux:lpm_mux_component|                      ; 2 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |COMPLETE_PROJECT|Transmitter:inst|MORSE2FREQ:inst|mux4to1:inst21|lpm_mux:lpm_mux_component                                           ;              ;
+;                |mux_gke:auto_generated|                      ; 2 (2)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |COMPLETE_PROJECT|Transmitter:inst|MORSE2FREQ:inst|mux4to1:inst21|lpm_mux:lpm_mux_component|mux_gke:auto_generated                    ;              ;
+;       |U2M:inst21|                                           ; 208 (0)           ; 98 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |COMPLETE_PROJECT|Transmitter:inst|U2M:inst21                                                                                         ;              ;
+;          |ENABLE_TRANS:inst2|                                ; 84 (84)           ; 33 (33)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |COMPLETE_PROJECT|Transmitter:inst|U2M:inst21|ENABLE_TRANS:inst2                                                                      ;              ;
+;          |char2morseTable:inst3|                             ; 73 (73)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |COMPLETE_PROJECT|Transmitter:inst|U2M:inst21|char2morseTable:inst3                                                                   ;              ;
+;          |ena_morse:inst|                                    ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |COMPLETE_PROJECT|Transmitter:inst|U2M:inst21|ena_morse:inst                                                                          ;              ;
+;          |kbd:inst1|                                         ; 49 (0)            ; 54 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |COMPLETE_PROJECT|Transmitter:inst|U2M:inst21|kbd:inst1                                                                               ;              ;
+;             |bitrec:bit_receiver|                            ; 28 (28)           ; 31 (31)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |COMPLETE_PROJECT|Transmitter:inst|U2M:inst21|kbd:inst1|bitrec:bit_receiver                                                           ;              ;
+;             |byterec:byte_receiver|                          ; 19 (19)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |COMPLETE_PROJECT|Transmitter:inst|U2M:inst21|kbd:inst1|byterec:byte_receiver                                                         ;              ;
+;             |lpf:cleaner|                                    ; 2 (2)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |COMPLETE_PROJECT|Transmitter:inst|U2M:inst21|kbd:inst1|lpf:cleaner                                                                   ;              ;
+;       |freq2sin:inst31|                                      ; 144 (0)           ; 16 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |COMPLETE_PROJECT|Transmitter:inst|freq2sin:inst31                                                                                    ;              ;
+;          |SinTableTC:inst25|                                 ; 135 (135)         ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |COMPLETE_PROJECT|Transmitter:inst|freq2sin:inst31|SinTableTC:inst25                                                                  ;              ;
+;          |counter256:inst7|                                  ; 9 (0)             ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |COMPLETE_PROJECT|Transmitter:inst|freq2sin:inst31|counter256:inst7                                                                   ;              ;
+;             |lpm_counter:lpm_counter_component|              ; 9 (0)             ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |COMPLETE_PROJECT|Transmitter:inst|freq2sin:inst31|counter256:inst7|lpm_counter:lpm_counter_component                                 ;              ;
+;                |cntr_1cj:auto_generated|                     ; 9 (9)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |COMPLETE_PROJECT|Transmitter:inst|freq2sin:inst31|counter256:inst7|lpm_counter:lpm_counter_component|cntr_1cj:auto_generated         ;              ;
+;    |sosnotif:inst10|                                         ; 26 (26)           ; 36 (36)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |COMPLETE_PROJECT|sosnotif:inst10                                                                                                     ;              ;
++--------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                                   ;
++--------------------------------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+----------------------------------+
+; Name                                                                                                                           ; Type ; Mode ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF                              ;
++--------------------------------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+----------------------------------+
+; MSS_XTRCT:inst24|MSS_Core:inst|P_DAC_Interface:U3|altsyncram:U1_altsyncram_component|altsyncram_gp81:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 256          ; 8            ; --           ; --           ; 2048 ; PDAC_conv_table.hex              ;
+; MSS_XTRCT:inst24|MSS_Core:inst|P_DAC_Interface:U3|altsyncram:U2_altsyncram_component|altsyncram_gp81:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 256          ; 8            ; --           ; --           ; 2048 ; PDAC_conv_table.hex              ;
+; MSS_XTRCT:inst24|MSS_Core:inst|S_DAC_Interface:U4|altsyncram:U2_altsyncram_component|altsyncram_jp81:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 256          ; 8            ; --           ; --           ; 2048 ; SDAC_conv_table.hex              ;
+; Reciever:inst23|2LCD:inst18|LCD_Table:inst2|altsyncram:Mux0_rtl_0|altsyncram_d901:auto_generated|ALTSYNCRAM                    ; AUTO ; ROM  ; 256          ; 7            ; --           ; --           ; 1792 ; please.COMPLETE_PROJECT0.rtl.mif ;
++--------------------------------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+----------------------------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |COMPLETE_PROJECT|sosnotif:inst10|state                                                                                          ;
++----------------+-----------+------------+-----------+-----------+----------+-------------+------------+------------+----------------+------------+
+; Name           ; state.ell ; state.dtwo ; state.uuu ; state.eee ; state.oo ; state.dione ; state.hone ; state.sone ; state.prespace ; state.idle ;
++----------------+-----------+------------+-----------+-----------+----------+-------------+------------+------------+----------------+------------+
+; state.idle     ; 0         ; 0          ; 0         ; 0         ; 0        ; 0           ; 0          ; 0          ; 0              ; 0          ;
+; state.prespace ; 0         ; 0          ; 0         ; 0         ; 0        ; 0           ; 0          ; 0          ; 1              ; 1          ;
+; state.sone     ; 0         ; 0          ; 0         ; 0         ; 0        ; 0           ; 0          ; 1          ; 0              ; 1          ;
+; state.hone     ; 0         ; 0          ; 0         ; 0         ; 0        ; 0           ; 1          ; 0          ; 0              ; 1          ;
+; state.dione    ; 0         ; 0          ; 0         ; 0         ; 0        ; 1           ; 0          ; 0          ; 0              ; 1          ;
+; state.oo       ; 0         ; 0          ; 0         ; 0         ; 1        ; 0           ; 0          ; 0          ; 0              ; 1          ;
+; state.eee      ; 0         ; 0          ; 0         ; 1         ; 0        ; 0           ; 0          ; 0          ; 0              ; 1          ;
+; state.uuu      ; 0         ; 0          ; 1         ; 0         ; 0        ; 0           ; 0          ; 0          ; 0              ; 1          ;
+; state.dtwo     ; 0         ; 1          ; 0         ; 0         ; 0        ; 0           ; 0          ; 0          ; 0              ; 1          ;
+; state.ell      ; 1         ; 0          ; 0         ; 0         ; 0        ; 0           ; 0          ; 0          ; 0              ; 1          ;
++----------------+-----------+------------+-----------+-----------+----------+-------------+------------+------------+----------------+------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |COMPLETE_PROJECT|Transmitter:inst|U2M:inst21|kbd:inst1|bitrec:bit_receiver|cur_state                                                                                                        ;
++----------------------+--------------------+--------------------+----------------------+--------------------+-------------------+---------------------+--------------------+-----------------+----------------+
+; Name                 ; cur_state.last_low ; cur_state.tell_out ; cur_state.update_out ; cur_state.chk_data ; cur_state.low_clk ; cur_state.cnt_shift ; cur_state.high_clk ; cur_state.start ; cur_state.idle ;
++----------------------+--------------------+--------------------+----------------------+--------------------+-------------------+---------------------+--------------------+-----------------+----------------+
+; cur_state.idle       ; 0                  ; 0                  ; 0                    ; 0                  ; 0                 ; 0                   ; 0                  ; 0               ; 0              ;
+; cur_state.start      ; 0                  ; 0                  ; 0                    ; 0                  ; 0                 ; 0                   ; 0                  ; 1               ; 1              ;
+; cur_state.high_clk   ; 0                  ; 0                  ; 0                    ; 0                  ; 0                 ; 0                   ; 1                  ; 0               ; 1              ;
+; cur_state.cnt_shift  ; 0                  ; 0                  ; 0                    ; 0                  ; 0                 ; 1                   ; 0                  ; 0               ; 1              ;
+; cur_state.low_clk    ; 0                  ; 0                  ; 0                    ; 0                  ; 1                 ; 0                   ; 0                  ; 0               ; 1              ;
+; cur_state.chk_data   ; 0                  ; 0                  ; 0                    ; 1                  ; 0                 ; 0                   ; 0                  ; 0               ; 1              ;
+; cur_state.update_out ; 0                  ; 0                  ; 1                    ; 0                  ; 0                 ; 0                   ; 0                  ; 0               ; 1              ;
+; cur_state.tell_out   ; 0                  ; 1                  ; 0                    ; 0                  ; 0                 ; 0                   ; 0                  ; 0               ; 1              ;
+; cur_state.last_low   ; 1                  ; 0                  ; 0                    ; 0                  ; 0                 ; 0                   ; 0                  ; 0               ; 1              ;
++----------------------+--------------------+--------------------+----------------------+--------------------+-------------------+---------------------+--------------------+-----------------+----------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |COMPLETE_PROJECT|Transmitter:inst|U2M:inst21|kbd:inst1|byterec:byte_receiver|present_state                                                                                                                                                                                         ;
++------------------------------+------------------------------+----------------------------+--------------------------+------------------------+-------------------------+--------------------------+------------------------+------------------------+--------------------------+--------------------+
+; Name                         ; present_state.sample_ext_rel ; present_state.wait_ext_rel ; present_state.sample_ext ; present_state.wait_ext ; present_state.new_break ; present_state.sample_rel ; present_state.wait_rel ; present_state.new_make ; present_state.sample_nor ; present_state.idle ;
++------------------------------+------------------------------+----------------------------+--------------------------+------------------------+-------------------------+--------------------------+------------------------+------------------------+--------------------------+--------------------+
+; present_state.idle           ; 0                            ; 0                          ; 0                        ; 0                      ; 0                       ; 0                        ; 0                      ; 0                      ; 0                        ; 0                  ;
+; present_state.sample_nor     ; 0                            ; 0                          ; 0                        ; 0                      ; 0                       ; 0                        ; 0                      ; 0                      ; 1                        ; 1                  ;
+; present_state.new_make       ; 0                            ; 0                          ; 0                        ; 0                      ; 0                       ; 0                        ; 0                      ; 1                      ; 0                        ; 1                  ;
+; present_state.wait_rel       ; 0                            ; 0                          ; 0                        ; 0                      ; 0                       ; 0                        ; 1                      ; 0                      ; 0                        ; 1                  ;
+; present_state.sample_rel     ; 0                            ; 0                          ; 0                        ; 0                      ; 0                       ; 1                        ; 0                      ; 0                      ; 0                        ; 1                  ;
+; present_state.new_break      ; 0                            ; 0                          ; 0                        ; 0                      ; 1                       ; 0                        ; 0                      ; 0                      ; 0                        ; 1                  ;
+; present_state.wait_ext       ; 0                            ; 0                          ; 0                        ; 1                      ; 0                       ; 0                        ; 0                      ; 0                      ; 0                        ; 1                  ;
+; present_state.sample_ext     ; 0                            ; 0                          ; 1                        ; 0                      ; 0                       ; 0                        ; 0                      ; 0                      ; 0                        ; 1                  ;
+; present_state.wait_ext_rel   ; 0                            ; 1                          ; 0                        ; 0                      ; 0                       ; 0                        ; 0                      ; 0                      ; 0                        ; 1                  ;
+; present_state.sample_ext_rel ; 1                            ; 0                          ; 0                        ; 0                      ; 0                       ; 0                        ; 0                      ; 0                      ; 0                        ; 1                  ;
++------------------------------+------------------------------+----------------------------+--------------------------+------------------------+-------------------------+--------------------------+------------------------+------------------------+--------------------------+--------------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------+
+; State Machine - |COMPLETE_PROJECT|Transmitter:inst|MORSE2FREQ:inst|StateMachinefin:inst|state ;
++-------------+-------------+-----------+-----------+-------------------------------------------+
+; Name        ; state.space ; state.dot ; state.kav ; state.idle                                ;
++-------------+-------------+-----------+-----------+-------------------------------------------+
+; state.idle  ; 0           ; 0         ; 0         ; 0                                         ;
+; state.kav   ; 0           ; 0         ; 1         ; 1                                         ;
+; state.dot   ; 0           ; 1         ; 0         ; 1                                         ;
+; state.space ; 1           ; 0         ; 0         ; 1                                         ;
++-------------+-------------+-----------+-----------+-------------------------------------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------+
+; State Machine - |COMPLETE_PROJECT|Reciever:inst23|SIN2FREQ:inst20|f_finder_fin:inst|state           ;
++-----------------+--------------+-----------+------------+------------+-----------------+------------+
+; Name            ; state.silent ; state.fin ; state.rise ; state.fall ; state.first_seq ; state.idle ;
++-----------------+--------------+-----------+------------+------------+-----------------+------------+
+; state.idle      ; 0            ; 0         ; 0          ; 0          ; 0               ; 0          ;
+; state.first_seq ; 0            ; 0         ; 0          ; 0          ; 1               ; 1          ;
+; state.fall      ; 0            ; 0         ; 0          ; 1          ; 0               ; 1          ;
+; state.rise      ; 0            ; 0         ; 1          ; 0          ; 0               ; 1          ;
+; state.fin       ; 0            ; 1         ; 0          ; 0          ; 0               ; 1          ;
+; state.silent    ; 1            ; 0         ; 0          ; 0          ; 0               ; 1          ;
++-----------------+--------------+-----------+------------+------------+-----------------+------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------+
+; State Machine - |COMPLETE_PROJECT|Reciever:inst23|freq2morse_SM_final:inst9|state ;
++------------+-----------+-----------+-----------+----------------------------------+
+; Name       ; state.fin ; state.dot ; state.kav ; state.idle                       ;
++------------+-----------+-----------+-----------+----------------------------------+
+; state.idle ; 0         ; 0         ; 0         ; 0                                ;
+; state.kav  ; 0         ; 0         ; 1         ; 1                                ;
+; state.dot  ; 0         ; 1         ; 0         ; 1                                ;
+; state.fin  ; 1         ; 0         ; 0         ; 1                                ;
++------------+-----------+-----------+-----------+----------------------------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------+
+; State Machine - |COMPLETE_PROJECT|Reciever:inst23|2LCD:inst18|LCD:inst8|state   ;
++------------------+------------+-------------+------------------+----------------+
+; Name             ; state.send ; state.ready ; state.initialize ; state.power_up ;
++------------------+------------+-------------+------------------+----------------+
+; state.power_up   ; 0          ; 0           ; 0                ; 0              ;
+; state.initialize ; 0          ; 0           ; 1                ; 1              ;
+; state.ready      ; 0          ; 1           ; 0                ; 1              ;
+; state.send       ; 1          ; 0           ; 0                ; 1              ;
++------------------+------------+-------------+------------------+----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                     ;
++----------------------------------------------------------------------+---------------------------------------------------------------------------------+
+; Register name                                                        ; Reason for Removal                                                              ;
++----------------------------------------------------------------------+---------------------------------------------------------------------------------+
+; Reciever:inst23|SIN2FREQ:inst20|f_finder_fin:inst|n[8]               ; Stuck at GND due to stuck port data_in                                          ;
+; Reciever:inst23|2LCD:inst18|LCD_Table:inst2|dout[7]                  ; Stuck at GND due to stuck port data_in                                          ;
+; Reciever:inst23|2LCD:inst18|LCD_Table:inst2|dout[0..6]               ; Lost fanout                                                                     ;
+; Reciever:inst23|SIN2FREQ:inst20|CLOSE_f_paramFin:inst15|fin_param[0] ; Lost fanout                                                                     ;
+; Reciever:inst23|2LCD:inst18|LCD_Table:inst2|dout[0]~18               ; Merged with Reciever:inst23|2LCD:inst18|LCD_Table:inst2|dout[1]~15              ;
+; Reciever:inst23|2LCD:inst18|LCD_Table:inst2|dout[1]~15               ; Merged with Reciever:inst23|2LCD:inst18|LCD_Table:inst2|dout[2]~12              ;
+; Reciever:inst23|2LCD:inst18|LCD_Table:inst2|dout[2]~12               ; Merged with Reciever:inst23|2LCD:inst18|LCD_Table:inst2|dout[3]~9               ;
+; Reciever:inst23|2LCD:inst18|LCD_Table:inst2|dout[3]~9                ; Merged with Reciever:inst23|2LCD:inst18|LCD_Table:inst2|dout[4]~6               ;
+; Reciever:inst23|2LCD:inst18|LCD_Table:inst2|dout[4]~6                ; Merged with Reciever:inst23|2LCD:inst18|LCD_Table:inst2|dout[5]~3               ;
+; Reciever:inst23|2LCD:inst18|LCD_Table:inst2|dout[5]~3                ; Merged with Reciever:inst23|2LCD:inst18|LCD_Table:inst2|dout[6]~0               ;
+; Reciever:inst23|2LCD:inst18|LCD_Table:inst2|dout[5]~5                ; Merged with Reciever:inst23|2LCD:inst18|LCD_Table:inst2|dout[6]~2               ;
+; Reciever:inst23|2LCD:inst18|LCD_Table:inst2|dout[4]~8                ; Merged with Reciever:inst23|2LCD:inst18|LCD_Table:inst2|dout[6]~2               ;
+; Reciever:inst23|2LCD:inst18|LCD_Table:inst2|dout[3]~11               ; Merged with Reciever:inst23|2LCD:inst18|LCD_Table:inst2|dout[6]~2               ;
+; Reciever:inst23|2LCD:inst18|LCD_Table:inst2|dout[2]~14               ; Merged with Reciever:inst23|2LCD:inst18|LCD_Table:inst2|dout[6]~2               ;
+; Reciever:inst23|2LCD:inst18|LCD_Table:inst2|dout[1]~17               ; Merged with Reciever:inst23|2LCD:inst18|LCD_Table:inst2|dout[6]~2               ;
+; Reciever:inst23|2LCD:inst18|LCD_Table:inst2|dout[0]~20               ; Merged with Reciever:inst23|2LCD:inst18|LCD_Table:inst2|dout[6]~2               ;
+; Reciever:inst23|SIN2FREQ:inst20|f_finder_fin:inst|state.silent       ; Stuck at GND due to stuck port data_in                                          ;
+; Transmitter:inst|MORSE2FREQ:inst|Clk_Divider:inst5|clk_div_param[0]  ; Merged with Transmitter:inst|MORSE2FREQ:inst|Clk_Divider:inst6|clk_div_param[0] ;
+; Transmitter:inst|MORSE2FREQ:inst|Clk_Divider:inst7|clk_div_param[0]  ; Merged with Transmitter:inst|MORSE2FREQ:inst|Clk_Divider:inst6|clk_div_param[0] ;
+; Transmitter:inst|MORSE2FREQ:inst|Clk_Divider:inst5|clk_div_param[1]  ; Merged with Transmitter:inst|MORSE2FREQ:inst|Clk_Divider:inst6|clk_div_param[1] ;
+; Transmitter:inst|MORSE2FREQ:inst|Clk_Divider:inst7|clk_div_param[1]  ; Merged with Transmitter:inst|MORSE2FREQ:inst|Clk_Divider:inst6|clk_div_param[1] ;
+; MSS_XTRCT:inst24|MSS_Core:inst|S_DAC_Interface:U4|nx44356z3          ; Stuck at GND due to stuck port data_in                                          ;
+; MSS_XTRCT:inst24|MSS_Core:inst|S_DAC_Interface:U4|nx39371z3          ; Stuck at GND due to stuck port data_in                                          ;
+; MSS_XTRCT:inst24|MSS_Core:inst|S_DAC_Interface:U4|nx41365z3          ; Stuck at GND due to stuck port data_in                                          ;
+; MSS_XTRCT:inst24|MSS_Core:inst|S_DAC_Interface:U4|nx42362z3          ; Stuck at GND due to stuck port data_in                                          ;
+; MSS_XTRCT:inst24|MSS_Core:inst|S_DAC_Interface:U4|nx43359z3          ; Stuck at GND due to stuck port data_in                                          ;
+; Reciever:inst23|2LCD:inst18|LCD:inst8|rw                             ; Stuck at GND due to stuck port data_in                                          ;
+; Total Number of Removed Registers = 33                               ;                                                                                 ;
++----------------------------------------------------------------------+---------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 636   ;
+; Number of registers using Synchronous Clear  ; 89    ;
+; Number of registers using Synchronous Load   ; 44    ;
+; Number of registers using Asynchronous Clear ; 590   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 386   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                   ;
++----------------------------------------------------------------------+---------+
+; Inverted Register                                                    ; Fan out ;
++----------------------------------------------------------------------+---------+
+; Reciever:inst23|2LCD:inst18|LCD_Table:inst2|dout[6]~0                ; 1       ;
+; Reciever:inst23|SIN2FREQ:inst20|CLOSE_f_paramFin:inst15|fin_param[2] ; 9       ;
+; Transmitter:inst|MORSE2FREQ:inst|Clk_Divider:inst6|clk_div_param[1]  ; 4       ;
+; Transmitter:inst|MORSE2FREQ:inst|Clk_Divider:inst6|clk_div_param[0]  ; 5       ;
+; Transmitter:inst|MORSE2FREQ:inst|Clk_Divider:inst5|clk_div_param[7]  ; 2       ;
+; Transmitter:inst|MORSE2FREQ:inst|Clk_Divider:inst5|clk_div_param[5]  ; 2       ;
+; Transmitter:inst|MORSE2FREQ:inst|Clk_Divider:inst7|clk_div_param[6]  ; 2       ;
+; Transmitter:inst|MORSE2FREQ:inst|Clk_Divider:inst7|clk_div_param[3]  ; 2       ;
+; Transmitter:inst|MORSE2FREQ:inst|Clk_Divider:inst6|clk_div_param[7]  ; 2       ;
+; Transmitter:inst|MORSE2FREQ:inst|Clk_Divider:inst6|clk_div_param[6]  ; 2       ;
+; Transmitter:inst|MORSE2FREQ:inst|Clk_Divider:inst4|clk_div_param[6]  ; 2       ;
+; Transmitter:inst|MORSE2FREQ:inst|Clk_Divider:inst4|clk_div_param[2]  ; 2       ;
+; Transmitter:inst|MORSE2FREQ:inst|Clk_Divider:inst4|clk_div_param[1]  ; 2       ;
+; MSS_XTRCT:inst24|MSS_Core:inst|ADC_DATA_USER_obuf_7_~DFFDATAOUT      ; 1       ;
+; Total number of inverted registers = 14                              ;         ;
++----------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions                                                                       ;
++--------------------------------------------------------+----------------------------------------------------+------+
+; Register Name                                          ; Megafunction                                       ; Type ;
++--------------------------------------------------------+----------------------------------------------------+------+
+; Reciever:inst23|2LCD:inst18|LCD_Table:inst2|dout[6]~1  ; Reciever:inst23|2LCD:inst18|LCD_Table:inst2|Mux0~0 ; ROM  ;
+; Reciever:inst23|2LCD:inst18|LCD_Table:inst2|dout[5]~4  ; Reciever:inst23|2LCD:inst18|LCD_Table:inst2|Mux0~0 ; ROM  ;
+; Reciever:inst23|2LCD:inst18|LCD_Table:inst2|dout[4]~7  ; Reciever:inst23|2LCD:inst18|LCD_Table:inst2|Mux0~0 ; ROM  ;
+; Reciever:inst23|2LCD:inst18|LCD_Table:inst2|dout[3]~10 ; Reciever:inst23|2LCD:inst18|LCD_Table:inst2|Mux0~0 ; ROM  ;
+; Reciever:inst23|2LCD:inst18|LCD_Table:inst2|dout[2]~13 ; Reciever:inst23|2LCD:inst18|LCD_Table:inst2|Mux0~0 ; ROM  ;
+; Reciever:inst23|2LCD:inst18|LCD_Table:inst2|dout[1]~16 ; Reciever:inst23|2LCD:inst18|LCD_Table:inst2|Mux0~0 ; ROM  ;
+; Reciever:inst23|2LCD:inst18|LCD_Table:inst2|dout[0]~19 ; Reciever:inst23|2LCD:inst18|LCD_Table:inst2|Mux0~0 ; ROM  ;
++--------------------------------------------------------+----------------------------------------------------+------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------+
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |COMPLETE_PROJECT|Transmitter:inst|U2M:inst21|kbd:inst1|bitrec:bit_receiver|shift_reg[7] ;
+; 3:1                ; 30 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; Yes        ; |COMPLETE_PROJECT|Transmitter:inst|U2M:inst21|ENABLE_TRANS:inst2|counter[18]             ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |COMPLETE_PROJECT|Reciever:inst23|2LCD:inst18|LCD:inst8|letter_count[14]                 ;
+; 7:1                ; 29 bits   ; 116 LEs       ; 58 LEs               ; 58 LEs                 ; Yes        ; |COMPLETE_PROJECT|MultiTurbo_F_div_quater:inst28|one_sec[6]                              ;
+; 7:1                ; 20 bits   ; 80 LEs        ; 20 LEs               ; 60 LEs                 ; Yes        ; |COMPLETE_PROJECT|Reciever:inst23|SIN2FREQ:inst20|f_finder_fin:inst|count_high[13]       ;
+; 8:1                ; 20 bits   ; 100 LEs       ; 20 LEs               ; 80 LEs                 ; Yes        ; |COMPLETE_PROJECT|Reciever:inst23|SIN2FREQ:inst20|f_finder_fin:inst|count_low[16]        ;
+; 8:1                ; 3 bits    ; 15 LEs        ; 3 LEs                ; 12 LEs                 ; Yes        ; |COMPLETE_PROJECT|Reciever:inst23|freq2morse_SM_final:inst9|inflen[1]                    ;
+; 14:1               ; 31 bits   ; 279 LEs       ; 31 LEs               ; 248 LEs                ; Yes        ; |COMPLETE_PROJECT|Reciever:inst23|2LCD:inst18|LCD:inst8|clk_count[25]                    ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |COMPLETE_PROJECT|Transmitter:inst|U2M:inst21|ENABLE_TRANS:inst2|counter[31]             ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |COMPLETE_PROJECT|Transmitter:inst|MORSE2FREQ:inst|StateMachinefin:inst|Add0             ;
+; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; No         ; |COMPLETE_PROJECT|Reciever:inst23|SIN2FREQ:inst20|f_finder_fin:inst|count_tone           ;
+; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; No         ; |COMPLETE_PROJECT|Reciever:inst23|SIN2FREQ:inst20|f_finder_fin:inst|count_ttwo           ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |COMPLETE_PROJECT|Reciever:inst23|freq2morse_SM_final:inst9|morsi                        ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |COMPLETE_PROJECT|Reciever:inst23|SIN2FREQ:inst20|f_finder_fin:inst|count_t              ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; No         ; |COMPLETE_PROJECT|Reciever:inst23|freq2morse_SM_final:inst9|state                        ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 10 LEs               ; 2 LEs                  ; No         ; |COMPLETE_PROJECT|Transmitter:inst|MORSE2FREQ:inst|StateMachinefin:inst|state            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for MSS_XTRCT:inst24|MSS_Core:inst|P_DAC_Interface:U3|altsyncram:U1_altsyncram_component|altsyncram_gp81:auto_generated ;
++---------------------------------+--------------------+------+------------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                           ;
++---------------------------------+--------------------+------+------------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                            ;
++---------------------------------+--------------------+------+------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for MSS_XTRCT:inst24|MSS_Core:inst|P_DAC_Interface:U3|altsyncram:U2_altsyncram_component|altsyncram_gp81:auto_generated ;
++---------------------------------+--------------------+------+------------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                           ;
++---------------------------------+--------------------+------+------------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                            ;
++---------------------------------+--------------------+------+------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for MSS_XTRCT:inst24|MSS_Core:inst|S_DAC_Interface:U4|altsyncram:U2_altsyncram_component|altsyncram_jp81:auto_generated ;
++---------------------------------+--------------------+------+------------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                           ;
++---------------------------------+--------------------+------+------------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                            ;
++---------------------------------+--------------------+------+------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Source assignments for Transmitter:inst|FREQ2SIN:inst31|counter256:inst7|lpm_counter:lpm_counter_component ;
++---------------------------+-------+------+-----------------------------------------------------------------+
+; Assignment                ; Value ; From ; To                                                              ;
++---------------------------+-------+------+-----------------------------------------------------------------+
+; SUPPRESS_DA_RULE_INTERNAL ; a101  ; -    ; -                                                               ;
+; SUPPRESS_DA_RULE_INTERNAL ; s102  ; -    ; -                                                               ;
+; SUPPRESS_DA_RULE_INTERNAL ; s103  ; -    ; -                                                               ;
++---------------------------+-------+------+-----------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for Reciever:inst23|2LCD:inst18|LCD_Table:inst2|altsyncram:Mux0_rtl_0|altsyncram_d901:auto_generated ;
++---------------------------------+--------------------+------+-----------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                        ;
++---------------------------------+--------------------+------+-----------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                         ;
++---------------------------------+--------------------+------+-----------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MSS_XTRCT:inst24|MSS_Core:inst|P_DAC_Interface:U3|altsyncram:U1_altsyncram_component ;
++------------------------------------+----------------------+-----------------------------------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                                                  ;
++------------------------------------+----------------------+-----------------------------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                                               ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                                            ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                                          ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                                          ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                                        ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                                               ;
+; OPERATION_MODE                     ; ROM                  ; Untyped                                                               ;
+; WIDTH_A                            ; 8                    ; Untyped                                                               ;
+; WIDTHAD_A                          ; 8                    ; Untyped                                                               ;
+; NUMWORDS_A                         ; 256                  ; Untyped                                                               ;
+; OUTDATA_REG_A                      ; CLOCK0               ; Untyped                                                               ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                                               ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                                               ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                                               ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                                               ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                                               ;
+; WIDTH_B                            ; 1                    ; Untyped                                                               ;
+; WIDTHAD_B                          ; 1                    ; Untyped                                                               ;
+; NUMWORDS_B                         ; 1                    ; Untyped                                                               ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                                               ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                                               ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                                               ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                                               ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                                               ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                                               ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                                               ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                               ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                                               ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                                               ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                               ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                                               ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                                                               ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                                               ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                                               ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                                               ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                                               ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                                               ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                                               ;
+; INIT_FILE                          ; PDAC_conv_table.hex  ; Untyped                                                               ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                                               ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                                               ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                                                               ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                                               ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                                                               ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                                               ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                                               ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                                               ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                                               ;
+; DEVICE_FAMILY                      ; Cyclone II           ; Untyped                                                               ;
+; CBXI_PARAMETER                     ; altsyncram_gp81      ; Untyped                                                               ;
++------------------------------------+----------------------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MSS_XTRCT:inst24|MSS_Core:inst|P_DAC_Interface:U3|altsyncram:U2_altsyncram_component ;
++------------------------------------+----------------------+-----------------------------------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                                                  ;
++------------------------------------+----------------------+-----------------------------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                                               ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                                            ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                                          ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                                          ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                                        ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                                               ;
+; OPERATION_MODE                     ; ROM                  ; Untyped                                                               ;
+; WIDTH_A                            ; 8                    ; Untyped                                                               ;
+; WIDTHAD_A                          ; 8                    ; Untyped                                                               ;
+; NUMWORDS_A                         ; 256                  ; Untyped                                                               ;
+; OUTDATA_REG_A                      ; CLOCK0               ; Untyped                                                               ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                                               ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                                               ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                                               ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                                               ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                                               ;
+; WIDTH_B                            ; 1                    ; Untyped                                                               ;
+; WIDTHAD_B                          ; 1                    ; Untyped                                                               ;
+; NUMWORDS_B                         ; 1                    ; Untyped                                                               ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                                               ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                                               ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                                               ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                                               ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                                               ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                                               ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                                               ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                               ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                                               ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                                               ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                               ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                                               ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                                                               ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                                               ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                                               ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                                               ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                                               ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                                               ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                                               ;
+; INIT_FILE                          ; PDAC_conv_table.hex  ; Untyped                                                               ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                                               ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                                               ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                                                               ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                                               ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                                                               ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                                               ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                                               ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                                               ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                                               ;
+; DEVICE_FAMILY                      ; Cyclone II           ; Untyped                                                               ;
+; CBXI_PARAMETER                     ; altsyncram_gp81      ; Untyped                                                               ;
++------------------------------------+----------------------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MSS_XTRCT:inst24|MSS_Core:inst|S_DAC_Interface:U4|altsyncram:U2_altsyncram_component ;
++------------------------------------+----------------------+-----------------------------------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                                                  ;
++------------------------------------+----------------------+-----------------------------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                                               ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                                            ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                                          ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                                          ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                                        ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                                               ;
+; OPERATION_MODE                     ; ROM                  ; Untyped                                                               ;
+; WIDTH_A                            ; 8                    ; Untyped                                                               ;
+; WIDTHAD_A                          ; 8                    ; Untyped                                                               ;
+; NUMWORDS_A                         ; 256                  ; Untyped                                                               ;
+; OUTDATA_REG_A                      ; CLOCK0               ; Untyped                                                               ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                                               ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                                               ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                                               ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                                               ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                                               ;
+; WIDTH_B                            ; 1                    ; Untyped                                                               ;
+; WIDTHAD_B                          ; 1                    ; Untyped                                                               ;
+; NUMWORDS_B                         ; 1                    ; Untyped                                                               ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                                               ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                                               ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                                               ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                                               ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                                               ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                                               ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                                               ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                               ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                                               ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                                               ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                               ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                                               ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                                                               ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                                               ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                                               ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                                               ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                                               ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                                               ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                                               ;
+; INIT_FILE                          ; SDAC_conv_table.hex  ; Untyped                                                               ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                                               ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                                               ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                                                               ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                                               ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                                                               ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                                               ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                                               ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                                               ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                                               ;
+; DEVICE_FAMILY                      ; Cyclone II           ; Untyped                                                               ;
+; CBXI_PARAMETER                     ; altsyncram_jp81      ; Untyped                                                               ;
++------------------------------------+----------------------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Transmitter:inst|FREQ2SIN:inst31|counter256:inst7|lpm_counter:lpm_counter_component ;
++------------------------+-------------+-------------------------------------------------------------------------------------------+
+; Parameter Name         ; Value       ; Type                                                                                      ;
++------------------------+-------------+-------------------------------------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                                                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                                                              ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                                                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                                                            ;
+; LPM_WIDTH              ; 8           ; Signed Integer                                                                            ;
+; LPM_DIRECTION          ; UP          ; Untyped                                                                                   ;
+; LPM_MODULUS            ; 0           ; Untyped                                                                                   ;
+; LPM_AVALUE             ; UNUSED      ; Untyped                                                                                   ;
+; LPM_SVALUE             ; UNUSED      ; Untyped                                                                                   ;
+; LPM_PORT_UPDOWN        ; PORT_UNUSED ; Untyped                                                                                   ;
+; DEVICE_FAMILY          ; Cyclone II  ; Untyped                                                                                   ;
+; CARRY_CHAIN            ; MANUAL      ; Untyped                                                                                   ;
+; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH                                                                        ;
+; NOT_GATE_PUSH_BACK     ; ON          ; NOT_GATE_PUSH_BACK                                                                        ;
+; CARRY_CNT_EN           ; SMART       ; Untyped                                                                                   ;
+; LABWIDE_SCLR           ; ON          ; Untyped                                                                                   ;
+; USE_NEW_VERSION        ; TRUE        ; Untyped                                                                                   ;
+; CBXI_PARAMETER         ; cntr_1cj    ; Untyped                                                                                   ;
++------------------------+-------------+-------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Transmitter:inst|MORSE2FREQ:inst|mux2:inst12|LPM_MUX:lpm_mux_component ;
++------------------------+------------+-------------------------------------------------------------------------------+
+; Parameter Name         ; Value      ; Type                                                                          ;
++------------------------+------------+-------------------------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON         ; AUTO_CARRY                                                                    ;
+; IGNORE_CARRY_BUFFERS   ; OFF        ; IGNORE_CARRY                                                                  ;
+; AUTO_CASCADE_CHAINS    ; ON         ; AUTO_CASCADE                                                                  ;
+; IGNORE_CASCADE_BUFFERS ; OFF        ; IGNORE_CASCADE                                                                ;
+; LPM_WIDTH              ; 1          ; Signed Integer                                                                ;
+; LPM_SIZE               ; 2          ; Signed Integer                                                                ;
+; LPM_WIDTHS             ; 1          ; Signed Integer                                                                ;
+; LPM_PIPELINE           ; 0          ; Signed Integer                                                                ;
+; CBXI_PARAMETER         ; mux_03e    ; Untyped                                                                       ;
+; DEVICE_FAMILY          ; Cyclone II ; Untyped                                                                       ;
++------------------------+------------+-------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Transmitter:inst|MORSE2FREQ:inst|mux4to1:inst21|LPM_MUX:lpm_mux_component ;
++------------------------+------------+----------------------------------------------------------------------------------+
+; Parameter Name         ; Value      ; Type                                                                             ;
++------------------------+------------+----------------------------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON         ; AUTO_CARRY                                                                       ;
+; IGNORE_CARRY_BUFFERS   ; OFF        ; IGNORE_CARRY                                                                     ;
+; AUTO_CASCADE_CHAINS    ; ON         ; AUTO_CASCADE                                                                     ;
+; IGNORE_CASCADE_BUFFERS ; OFF        ; IGNORE_CASCADE                                                                   ;
+; LPM_WIDTH              ; 1          ; Signed Integer                                                                   ;
+; LPM_SIZE               ; 4          ; Signed Integer                                                                   ;
+; LPM_WIDTHS             ; 2          ; Signed Integer                                                                   ;
+; LPM_PIPELINE           ; 1          ; Signed Integer                                                                   ;
+; CBXI_PARAMETER         ; mux_gke    ; Untyped                                                                          ;
+; DEVICE_FAMILY          ; Cyclone II ; Untyped                                                                          ;
++------------------------+------------+----------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Transmitter:inst|MORSE2FREQ:inst|Clk_Divider:inst4 ;
++----------------+-------+------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                   ;
++----------------+-------+------------------------------------------------------------------------+
+; div            ; 70    ; Untyped                                                                ;
++----------------+-------+------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Transmitter:inst|MORSE2FREQ:inst|Clk_Divider:inst7 ;
++----------------+-------+------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                   ;
++----------------+-------+------------------------------------------------------------------------+
+; div            ; 75    ; Untyped                                                                ;
++----------------+-------+------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Transmitter:inst|MORSE2FREQ:inst|Clk_Divider:inst5 ;
++----------------+-------+------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                   ;
++----------------+-------+------------------------------------------------------------------------+
+; div            ; 163   ; Untyped                                                                ;
++----------------+-------+------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Transmitter:inst|MORSE2FREQ:inst|Clk_Divider:inst6 ;
++----------------+-------+------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                   ;
++----------------+-------+------------------------------------------------------------------------+
+; div            ; 195   ; Untyped                                                                ;
++----------------+-------+------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Transmitter:inst|U2M:inst21|KBD:inst1|lpf:cleaner ;
++----------------+-------+-----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                  ;
++----------------+-------+-----------------------------------------------------------------------+
+; width          ; 4     ; Untyped                                                               ;
++----------------+-------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Reciever:inst23|2LCD:inst18|LCD_Table:inst2|altsyncram:Mux0_rtl_0 ;
++------------------------------------+----------------------------------+--------------------------------------------+
+; Parameter Name                     ; Value                            ; Type                                       ;
++------------------------------------+----------------------------------+--------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                                ; Untyped                                    ;
+; AUTO_CARRY_CHAINS                  ; ON                               ; AUTO_CARRY                                 ;
+; IGNORE_CARRY_BUFFERS               ; OFF                              ; IGNORE_CARRY                               ;
+; AUTO_CASCADE_CHAINS                ; ON                               ; AUTO_CASCADE                               ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                              ; IGNORE_CASCADE                             ;
+; WIDTH_BYTEENA                      ; 1                                ; Untyped                                    ;
+; OPERATION_MODE                     ; ROM                              ; Untyped                                    ;
+; WIDTH_A                            ; 7                                ; Untyped                                    ;
+; WIDTHAD_A                          ; 8                                ; Untyped                                    ;
+; NUMWORDS_A                         ; 256                              ; Untyped                                    ;
+; OUTDATA_REG_A                      ; UNREGISTERED                     ; Untyped                                    ;
+; ADDRESS_ACLR_A                     ; NONE                             ; Untyped                                    ;
+; OUTDATA_ACLR_A                     ; NONE                             ; Untyped                                    ;
+; WRCONTROL_ACLR_A                   ; NONE                             ; Untyped                                    ;
+; INDATA_ACLR_A                      ; NONE                             ; Untyped                                    ;
+; BYTEENA_ACLR_A                     ; NONE                             ; Untyped                                    ;
+; WIDTH_B                            ; 1                                ; Untyped                                    ;
+; WIDTHAD_B                          ; 1                                ; Untyped                                    ;
+; NUMWORDS_B                         ; 1                                ; Untyped                                    ;
+; INDATA_REG_B                       ; CLOCK1                           ; Untyped                                    ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                           ; Untyped                                    ;
+; RDCONTROL_REG_B                    ; CLOCK1                           ; Untyped                                    ;
+; ADDRESS_REG_B                      ; CLOCK1                           ; Untyped                                    ;
+; OUTDATA_REG_B                      ; UNREGISTERED                     ; Untyped                                    ;
+; BYTEENA_REG_B                      ; CLOCK1                           ; Untyped                                    ;
+; INDATA_ACLR_B                      ; NONE                             ; Untyped                                    ;
+; WRCONTROL_ACLR_B                   ; NONE                             ; Untyped                                    ;
+; ADDRESS_ACLR_B                     ; NONE                             ; Untyped                                    ;
+; OUTDATA_ACLR_B                     ; NONE                             ; Untyped                                    ;
+; RDCONTROL_ACLR_B                   ; NONE                             ; Untyped                                    ;
+; BYTEENA_ACLR_B                     ; NONE                             ; Untyped                                    ;
+; WIDTH_BYTEENA_A                    ; 1                                ; Untyped                                    ;
+; WIDTH_BYTEENA_B                    ; 1                                ; Untyped                                    ;
+; RAM_BLOCK_TYPE                     ; AUTO                             ; Untyped                                    ;
+; BYTE_SIZE                          ; 8                                ; Untyped                                    ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                        ; Untyped                                    ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ             ; Untyped                                    ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ             ; Untyped                                    ;
+; INIT_FILE                          ; please.COMPLETE_PROJECT0.rtl.mif ; Untyped                                    ;
+; INIT_FILE_LAYOUT                   ; PORT_A                           ; Untyped                                    ;
+; MAXIMUM_DEPTH                      ; 0                                ; Untyped                                    ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                           ; Untyped                                    ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                           ; Untyped                                    ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                           ; Untyped                                    ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                           ; Untyped                                    ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                  ; Untyped                                    ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                  ; Untyped                                    ;
+; ENABLE_ECC                         ; FALSE                            ; Untyped                                    ;
+; DEVICE_FAMILY                      ; Cyclone II                       ; Untyped                                    ;
+; CBXI_PARAMETER                     ; altsyncram_d901                  ; Untyped                                    ;
++------------------------------------+----------------------------------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                                                 ;
++-------------------------------------------+--------------------------------------------------------------------------------------+
+; Name                                      ; Value                                                                                ;
++-------------------------------------------+--------------------------------------------------------------------------------------+
+; Number of entity instances                ; 4                                                                                    ;
+; Entity Instance                           ; MSS_XTRCT:inst24|MSS_Core:inst|P_DAC_Interface:U3|altsyncram:U1_altsyncram_component ;
+;     -- OPERATION_MODE                     ; ROM                                                                                  ;
+;     -- WIDTH_A                            ; 8                                                                                    ;
+;     -- NUMWORDS_A                         ; 256                                                                                  ;
+;     -- OUTDATA_REG_A                      ; CLOCK0                                                                               ;
+;     -- WIDTH_B                            ; 1                                                                                    ;
+;     -- NUMWORDS_B                         ; 1                                                                                    ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                                               ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                                         ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                                 ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                            ;
+; Entity Instance                           ; MSS_XTRCT:inst24|MSS_Core:inst|P_DAC_Interface:U3|altsyncram:U2_altsyncram_component ;
+;     -- OPERATION_MODE                     ; ROM                                                                                  ;
+;     -- WIDTH_A                            ; 8                                                                                    ;
+;     -- NUMWORDS_A                         ; 256                                                                                  ;
+;     -- OUTDATA_REG_A                      ; CLOCK0                                                                               ;
+;     -- WIDTH_B                            ; 1                                                                                    ;
+;     -- NUMWORDS_B                         ; 1                                                                                    ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                                               ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                                         ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                                 ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                            ;
+; Entity Instance                           ; MSS_XTRCT:inst24|MSS_Core:inst|S_DAC_Interface:U4|altsyncram:U2_altsyncram_component ;
+;     -- OPERATION_MODE                     ; ROM                                                                                  ;
+;     -- WIDTH_A                            ; 8                                                                                    ;
+;     -- NUMWORDS_A                         ; 256                                                                                  ;
+;     -- OUTDATA_REG_A                      ; CLOCK0                                                                               ;
+;     -- WIDTH_B                            ; 1                                                                                    ;
+;     -- NUMWORDS_B                         ; 1                                                                                    ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                                               ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                                         ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                                 ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                            ;
+; Entity Instance                           ; Reciever:inst23|2LCD:inst18|LCD_Table:inst2|altsyncram:Mux0_rtl_0                    ;
+;     -- OPERATION_MODE                     ; ROM                                                                                  ;
+;     -- WIDTH_A                            ; 7                                                                                    ;
+;     -- NUMWORDS_A                         ; 256                                                                                  ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                                         ;
+;     -- WIDTH_B                            ; 1                                                                                    ;
+;     -- NUMWORDS_B                         ; 1                                                                                    ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                                               ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                                         ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                                 ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                            ;
++-------------------------------------------+--------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 9.1 Build 222 10/21/2009 SJ Full Version
+    Info: Processing started: Wed Jun 22 17:08:41 2016
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off please -c please
+Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info: Found 2 design units, including 1 entities, in source file sign2bin.vhd
+    Info: Found design unit 1: sign2bin-arc2
+    Info: Found entity 1: sign2bin
+Warning: Can't analyze file -- file half_full_wave_rect.vhd is missing
+Info: Found 1 design units, including 1 entities, in source file mss_basic.bdf
+    Info: Found entity 1: MSS_BASIC
+Info: Found 4 design units, including 4 entities, in source file mss_core.edf
+    Info: Found entity 1: modgen_counter_8_0
+    Info: Found entity 2: MSS_Core
+    Info: Found entity 3: P_DAC_Interface
+    Info: Found entity 4: S_DAC_Interface
+Info: Found 1 design units, including 1 entities, in source file mss_dr.bdf
+    Info: Found entity 1: MSS_dr
+Info: Found 1 design units, including 1 entities, in source file mss_xtrct.bdf
+    Info: Found entity 1: MSS_XTRCT
+Info: Found 2 design units, including 1 entities, in source file bin2sign.vhd
+    Info: Found design unit 1: bin2sign-arc1
+    Info: Found entity 1: bin2sign
+Warning: Can't analyze file -- file klita1.bdf is missing
+Info: Found 2 design units, including 1 entities, in source file freq2morse_sm_final.vhd
+    Info: Found design unit 1: freq2morse_SM_final-arc_freq2morse_SM_final
+    Info: Found entity 1: freq2morse_SM_final
+Info: Found 2 design units, including 1 entities, in source file turbo_f_div_quater.vhd
+    Info: Found design unit 1: Turbo_F_div_quater-arc_Turbo_F_div_quater
+    Info: Found entity 1: Turbo_F_div_quater
+Warning: Can't analyze file -- file klita2.bdf is missing
+Info: Found 2 design units, including 1 entities, in source file sosnotif.vhd
+    Info: Found design unit 1: sosnotif-arc_sosnotif
+    Info: Found entity 1: sosnotif
+Info: Found 2 design units, including 1 entities, in source file lcd.vhd
+    Info: Found design unit 1: LCD-controller
+    Info: Found entity 1: LCD
+Info: Found 2 design units, including 1 entities, in source file turbo_f_div_100k.vhd
+    Info: Found design unit 1: Turbo_F_div_100k-arc_Turbo_F_div_100k
+    Info: Found entity 1: Turbo_F_div_100k
+Info: Found 2 design units, including 1 entities, in source file f_finder_fin.vhd
+    Info: Found design unit 1: f_finder_fin-arc_f_finder_fin
+    Info: Found entity 1: f_finder_fin
+Warning: Can't analyze file -- file hister_pls.vhd is missing
+Warning: Can't analyze file -- file hister.vhd is missing
+Warning: Can't analyze file -- file klita3.bdf is missing
+Warning: Can't analyze file -- file hister4.vhd is missing
+Warning: Can't analyze file -- file hister5.vhd is missing
+Warning: Can't analyze file -- file f_finder10.vhd is missing
+Warning: Can't analyze file -- file f_finder.vhd is missing
+Info: Found 2 design units, including 1 entities, in source file multiturbo_f_div_quater.vhd
+    Info: Found design unit 1: MultiTurbo_F_div_quater-arc_MultiTurbo_F_div_quater
+    Info: Found entity 1: MultiTurbo_F_div_quater
+Info: Found 1 design units, including 1 entities, in source file for_signaltap.bdf
+    Info: Found entity 1: for_signalTap
+Warning: Can't analyze file -- file u2m2.bdf is missing
+Info: Found 2 design units, including 1 entities, in source file statemachinefin.vhd
+    Info: Found design unit 1: StateMachinefin-arc_StateMachinefin
+    Info: Found entity 1: StateMachinefin
+Warning: Can't analyze file -- file f_finderFin.vhd is missing
+Info: Found 2 design units, including 1 entities, in source file close_f_paramfin.vhd
+    Info: Found design unit 1: CLOSE_f_paramFin-arc_CLOSE_f_paramFin
+    Info: Found entity 1: CLOSE_f_paramFin
+Info: Found 2 design units, including 1 entities, in source file histereres.vhd
+    Info: Found design unit 1: Histereres-arc_Histereres
+    Info: Found entity 1: Histereres
+Warning: Can't analyze file -- file User to Morse.bdf is missing
+Info: Found 1 design units, including 1 entities, in source file u2m.bdf
+    Info: Found entity 1: U2M
+Info: Found 1 design units, including 1 entities, in source file 2lcd.bdf
+    Info: Found entity 1: 2LCD
+Info: Found 1 design units, including 1 entities, in source file sin2freq.bdf
+    Info: Found entity 1: SIN2FREQ
+Info: Found 1 design units, including 1 entities, in source file morse2freq.bdf
+    Info: Found entity 1: MORSE2FREQ
+Info: Found 1 design units, including 1 entities, in source file morse_schemat_blockim.bdf
+    Info: Found entity 1: Morse_schemat_blockim
+Info: Found 1 design units, including 1 entities, in source file transmitter.bdf
+    Info: Found entity 1: Transmitter
+Info: Found 1 design units, including 1 entities, in source file reciever.bdf
+    Info: Found entity 1: Reciever
+Info: Found 1 design units, including 1 entities, in source file complete_project.bdf
+    Info: Found entity 1: COMPLETE_PROJECT
+Info: Elaborating entity "COMPLETE_PROJECT" for the top level hierarchy
+Warning: Block or symbol "sosnotif" of instance "inst10" overlaps another block or symbol
+Info: Elaborating entity "Reciever" for hierarchy "Reciever:inst23"
+Info: Elaborating entity "2LCD" for hierarchy "Reciever:inst23|2LCD:inst18"
+Info: Elaborating entity "LCD" for hierarchy "Reciever:inst23|2LCD:inst18|LCD:inst8"
+Warning: Using design file lcd_table.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: LCD_Table-arch
+    Info: Found entity 1: LCD_Table
+Info: Elaborating entity "LCD_Table" for hierarchy "Reciever:inst23|2LCD:inst18|LCD_Table:inst2"
+Info: Elaborating entity "freq2morse_SM_final" for hierarchy "Reciever:inst23|freq2morse_SM_final:inst9"
+Warning (10492): VHDL Process Statement warning at freq2morse_sm_final.vhd(121): signal "finlen" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at freq2morse_sm_final.vhd(122): signal "morse_type" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at freq2morse_sm_final.vhd(123): signal "isfin" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info: Elaborating entity "SIN2FREQ" for hierarchy "Reciever:inst23|SIN2FREQ:inst20"
+Info: Elaborating entity "CLOSE_f_paramFin" for hierarchy "Reciever:inst23|SIN2FREQ:inst20|CLOSE_f_paramFin:inst15"
+Info: Elaborating entity "f_finder_fin" for hierarchy "Reciever:inst23|SIN2FREQ:inst20|f_finder_fin:inst"
+Info: Elaborating entity "Histereres" for hierarchy "Reciever:inst23|SIN2FREQ:inst20|Histereres:inst16"
+Info: Elaborating entity "MultiTurbo_F_div_quater" for hierarchy "MultiTurbo_F_div_quater:inst28"
+Warning (10542): VHDL Variable Declaration warning at MultiTurbo_F_div_quater.vhd(15): used initial value expression for variable "sec" because variable was never assigned a value
+Info: Elaborating entity "MSS_XTRCT" for hierarchy "MSS_XTRCT:inst24"
+Info: Elaborating entity "MSS_Core" for hierarchy "MSS_XTRCT:inst24|MSS_Core:inst"
+Info: Elaborating entity "modgen_counter_8_0" for hierarchy "MSS_XTRCT:inst24|MSS_Core:inst|modgen_counter_8_0:U1_modgen_counter_PDAC_COUNTER"
+Info: Elaborating entity "P_DAC_Interface" for hierarchy "MSS_XTRCT:inst24|MSS_Core:inst|P_DAC_Interface:U3"
+Info: Elaborating entity "altsyncram" for hierarchy "MSS_XTRCT:inst24|MSS_Core:inst|P_DAC_Interface:U3|altsyncram:U1_altsyncram_component"
+Info: Elaborated megafunction instantiation "MSS_XTRCT:inst24|MSS_Core:inst|P_DAC_Interface:U3|altsyncram:U1_altsyncram_component"
+Info: Instantiated megafunction "MSS_XTRCT:inst24|MSS_Core:inst|P_DAC_Interface:U3|altsyncram:U1_altsyncram_component" with the following parameter:
+    Info: Parameter "width_a" = "8"
+    Info: Parameter "clock_enable_input_a" = "NORMAL"
+    Info: Parameter "init_file" = "PDAC_conv_table.hex"
+    Info: Parameter "intended_device_family" = "Cyclone II"
+    Info: Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info: Parameter "numwords_a" = "256"
+    Info: Parameter "operation_mode" = "ROM"
+    Info: Parameter "outdata_aclr_a" = "NONE"
+    Info: Parameter "outdata_reg_a" = "CLOCK0"
+    Info: Parameter "width_byteena_a" = "1"
+    Info: Parameter "widthad_a" = "8"
+    Info: Parameter "clock_enable_output_a" = "NORMAL"
+Info: Found 1 design units, including 1 entities, in source file db/altsyncram_gp81.tdf
+    Info: Found entity 1: altsyncram_gp81
+Info: Elaborating entity "altsyncram_gp81" for hierarchy "MSS_XTRCT:inst24|MSS_Core:inst|P_DAC_Interface:U3|altsyncram:U1_altsyncram_component|altsyncram_gp81:auto_generated"
+Info: Elaborating entity "S_DAC_Interface" for hierarchy "MSS_XTRCT:inst24|MSS_Core:inst|S_DAC_Interface:U4"
+Info: Elaborating entity "altsyncram" for hierarchy "MSS_XTRCT:inst24|MSS_Core:inst|S_DAC_Interface:U4|altsyncram:U2_altsyncram_component"
+Info: Elaborated megafunction instantiation "MSS_XTRCT:inst24|MSS_Core:inst|S_DAC_Interface:U4|altsyncram:U2_altsyncram_component"
+Info: Instantiated megafunction "MSS_XTRCT:inst24|MSS_Core:inst|S_DAC_Interface:U4|altsyncram:U2_altsyncram_component" with the following parameter:
+    Info: Parameter "width_a" = "8"
+    Info: Parameter "clock_enable_input_a" = "NORMAL"
+    Info: Parameter "init_file" = "SDAC_conv_table.hex"
+    Info: Parameter "intended_device_family" = "Cyclone II"
+    Info: Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info: Parameter "numwords_a" = "256"
+    Info: Parameter "operation_mode" = "ROM"
+    Info: Parameter "outdata_aclr_a" = "NONE"
+    Info: Parameter "outdata_reg_a" = "CLOCK0"
+    Info: Parameter "width_byteena_a" = "1"
+    Info: Parameter "widthad_a" = "8"
+    Info: Parameter "clock_enable_output_a" = "NORMAL"
+Info: Found 1 design units, including 1 entities, in source file db/altsyncram_jp81.tdf
+    Info: Found entity 1: altsyncram_jp81
+Info: Elaborating entity "altsyncram_jp81" for hierarchy "MSS_XTRCT:inst24|MSS_Core:inst|S_DAC_Interface:U4|altsyncram:U2_altsyncram_component|altsyncram_jp81:auto_generated"
+Info: Elaborating entity "Transmitter" for hierarchy "Transmitter:inst"
+Warning: Using design file freq2sin.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: freq2sin
+Info: Elaborating entity "FREQ2SIN" for hierarchy "Transmitter:inst|FREQ2SIN:inst31"
+Info: Elaborating entity "sign2bin" for hierarchy "Transmitter:inst|FREQ2SIN:inst31|sign2bin:inst6"
+Warning: Using design file sintabletc.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: SinTableTC-arch
+    Info: Found entity 1: SinTableTC
+Info: Elaborating entity "SinTableTC" for hierarchy "Transmitter:inst|FREQ2SIN:inst31|SinTableTC:inst25"
+Warning: Using design file counter256.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: counter256-SYN
+    Info: Found entity 1: counter256
+Info: Elaborating entity "counter256" for hierarchy "Transmitter:inst|FREQ2SIN:inst31|counter256:inst7"
+Info: Elaborating entity "lpm_counter" for hierarchy "Transmitter:inst|FREQ2SIN:inst31|counter256:inst7|lpm_counter:lpm_counter_component"
+Info: Elaborated megafunction instantiation "Transmitter:inst|FREQ2SIN:inst31|counter256:inst7|lpm_counter:lpm_counter_component"
+Info: Instantiated megafunction "Transmitter:inst|FREQ2SIN:inst31|counter256:inst7|lpm_counter:lpm_counter_component" with the following parameter:
+    Info: Parameter "lpm_direction" = "UP"
+    Info: Parameter "lpm_port_updown" = "PORT_UNUSED"
+    Info: Parameter "lpm_type" = "LPM_COUNTER"
+    Info: Parameter "lpm_width" = "8"
+Info: Found 1 design units, including 1 entities, in source file db/cntr_1cj.tdf
+    Info: Found entity 1: cntr_1cj
+Info: Elaborating entity "cntr_1cj" for hierarchy "Transmitter:inst|FREQ2SIN:inst31|counter256:inst7|lpm_counter:lpm_counter_component|cntr_1cj:auto_generated"
+Info: Elaborating entity "MORSE2FREQ" for hierarchy "Transmitter:inst|MORSE2FREQ:inst"
+Info: Elaborating entity "StateMachinefin" for hierarchy "Transmitter:inst|MORSE2FREQ:inst|StateMachinefin:inst"
+Warning: Using design file mux2.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: mux2-SYN
+    Info: Found entity 1: mux2
+Info: Elaborating entity "mux2" for hierarchy "Transmitter:inst|MORSE2FREQ:inst|mux2:inst12"
+Info: Elaborating entity "LPM_MUX" for hierarchy "Transmitter:inst|MORSE2FREQ:inst|mux2:inst12|LPM_MUX:lpm_mux_component"
+Info: Elaborated megafunction instantiation "Transmitter:inst|MORSE2FREQ:inst|mux2:inst12|LPM_MUX:lpm_mux_component"
+Info: Instantiated megafunction "Transmitter:inst|MORSE2FREQ:inst|mux2:inst12|LPM_MUX:lpm_mux_component" with the following parameter:
+    Info: Parameter "LPM_WIDTH" = "1"
+    Info: Parameter "LPM_SIZE" = "2"
+    Info: Parameter "LPM_WIDTHS" = "1"
+    Info: Parameter "LPM_PIPELINE" = "0"
+    Info: Parameter "LPM_TYPE" = "LPM_MUX"
+    Info: Parameter "LPM_HINT" = "UNUSED"
+Info: Found 1 design units, including 1 entities, in source file db/mux_03e.tdf
+    Info: Found entity 1: mux_03e
+Info: Elaborating entity "mux_03e" for hierarchy "Transmitter:inst|MORSE2FREQ:inst|mux2:inst12|LPM_MUX:lpm_mux_component|mux_03e:auto_generated"
+Warning: Using design file mux4to1.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: mux4to1-SYN
+    Info: Found entity 1: mux4to1
+Info: Elaborating entity "mux4to1" for hierarchy "Transmitter:inst|MORSE2FREQ:inst|mux4to1:inst21"
+Info: Elaborating entity "LPM_MUX" for hierarchy "Transmitter:inst|MORSE2FREQ:inst|mux4to1:inst21|LPM_MUX:lpm_mux_component"
+Info: Elaborated megafunction instantiation "Transmitter:inst|MORSE2FREQ:inst|mux4to1:inst21|LPM_MUX:lpm_mux_component"
+Info: Instantiated megafunction "Transmitter:inst|MORSE2FREQ:inst|mux4to1:inst21|LPM_MUX:lpm_mux_component" with the following parameter:
+    Info: Parameter "LPM_WIDTH" = "1"
+    Info: Parameter "LPM_SIZE" = "4"
+    Info: Parameter "LPM_WIDTHS" = "2"
+    Info: Parameter "LPM_PIPELINE" = "1"
+    Info: Parameter "LPM_TYPE" = "LPM_MUX"
+    Info: Parameter "LPM_HINT" = "UNUSED"
+Info: Found 1 design units, including 1 entities, in source file db/mux_gke.tdf
+    Info: Found entity 1: mux_gke
+Info: Elaborating entity "mux_gke" for hierarchy "Transmitter:inst|MORSE2FREQ:inst|mux4to1:inst21|LPM_MUX:lpm_mux_component|mux_gke:auto_generated"
+Warning: Using design file clk_divider.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: Clk_Divider-Clk_Divider_architecture
+    Info: Found entity 1: Clk_Divider
+Info: Elaborating entity "Clk_Divider" for hierarchy "Transmitter:inst|MORSE2FREQ:inst|Clk_Divider:inst4"
+Info: Elaborating entity "Clk_Divider" for hierarchy "Transmitter:inst|MORSE2FREQ:inst|Clk_Divider:inst7"
+Info: Elaborating entity "Clk_Divider" for hierarchy "Transmitter:inst|MORSE2FREQ:inst|Clk_Divider:inst5"
+Info: Elaborating entity "Clk_Divider" for hierarchy "Transmitter:inst|MORSE2FREQ:inst|Clk_Divider:inst6"
+Info: Elaborating entity "U2M" for hierarchy "Transmitter:inst|U2M:inst21"
+Warning: Using design file char2morsetable.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: char2morseTable-arc_char2morseTable
+    Info: Found entity 1: char2morseTable
+Info: Elaborating entity "char2morseTable" for hierarchy "Transmitter:inst|U2M:inst21|char2morseTable:inst3"
+Warning: Using design file ena_morse.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: ena_morse-ena_morse_behavior
+    Info: Found entity 1: ena_morse
+Info: Elaborating entity "ena_morse" for hierarchy "Transmitter:inst|U2M:inst21|ena_morse:inst"
+Warning: Using design file kbd.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: kbd
+Info: Elaborating entity "KBD" for hierarchy "Transmitter:inst|U2M:inst21|KBD:inst1"
+Warning: Using design file byterec.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: byterec-arc_byterec
+    Info: Found entity 1: byterec
+Info: Elaborating entity "byterec" for hierarchy "Transmitter:inst|U2M:inst21|KBD:inst1|byterec:byte_receiver"
+Warning: Using design file bitrec.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: bitrec-arc_bitrec
+    Info: Found entity 1: bitrec
+Info: Elaborating entity "bitrec" for hierarchy "Transmitter:inst|U2M:inst21|KBD:inst1|bitrec:bit_receiver"
+Warning (10492): VHDL Process Statement warning at bitrec.vhd(87): signal "kbd_clk" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at bitrec.vhd(87): signal "kbd_dat" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at bitrec.vhd(93): signal "kbd_clk" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at bitrec.vhd(99): signal "kbd_clk" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at bitrec.vhd(106): signal "count9" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at bitrec.vhd(113): signal "kbd_clk" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at bitrec.vhd(119): signal "kbd_dat" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at bitrec.vhd(119): signal "parity_ok" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at bitrec.vhd(131): signal "kbd_clk" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning: Using design file lpf.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: lpf-arc_lpf
+    Info: Found entity 1: lpf
+Info: Elaborating entity "lpf" for hierarchy "Transmitter:inst|U2M:inst21|KBD:inst1|lpf:cleaner"
+Warning: Using design file enable_trans.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: ENABLE_TRANS-arc_ENABLE_TRANS
+    Info: Found entity 1: ENABLE_TRANS
+Info: Elaborating entity "ENABLE_TRANS" for hierarchy "Transmitter:inst|U2M:inst21|ENABLE_TRANS:inst2"
+Warning (10542): VHDL Variable Declaration warning at enable_trans.vhd(22): used initial value expression for variable "lenght_bin" because variable was never assigned a value
+Warning (10492): VHDL Process Statement warning at enable_trans.vhd(22): signal "leng" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info: Elaborating entity "sosnotif" for hierarchy "sosnotif:inst10"
+Info: Elaborating entity "Turbo_F_div_100k" for hierarchy "Turbo_F_div_100k:inst20"
+Warning (10542): VHDL Variable Declaration warning at Turbo_F_div_100K.vhd(15): used initial value expression for variable "sec" because variable was never assigned a value
+Info: Inferred 1 megafunctions from design logic
+    Info: Inferred altsyncram megafunction from the following design logic: "Reciever:inst23|2LCD:inst18|LCD_Table:inst2|Mux0~0"
+        Info: Parameter OPERATION_MODE set to ROM
+        Info: Parameter WIDTH_A set to 7
+        Info: Parameter WIDTHAD_A set to 8
+        Info: Parameter NUMWORDS_A set to 256
+        Info: Parameter OUTDATA_REG_A set to UNREGISTERED
+        Info: Parameter RAM_BLOCK_TYPE set to AUTO
+        Info: Parameter INIT_FILE set to please.COMPLETE_PROJECT0.rtl.mif
+Info: Elaborated megafunction instantiation "Reciever:inst23|2LCD:inst18|LCD_Table:inst2|altsyncram:Mux0_rtl_0"
+Info: Instantiated megafunction "Reciever:inst23|2LCD:inst18|LCD_Table:inst2|altsyncram:Mux0_rtl_0" with the following parameter:
+    Info: Parameter "OPERATION_MODE" = "ROM"
+    Info: Parameter "WIDTH_A" = "7"
+    Info: Parameter "WIDTHAD_A" = "8"
+    Info: Parameter "NUMWORDS_A" = "256"
+    Info: Parameter "OUTDATA_REG_A" = "UNREGISTERED"
+    Info: Parameter "RAM_BLOCK_TYPE" = "AUTO"
+    Info: Parameter "INIT_FILE" = "please.COMPLETE_PROJECT0.rtl.mif"
+Info: Found 1 design units, including 1 entities, in source file db/altsyncram_d901.tdf
+    Info: Found entity 1: altsyncram_d901
+Info: WYSIWYG I/O primitives converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|VOLTAGE_TRANSLATORS_ENAn_USER_ibuf" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|ADC_POWERDOWNn_USER_ibuf" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|ADC_PART_EXT_ENABLE_USER_ibuf" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|INT_EXT_ENABLES_FOR_UNITS_USER_ibuf" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|CLK_IN_ibuf" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|DACs_POWERDOWNn_USER_ibuf" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|PDACs_PART_EXT_ENABLE_USER_ibuf" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|SDACs_PART_EXT_ENABLE_USER_ibuf" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|RESETn_ibuf" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|BIT_INPUT_MUX_USER_ibuf" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|PDAC_A_RESET_USER_ibuf" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|PDAC_A_DATA_ENABLE_USER_ibuf" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|PDAC_B_RESET_USER_ibuf" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|PDAC_B_DATA_ENABLE_USER_ibuf" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|PDACs_NORMAL_ENABLE_USER_ibuf" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|PDAC_A_DATA_USER_ibuf_7_" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|PDAC_B_DATA_USER_ibuf_7_" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|SDACs_SCAN_ENABLE_USER_ibuf" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|PDAC_A_DATA_USER_ibuf_0_" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|PDAC_A_DATA_USER_ibuf_1_" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|PDAC_A_DATA_USER_ibuf_2_" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|PDAC_A_DATA_USER_ibuf_3_" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|PDAC_A_DATA_USER_ibuf_4_" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|PDAC_A_DATA_USER_ibuf_5_" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|PDAC_A_DATA_USER_ibuf_6_" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|PDAC_B_DATA_USER_ibuf_0_" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|PDAC_B_DATA_USER_ibuf_1_" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|PDAC_B_DATA_USER_ibuf_2_" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|PDAC_B_DATA_USER_ibuf_3_" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|PDAC_B_DATA_USER_ibuf_4_" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|PDAC_B_DATA_USER_ibuf_5_" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|PDAC_B_DATA_USER_ibuf_6_" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|SDACs_NORMAL_ENABLE_USER_ibuf" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|SDAC_0_DATA_USER_ibuf_7_" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|SDAC_0_RESET_USER_ibuf" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|SDAC_0_DATA_ENABLE_USER_ibuf" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|SDAC_1_DATA_USER_ibuf_7_" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|SDAC_1_RESET_USER_ibuf" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|SDAC_1_DATA_ENABLE_USER_ibuf" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|SDAC_0_DATA_USER_ibuf_6_" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|SDAC_1_DATA_USER_ibuf_6_" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|SDAC_0_DATA_USER_ibuf_0_" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|SDAC_1_DATA_USER_ibuf_0_" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|SDAC_0_DATA_USER_ibuf_1_" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|SDAC_1_DATA_USER_ibuf_1_" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|SDAC_0_DATA_USER_ibuf_2_" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|SDAC_1_DATA_USER_ibuf_2_" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|SDAC_0_DATA_USER_ibuf_3_" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|SDAC_1_DATA_USER_ibuf_3_" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|SDAC_0_DATA_USER_ibuf_4_" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|SDAC_1_DATA_USER_ibuf_4_" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|SDAC_0_DATA_USER_ibuf_5_" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|SDAC_1_DATA_USER_ibuf_5_" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|ADC_DATA_USER_7_" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|ADC_DATA_USER_5_" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|ADC_DATA_USER_6_" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|ADC_DATA_USER_3_" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|ADC_DATA_USER_4_" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|ADC_DATA_USER_2_" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|ADC_DATA_USER_0_" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|ADC_DATA_USER_1_" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|ADC_RESET_USER_ibuf" converted to equivalent logic
+    Info: WYSIWYG I/O primitive "MSS_XTRCT:inst24|MSS_Core:inst|ADC_DATA_ENABLE_USER_ibuf" converted to equivalent logic
+Info: Registers with preset signals will power-up high
+Info: DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LCD_RW" is stuck at GND
+    Warning (13410): Pin "LCD_ON" is stuck at VCC
+    Warning (13410): Pin "LCD_BLON" is stuck at VCC
+Critical Warning: Ignored Power-Up Level option on the following registers
+    Critical Warning (18010): Register Reciever:inst23|SIN2FREQ:inst20|CLOSE_f_paramFin:inst15|fin_param[2] will power up to High
+    Critical Warning (18010): Register MultiTurbo_F_div_quater:inst28|one_sec[0] will power up to Low
+    Critical Warning (18010): Register MultiTurbo_F_div_quater:inst28|one_sec[31] will power up to Low
+    Critical Warning (18010): Register Transmitter:inst|U2M:inst21|ENABLE_TRANS:inst2|counter[31] will power up to Low
+    Critical Warning (18010): Register Transmitter:inst|U2M:inst21|ENABLE_TRANS:inst2|counter[0] will power up to Low
+    Critical Warning (18010): Register Transmitter:inst|MORSE2FREQ:inst|Clk_Divider:inst5|clk_div_param[7] will power up to High
+    Critical Warning (18010): Register Transmitter:inst|MORSE2FREQ:inst|Clk_Divider:inst5|clk_div_param[5] will power up to High
+    Critical Warning (18010): Register Transmitter:inst|MORSE2FREQ:inst|Clk_Divider:inst6|clk_div_param[1] will power up to High
+    Critical Warning (18010): Register Transmitter:inst|MORSE2FREQ:inst|Clk_Divider:inst6|clk_div_param[0] will power up to High
+    Critical Warning (18010): Register Transmitter:inst|MORSE2FREQ:inst|Clk_Divider:inst7|clk_div_param[6] will power up to High
+    Critical Warning (18010): Register Transmitter:inst|MORSE2FREQ:inst|Clk_Divider:inst7|clk_div_param[3] will power up to High
+    Critical Warning (18010): Register Transmitter:inst|MORSE2FREQ:inst|Clk_Divider:inst6|clk_div_param[7] will power up to High
+    Critical Warning (18010): Register Transmitter:inst|MORSE2FREQ:inst|Clk_Divider:inst6|clk_div_param[6] will power up to High
+    Critical Warning (18010): Register Transmitter:inst|MORSE2FREQ:inst|Clk_Divider:inst4|clk_div_param[6] will power up to High
+    Critical Warning (18010): Register Transmitter:inst|MORSE2FREQ:inst|Clk_Divider:inst4|clk_div_param[2] will power up to High
+    Critical Warning (18010): Register Transmitter:inst|MORSE2FREQ:inst|Clk_Divider:inst4|clk_div_param[1] will power up to High
+Info: 8 registers lost all their fanouts during netlist optimizations. The first 8 are displayed below.
+    Info: Register "Reciever:inst23|2LCD:inst18|LCD_Table:inst2|dout[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "Reciever:inst23|2LCD:inst18|LCD_Table:inst2|dout[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "Reciever:inst23|2LCD:inst18|LCD_Table:inst2|dout[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "Reciever:inst23|2LCD:inst18|LCD_Table:inst2|dout[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "Reciever:inst23|2LCD:inst18|LCD_Table:inst2|dout[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "Reciever:inst23|2LCD:inst18|LCD_Table:inst2|dout[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "Reciever:inst23|2LCD:inst18|LCD_Table:inst2|dout[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "Reciever:inst23|SIN2FREQ:inst20|CLOSE_f_paramFin:inst15|fin_param[0]" lost all its fanouts during netlist optimizations.
+Info: Removed 7 MSB VCC or GND address nodes from RAM block "MSS_XTRCT:inst24|MSS_Core:inst|P_DAC_Interface:U3|altsyncram:U2_altsyncram_component|altsyncram_gp81:auto_generated|ALTSYNCRAM"
+Info: Found the following redundant logic cells in design
+    Info (17048): Logic cell "MSS_XTRCT:inst24|MSS_Core:inst|CHOOSEN_SDACs_PART_ENABLE"
+    Info (17048): Logic cell "MSS_XTRCT:inst24|MSS_Core:inst|P_DAC_Interface:U3|DATA_TO_PDAC_A_sig_6n2ss1_7_"
+    Info (17048): Logic cell "MSS_XTRCT:inst24|MSS_Core:inst|P_DAC_Interface:U3|nx7507z1"
+    Info (17048): Logic cell "MSS_XTRCT:inst24|MSS_Core:inst|P_DAC_Interface:U3|DATA_TO_PDAC_B_sig_6n4ss1_7_"
+    Info (17048): Logic cell "MSS_XTRCT:inst24|MSS_Core:inst|P_DAC_Interface:U3|nx35834z1"
+    Info (17048): Logic cell "MSS_XTRCT:inst24|MSS_Core:inst|S_DAC_Interface:U4|nx52182z1"
+    Info (17048): Logic cell "MSS_XTRCT:inst24|MSS_Core:inst|CHOOSEN_PDACs_PART_ENABLE"
+    Info (17048): Logic cell "MSS_XTRCT:inst24|MSS_Core:inst|S_DAC_Interface:U4|DATA_LATCH_SDAC0_3n2ss1_0_"
+    Info (17048): Logic cell "MSS_XTRCT:inst24|MSS_Core:inst|S_DAC_Interface:U4|nx56931z1"
+    Info (17048): Logic cell "MSS_XTRCT:inst24|MSS_Core:inst|S_DAC_Interface:U4|nx65350z1"
+    Info (17048): Logic cell "MSS_XTRCT:inst24|MSS_Core:inst|S_DAC_Interface:U4|DATA_LATCH_SDAC0_3n2ss1_2_"
+    Info (17048): Logic cell "MSS_XTRCT:inst24|MSS_Core:inst|nx4534z1"
+    Info (17048): Logic cell "MSS_XTRCT:inst24|MSS_Core:inst|U2_DATA_OUT_sig_3n2ss1_7_"
+    Info (17048): Logic cell "MSS_XTRCT:inst24|MSS_Core:inst|CHOOSEN_ADC_PART_ENABLE"
+Info: Implemented 1664 device resources after synthesis - the final resource count might be different
+    Info: Implemented 14 input pins
+    Info: Implemented 56 output pins
+    Info: Implemented 1563 logic cells
+    Info: Implemented 31 RAM segments
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 65 warnings
+    Info: Peak virtual memory: 259 megabytes
+    Info: Processing ended: Wed Jun 22 17:08:49 2016
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:08
+
+

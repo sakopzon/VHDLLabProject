@@ -1,0 +1,269 @@
+Partition Merge report for please
+Wed Jun 22 04:55:55 2016
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Partition Merge Summary
+  3. Connections to In-System Debugging Instance "auto_signaltap_0"
+  4. Partition Merge Netlist Types Used
+  5. Partition Merge Partition Statistics
+  6. Partition Merge Resource Usage Summary
+  7. Partition Merge RAM Summary
+  8. Partition Merge Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------------+
+; Partition Merge Summary                                                            ;
++------------------------------------+-----------------------------------------------+
+; Partition Merge Status             ; Successful - Wed Jun 22 04:55:55 2016         ;
+; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Full Version ;
+; Revision Name                      ; please                                        ;
+; Top-level Entity Name              ; MultiTurbo_F_div_quater                       ;
+; Family                             ; Cyclone II                                    ;
+; Total logic elements               ; 1,181                                         ;
+;     Total combinational functions  ; 738                                           ;
+;     Dedicated logic registers      ; 773                                           ;
+; Total registers                    ; 773                                           ;
+; Total pins                         ; 5                                             ;
+; Total virtual pins                 ; 0                                             ;
+; Total memory bits                  ; 122,880                                       ;
+; Embedded Multiplier 9-bit elements ; 0                                             ;
+; Total PLLs                         ; 0                                             ;
++------------------------------------+-----------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Connections to In-System Debugging Instance "auto_signaltap_0"                                                                                                                                                                                                                        ;
++-----------------------------------+---------------+---------+----------------+-------------------+-------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Name                              ; Type          ; Status  ; Partition Name ; Netlist Type Used ; Actual Connection ; Details                                                                                                                                                        ;
++-----------------------------------+---------------+---------+----------------+-------------------+-------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; ADC_DATA_OUT[0]                   ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; ADC_DATA_OUT[0]                   ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; ADC_DATA_OUT[1]                   ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; ADC_DATA_OUT[1]                   ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; ADC_DATA_OUT[2]                   ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; ADC_DATA_OUT[2]                   ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; ADC_DATA_OUT[3]                   ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; ADC_DATA_OUT[3]                   ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; ADC_DATA_OUT[4]                   ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; ADC_DATA_OUT[4]                   ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; ADC_DATA_OUT[5]                   ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; ADC_DATA_OUT[5]                   ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; ADC_DATA_OUT[6]                   ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; ADC_DATA_OUT[6]                   ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; ADC_DATA_OUT[7]                   ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; ADC_DATA_OUT[7]                   ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; Turbo_F_div_100k:inst20|QuaterSec ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; close_param[0]                    ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; close_param[0]                    ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; close_param[1]                    ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; close_param[1]                    ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; close_param[2]                    ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; close_param[2]                    ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; f_finder2:inst25|per_num[0]       ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; f_finder2:inst25|per_num[0]       ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; f_finder2:inst25|per_num[1]       ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; f_finder2:inst25|per_num[1]       ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; f_finder2:inst25|per_num[2]       ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; f_finder2:inst25|per_num[2]       ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; f_finder2:inst25|per_num[3]       ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; f_finder2:inst25|per_num[3]       ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; f_finder2:inst25|per_num[4]       ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; f_finder2:inst25|per_num[4]       ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; f_finder2:inst25|per_num[5]       ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; f_finder2:inst25|per_num[5]       ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; f_finder2:inst25|state.fall       ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; f_finder2:inst25|state.fall       ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; f_finder2:inst25|state.idle       ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; f_finder2:inst25|state.idle       ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; f_finder2:inst25|state.rise       ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; f_finder2:inst25|state.rise       ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; hister5:inst17|highorlow          ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; hister5:inst17|highorlow          ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; param[0]                          ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; param[0]                          ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; param[1]                          ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; param[1]                          ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; param[2]                          ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; param[2]                          ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; param[3]                          ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; param[3]                          ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; param[4]                          ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; param[4]                          ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; param[5]                          ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; param[5]                          ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; param[6]                          ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; param[6]                          ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; param[7]                          ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; param[7]                          ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; param[8]                          ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; param[8]                          ; pre-synthesis ; missing ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
++-----------------------------------+---------------+---------+----------------+-------------------+-------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Partition Merge Netlist Types Used                                                                                            ;
++--------------------------------+----------------+-------------------+------------------------+--------------------------------+
+; Partition Name                 ; Partition Type ; Netlist Type Used ; Netlist Type Requested ; Partition Contents             ;
++--------------------------------+----------------+-------------------+------------------------+--------------------------------+
+; Top                            ; User-created   ; Source File       ; Post-Fit               ;                                ;
+; sld_hub:auto_hub               ; Auto-generated ; Post-Synthesis    ; Post-Synthesis         ; sld_hub:auto_hub               ;
+; sld_signaltap:auto_signaltap_0 ; Auto-generated ; Post-Synthesis    ; Post-Synthesis         ; sld_signaltap:auto_signaltap_0 ;
++--------------------------------+----------------+-------------------+------------------------+--------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Partition Merge Partition Statistics                                                                   ;
++---------------------------------------------+------+------------------+--------------------------------+
+; Statistic                                   ; Top  ; sld_hub:auto_hub ; sld_signaltap:auto_signaltap_0 ;
++---------------------------------------------+------+------------------+--------------------------------+
+; Estimated Total logic elements              ; 267  ; 113              ; 802                            ;
+;                                             ;      ;                  ;                                ;
+; Total combinational functions               ; 267  ; 103              ; 368                            ;
+; Logic element usage by number of LUT inputs ;      ;                  ;                                ;
+;     -- 4 input functions                    ; 75   ; 40               ; 152                            ;
+;     -- 3 input functions                    ; 61   ; 42               ; 128                            ;
+;     -- <=2 input functions                  ; 131  ; 21               ; 88                             ;
+;                                             ;      ;                  ;                                ;
+; Logic elements by mode                      ;      ;                  ;                                ;
+;     -- normal mode                          ; 146  ; 99               ; 312                            ;
+;     -- arithmetic mode                      ; 121  ; 4                ; 56                             ;
+;                                             ;      ;                  ;                                ;
+; Total registers                             ; 33   ; 73               ; 667                            ;
+;     -- Dedicated logic registers            ; 33   ; 73               ; 667                            ;
+;     -- I/O registers                        ; 0    ; 0                ; 0                              ;
+;                                             ;      ;                  ;                                ;
+; Virtual pins                                ; 0    ; 0                ; 0                              ;
+; I/O pins                                    ; 5    ; 0                ; 0                              ;
+; Embedded Multiplier 9-bit elements          ; 0    ; 0                ; 0                              ;
+; Total memory bits                           ; 0    ; 0                ; 122880                         ;
+; Total RAM block bits                        ; 0    ; 0                ; 0                              ;
+; JTAG                                        ; 1    ; 0                ; 0                              ;
+;                                             ;      ;                  ;                                ;
+; Connections                                 ;      ;                  ;                                ;
+;     -- Input Connections                    ; 1    ; 111              ; 927                            ;
+;     -- Registered Input Connections         ; 0    ; 82               ; 754                            ;
+;     -- Output Connections                   ; 893  ; 145              ; 1                              ;
+;     -- Registered Output Connections        ; 0    ; 144              ; 0                              ;
+;                                             ;      ;                  ;                                ;
+; Internal Connections                        ;      ;                  ;                                ;
+;     -- Total Connections                    ; 1735 ; 710              ; 3999                           ;
+;     -- Registered Connections               ; 131  ; 537              ; 2858                           ;
+;                                             ;      ;                  ;                                ;
+; External Connections                        ;      ;                  ;                                ;
+;     -- Top                                  ; 0    ; 103              ; 791                            ;
+;     -- sld_hub:auto_hub                     ; 103  ; 16               ; 137                            ;
+;     -- sld_signaltap:auto_signaltap_0       ; 791  ; 137              ; 0                              ;
+;                                             ;      ;                  ;                                ;
+; Partition Interface                         ;      ;                  ;                                ;
+;     -- Input Ports                          ; 7    ; 18               ; 117                            ;
+;     -- Output Ports                         ; 2    ; 36               ; 70                             ;
+;     -- Bidir Ports                          ; 0    ; 0                ; 0                              ;
+;                                             ;      ;                  ;                                ;
+; Registered Ports                            ;      ;                  ;                                ;
+;     -- Registered Input Ports               ; 0    ; 4                ; 65                             ;
+;     -- Registered Output Ports              ; 0    ; 26               ; 1                              ;
+;                                             ;      ;                  ;                                ;
+; Port Connectivity                           ;      ;                  ;                                ;
+;     -- Input Ports driven by GND            ; 0    ; 1                ; 61                             ;
+;     -- Output Ports driven by GND           ; 0    ; 0                ; 0                              ;
+;     -- Input Ports driven by VCC            ; 0    ; 0                ; 0                              ;
+;     -- Output Ports driven by VCC           ; 0    ; 0                ; 0                              ;
+;     -- Input Ports with no Source           ; 0    ; 0                ; 35                             ;
+;     -- Output Ports with no Source          ; 0    ; 0                ; 0                              ;
+;     -- Input Ports with no Fanout           ; 0    ; 1                ; 40                             ;
+;     -- Output Ports with no Fanout          ; 0    ; 14               ; 61                             ;
++---------------------------------------------+------+------------------+--------------------------------+
+Note: Resource usage numbers presented for Partitions containing post-synthesis logic are estimates.  For Partitions containing post-fit logic, resource usage numbers are accurate based on previous placement information.  Actual Fitter results may vary depending on current Fitter Preservation Level assignments.
+
+
++-----------------------------------------------------------------+
+; Partition Merge Resource Usage Summary                          ;
++---------------------------------------------+-------------------+
+; Resource                                    ; Usage             ;
++---------------------------------------------+-------------------+
+; Estimated Total logic elements              ; 1,181             ;
+;                                             ;                   ;
+; Total combinational functions               ; 738               ;
+; Logic element usage by number of LUT inputs ;                   ;
+;     -- 4 input functions                    ; 267               ;
+;     -- 3 input functions                    ; 231               ;
+;     -- <=2 input functions                  ; 240               ;
+;                                             ;                   ;
+; Logic elements by mode                      ;                   ;
+;     -- normal mode                          ; 557               ;
+;     -- arithmetic mode                      ; 181               ;
+;                                             ;                   ;
+; Total registers                             ; 773               ;
+;     -- Dedicated logic registers            ; 773               ;
+;     -- I/O registers                        ; 0                 ;
+;                                             ;                   ;
+; I/O pins                                    ; 5                 ;
+; Total memory bits                           ; 122880            ;
+; Maximum fan-out node                        ; QIC_SIGNALTAP_GND ;
+; Maximum fan-out                             ; 425               ;
+; Total fan-out                               ; 5313              ;
+; Average fan-out                             ; 3.43              ;
++---------------------------------------------+-------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Partition Merge RAM Summary                                                                                                                                                                                                                                                                    ;
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+--------+------+
+; Name                                                                                                                                                                                       ; Type ; Mode           ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size   ; MIF  ;
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+--------+------+
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram|altsyncram_ess3:auto_generated|altsyncram_tgq1:altsyncram1|ALTSYNCRAM ; AUTO ; True Dual Port ; 4096         ; 30           ; 4096         ; 30           ; 122880 ; None ;
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+--------+------+
+
+
++--------------------------+
+; Partition Merge Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Partition Merge
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Version
+    Info: Processing started: Wed Jun 22 04:55:54 2016
+Info: Command: quartus_cdb --read_settings_files=off --write_settings_files=off please -c please --merge=on
+Warning: Previously generated Fitter netlist for partition "Top" is older than current Synthesis netlist -- using the current Synthesis netlist instead to ensure that the latest source changes are included
+    Info: Forcing the Quartus II software to use the previously generated Fitter netlist is allowed by setting the Netlist Type to Post-Fit (Strict)
+Info: Using synthesis netlist for partition "Top"
+Info: Using synthesis netlist for partition "sld_hub:auto_hub"
+Info: Using synthesis netlist for partition "sld_signaltap:auto_signaltap_0"
+Critical Warning: Partially connected in-system debug instance "auto_signaltap_0" to 0 of its 61 required data inputs, trigger inputs, acquisition clocks, and dynamic pins.  There were 0 illegal, 0 inaccessible, and 61 missing sources or connections.
+Info: Resolved and merged 3 partition(s)
+Info: Implemented 1240 device resources after synthesis - the final resource count might be different
+    Info: Implemented 7 input pins
+    Info: Implemented 2 output pins
+    Info: Implemented 1200 logic cells
+    Info: Implemented 30 RAM segments
+Info: Quartus II Partition Merge was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 219 megabytes
+    Info: Processing ended: Wed Jun 22 04:55:55 2016
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

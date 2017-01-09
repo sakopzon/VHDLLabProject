@@ -1,0 +1,118 @@
+library ieee ;
+use IEEE.std_logic_1164.all;
+use IEEE.std_logic_unsigned.all;
+use IEEE.std_logic_arith.all;
+USE ieee.numeric_std.ALL;
+
+
+entity freq2morse_SM_final is
+	port ( 	clk:	in 	std_logic;
+			slow_clk:in std_logic;
+		resetN:		in 	std_logic;
+		endword:		in 	std_logic;
+		f_ind:  	in	std_logic_vector(2 downto 0);
+		morsecode: out std_logic_vector(7 downto 0);
+		finish : out std_logic
+		);
+end freq2morse_SM_final;
+
+architecture arc_freq2morse_SM_final of freq2morse_SM_final is 
+  type state_type is (idle, kav ,dot , fin); --enumerated type for state machine
+	signal morsi: integer range 0 to 7 ;
+	signal morse_type :std_logic_vector(4 downto 0);
+	signal out_tmp: std_logic_vector (7 downto 0);
+	signal inflen : integer range 0 to 7;
+	signal finlen : integer range 0 to 7;
+	begin
+    process (clk, resetN, endword)
+		variable state : state_type;
+		variable in_tmp: std_logic_vector (2 downto 0);
+		variable out_trans: std_logic;
+		variable getend: std_logic;
+		variable finlebinar: std_logic_vector (2 downto 0);
+    begin
+        if (resetN = '0') then
+			out_trans :='0';
+            state := idle;
+            morse_type<="00000";
+            out_tmp<="00000000";
+			in_tmp := "100";
+			morsi <= 0;
+			inflen<= 0;
+			finlen <= 0;
+       elsif (rising_edge(clk)) then
+				if(slow_clk='1') then
+				-- Determine the next state synchronously, based on
+				-- the current state and the input
+					out_tmp <="00000000";
+					finlebinar :="000";
+					getend :=endword;
+					in_tmp :=f_ind;
+					morsi <= 0;
+					out_trans :='0';
+					case state is
+						when idle=>
+								out_tmp <="00000000";
+								morsi <= 0;
+								inflen <=0;
+								morse_type<="00000";
+								finlebinar :="000";
+								out_trans :='0';
+								if(in_tmp ="000" or in_tmp ="001" ) then
+									state := kav ;
+									inflen <= inflen+1;
+									morsi <=0;
+								end if;
+								if(in_tmp="010" or in_tmp ="011" ) then
+									state := dot ;
+									inflen <= inflen+1;
+									morsi <=0;
+								end if;
+						when kav=>
+							out_trans :='0';
+							morse_type(4-morsi)<='1';
+							if(getend='1') then
+								state := fin;
+							else
+								if(in_tmp ="000" or in_tmp ="001" ) then
+									state :=kav;
+									inflen <= inflen+1;
+									morsi <= morsi+1;
+								elsif(in_tmp ="010" or in_tmp ="011") then
+									state :=dot;
+									inflen <= inflen+1;
+									morsi <= morsi+1;
+								end if;
+							end if;
+						when dot =>
+							out_trans :='0';
+							morse_type(4-morsi) <='0';
+							if(getend='1') then
+								state := fin;
+							else
+								if(in_tmp ="000" or in_tmp ="001" ) then
+									state :=kav;
+									inflen <= inflen+1;
+									morsi <= morsi+1;
+								elsif(in_tmp ="010" or in_tmp ="011") then
+									state :=dot;
+									inflen <= inflen+1;
+									morsi <= morsi+1;
+								end if;
+							end if;		
+						when fin => 
+							out_trans :='1';
+							finlen<=inflen;
+							morsi <= 0;
+							inflen <=0;
+							in_tmp := "100";
+							state:=idle; 
+					end case;
+				end if;
+        end if;
+    finlebinar := conv_std_logic_vector(finlen,3);
+	out_tmp <= morse_type(4 downto 0)&finlebinar(2 downto 0); 
+	finish<= out_trans;
+    end process;
+    morsecode <=out_tmp;
+end arc_freq2morse_SM_final ; 

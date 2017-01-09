@@ -1,0 +1,56 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 6.057 ns
+From           : RESETn
+To             : Reciever:inst23|freq2morse_SM_final:inst9|dold
+From Clock     : --
+To Clock       : CLK_IN
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 8.066 ns
+From           : sosnotif:inst10|outtmp[4]
+To             : shine[4]
+From Clock     : CLK_IN
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : -0.094 ns
+From           : Turbo[1]
+To             : MultiTurbo_F_div_quater:inst28|one_sec[0]
+From Clock     : --
+To Clock       : CLK_IN
+Failed Paths   : 0
+
+Type           : Clock Setup: 'CLK_IN'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 116.25 MHz ( period = 8.602 ns )
+From           : Reciever:inst23|2LCD:inst18|LCD:inst8|clk_count[0]
+To             : Reciever:inst23|2LCD:inst18|LCD:inst8|lcd_data[5]
+From Clock     : CLK_IN
+To Clock       : CLK_IN
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+
